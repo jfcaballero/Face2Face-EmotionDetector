@@ -77,15 +77,15 @@
         android:id="@+id/videoView"
         android:layout_width="390dp"
         android:layout_height="230dp"
-        android:layout_marginLeft="197dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginLeft="178dp"
+        android:layout_marginTop="57dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="850dp"
-        android:layout_height="match_parent"
+        android:layout_width="805dp"
+        android:layout_height="335dp"
         android:src="@drawable/tvbase"
         android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -96,7 +96,7 @@
         style="@android:style/Widget.ImageButton"
         android:layout_width="44dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="581dp"
+        android:layout_marginLeft="557dp"
         android:layout_marginTop="67dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
