@@ -17,15 +17,108 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:background="@drawable/fondotela"
     android:screenOrientation="landscape">
 
+
+    <ImageView
+        android:id="@+id/carton"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/reconocimient"
+        android:layout_marginTop="215dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:rotation="15"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/carton2"
+        tools:src="@mipmap/carton2" />
+
+
+    <ImageButton
+        android:id="@+id/botonvolver"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="220dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/boton" />
+
+
+    <ImageView
+        android:id="@+id/tira"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="265dp"
+        android:alpha=".95"
+        android:rotation="15"
+        app:srcCompat="@drawable/adhesiva" />
+
+    <TextView
+        android:id="@+id/textvolver"
+        android:layout_width="112dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="265dp"
+        android:fontFamily="@font/f3dumb"
+        android:rotation="15"
+        android:text="VOLVER"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="25dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="765dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/cuerda" />
+
     <ImageView
         android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/control" />
+        android:layout_width="225dp"
+        android:layout_height="5000dp"
+        android:layout_above="@+id/control"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/marco"
+        android:layout_width="480dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="84dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/marcofoto" />
+
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/reconocimient"
+        android:layout_marginLeft="540dp"
+        android:layout_marginTop="215dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:rotation="15"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/carton2"
+        tools:src="@mipmap/carton2" />
+
 
     <ImageButton
         android:id="@+id/volverAtras"
@@ -33,21 +126,74 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="600dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
         android:cropToPadding="false"
+        android:rotation="15"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/boton" />
+
+
+    <ImageView
+        android:id="@+id/tira1"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="553dp"
+        android:layout_marginTop="263dp"
+        android:alpha=".95"
+        android:rotation="16"
+        app:srcCompat="@drawable/adhesiva" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="112dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="565dp"
+        android:layout_marginTop="265dp"
+        android:fontFamily="@font/f3dumb"
+        android:rotation="15"
+        android:text="SEGUIR"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/muelle"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginLeft="387dp"
+        android:layout_marginTop="220dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/muelle" />
+
+    <ImageView
+        android:id="@+id/bombilla"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:layout_marginLeft="400dp"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/bombilla" />
+
+    <ImageView
+        android:id="@+id/cartelMuyBien"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:layout_marginLeft="402dp"
+        android:layout_marginTop="105dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/cartelmuybien" />
+
 
     <FrameLayout
         android:id="@+id/control"
         android:layout_width="match_parent"
-        android:layout_height="112dp"
+        android:layout_height="29dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:background="@color/control_background"
-        android:screenOrientation="landscape">
+        android:screenOrientation="landscape"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/text"
@@ -56,8 +202,46 @@
             android:paddingLeft="80dp"
             android:textColor="#FFF"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:visibility="gone" />
+
 
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/libro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:srcCompat="@drawable/libroabierto" />
+
+    <ImageView
+        android:id="@+id/textorecuerda"
+        android:layout_width="230dp"
+        android:layout_height="295dp"
+        android:layout_marginLeft="97dp"
+        android:layout_marginTop="14dp"
+        android:rotation="1"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imagenrecuerda"
+        android:layout_width="230dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="355dp"
+        android:layout_marginTop="60dp"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/tryagain"
+        android:layout_width="150dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="137dp"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/nada"
+        android:rotation="1"
+        android:visibility="gone" />
+
 
 </RelativeLayout>
