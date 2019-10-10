@@ -481,7 +481,7 @@ public class TFClassification extends Fragment {
                                 getActivity().finish();
                             }
                             exp=0;
-                            if(etiqueta.equals("surprisedimg") && (confianza > 0.82)) { //Acierto sorpresa
+                            if(etiqueta.equals("surprisedimg") && (confianza > 0.79)) { //Acierto sorpresa, antes 0,82
 
                                 //Realiza lo correspondiente segun resultado en el hilo principal
                                 getActivity().runOnUiThread(new Runnable() {

@@ -90,13 +90,13 @@
         android:layout_height="5000dp"
         android:layout_above="@+id/control"
         android:layout_marginLeft="170dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:visibility="gone" />
 
     <ImageView
         android:id="@+id/marco"
         android:layout_width="480dp"
-        android:layout_height="200dp"
+        android:layout_height="195dp"
         android:layout_marginLeft="42dp"
         android:layout_marginTop="84dp"
         android:visibility="gone"
