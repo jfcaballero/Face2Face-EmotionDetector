@@ -104,11 +104,12 @@
 
 
     <ImageView
+        android:id="@+id/carton2"
         android:layout_width="180dp"
         android:layout_height="100dp"
-        android:layout_alignTop="@+id/reconocimient"
-        android:layout_marginLeft="500dp"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="220dp"
+        android:layout_marginEnd="0dp"
         android:adjustViewBounds="false"
         android:baselineAligned="false"
         android:contentDescription="@string/todo"
@@ -124,8 +125,9 @@
         style="@android:style/Widget.ImageButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="555dp"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="225dp"
+        android:layout_marginEnd="60dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
         android:cropToPadding="false"
@@ -136,20 +138,22 @@
 
     <ImageView
         android:id="@+id/tira1"
-        android:layout_width="120dp"
+        android:layout_width="125dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="505dp"
-        android:layout_marginTop="267dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="34dp"
         android:alpha=".95"
         android:rotation="16"
         app:srcCompat="@drawable/adhesiva" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="112dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="515dp"
-        android:layout_marginTop="270dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="271dp"
+        android:layout_marginEnd="48dp"
         android:fontFamily="@font/f3dumb"
         android:rotation="15"
         android:text="SEGUIR"
@@ -158,9 +162,9 @@
 
     <ImageView
         android:id="@+id/muelle"
-        android:layout_width="190dp"
+        android:layout_width="170dp"
         android:layout_height="200dp"
-        android:layout_marginLeft="382dp"
+        android:layout_marginLeft="380dp"
         android:layout_marginTop="210dp"
         android:visibility="gone"
         app:srcCompat="@drawable/muelle" />
@@ -169,7 +173,7 @@
         android:id="@+id/bombilla"
         android:layout_width="160dp"
         android:layout_height="170dp"
-        android:layout_marginLeft="395dp"
+        android:layout_marginLeft="393dp"
         android:layout_marginTop="15dp"
         android:visibility="gone"
         app:srcCompat="@drawable/bombilla" />
@@ -178,7 +182,7 @@
         android:id="@+id/cartelMuyBien"
         android:layout_width="160dp"
         android:layout_height="170dp"
-        android:layout_marginLeft="397dp"
+        android:layout_marginLeft="395dp"
         android:layout_marginTop="90dp"
         android:visibility="gone"
         app:srcCompat="@drawable/cartelmuybien" />
@@ -227,7 +231,7 @@
 
     <ImageView
         android:id="@+id/textorecuerda"
-        android:layout_width="210dp"
+        android:layout_width="207dp"
         android:layout_height="295dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="15dp"
@@ -247,7 +251,7 @@
 
     <ImageView
         android:id="@+id/imagenrecuerda"
-        android:layout_width="170dp"
+        android:layout_width="175dp"
         android:layout_height="200dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="63dp"
