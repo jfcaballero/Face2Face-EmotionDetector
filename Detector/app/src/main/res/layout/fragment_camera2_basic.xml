@@ -216,13 +216,13 @@
         android:id="@+id/libro"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         app:srcCompat="@drawable/libroabierto" />
 
 
     <Space
         android:id="@+id/space"
-        android:layout_width="97dp"
+        android:layout_width="94dp"
         android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -231,11 +231,11 @@
 
     <ImageView
         android:id="@+id/textorecuerda"
-        android:layout_width="207dp"
-        android:layout_height="295dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="15dp"
-        android:layout_toEndOf="@id/space"
+        android:layout_width="214dp"
+        android:layout_height="395dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginBottom="10dp"
         android:rotation="1"
         android:visibility="visible" />
 
@@ -251,11 +251,12 @@
 
     <ImageView
         android:id="@+id/imagenrecuerda"
-        android:layout_width="175dp"
+        android:layout_width="170dp"
         android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="63dp"
-        android:layout_toLeftOf="@id/space2"
+        android:layout_marginEnd="120dp"
         android:visibility="visible" />
 
     <ImageButton
