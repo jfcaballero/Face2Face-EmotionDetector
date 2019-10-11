@@ -138,7 +138,7 @@
         android:id="@+id/tira1"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="505dp"
+        android:layout_marginLeft="507dp"
         android:layout_marginTop="267dp"
         android:alpha=".95"
         android:rotation="16"
@@ -146,9 +146,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="112dp"
+        android:layout_width="110dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="515dp"
+        android:layout_marginLeft="517dp"
         android:layout_marginTop="270dp"
         android:fontFamily="@font/f3dumb"
         android:rotation="15"
@@ -227,7 +227,7 @@
 
     <ImageView
         android:id="@+id/textorecuerda"
-        android:layout_width="210dp"
+        android:layout_width="207dp"
         android:layout_height="295dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="15dp"
@@ -247,7 +247,7 @@
 
     <ImageView
         android:id="@+id/imagenrecuerda"
-        android:layout_width="170dp"
+        android:layout_width="175dp"
         android:layout_height="200dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="63dp"
