@@ -231,7 +231,7 @@
 
     <ImageView
         android:id="@+id/textorecuerda"
-        android:layout_width="214dp"
+        android:layout_width="217dp"
         android:layout_height="395dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="97dp"
