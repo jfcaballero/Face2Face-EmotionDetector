@@ -216,7 +216,7 @@
         android:id="@+id/libro"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:srcCompat="@drawable/libroabierto" />
 
 
@@ -237,7 +237,7 @@
         android:layout_marginStart="97dp"
         android:layout_marginBottom="10dp"
         android:rotation="1"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <Space
         android:id="@+id/space2"
@@ -257,7 +257,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="63dp"
         android:layout_marginEnd="120dp"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <ImageButton
         android:id="@+id/tryagain"
