@@ -26,11 +26,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/libroabierto.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/libroabierto.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/recorte2_historia_javier.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/recorte2_historia_javier.JPG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/recorte2_historia_maria.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/recorte2_historia_maria.JPG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/recorte_historia_maria.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/recorte_historia_maria.JPG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_camera2_basic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_camera2_basic.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +40,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="03157df3a320761a" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ce091829e9ce54f00b" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -381,7 +380,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49407783" visible="true" weight="0.2590604" />
