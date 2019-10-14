@@ -128,7 +128,7 @@
     <orderEntry type="library" name="Gradle: android.arch.core:runtime:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout:1.0.2@aar" level="project" />
-    <orderEntry type="library" name="Gradle: org.tensorflow:tensorflow-lite:1.14.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.tensorflow:tensorflow-lite:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.tensorflow:tensorflow-android:1.5.0@aar" level="project" />
     <orderEntry type="module" module-name="openCVLibrary341" />
   </component>
