@@ -79,7 +79,7 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="765dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:srcCompat="@drawable/cuerda" />

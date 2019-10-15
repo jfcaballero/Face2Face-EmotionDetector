@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.karumi.dexter.Dexter;
@@ -34,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
     public MediaPlayer mBoton;
     /** Variable que almacena el boton para ir al modulo de práctica */
     public ImageButton reconocimientoOpenCV;
-
+    /** Variable que almacena la vista de los créditos de la app */
+    //public ImageView creditos;
+    /** Variable de control para los créditos */
+    public int entrar=1;
 
     /** Esta funcion se encarga de la creacion de la actividad
      * @author manu
@@ -123,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Se le permite acceder al modulo de aprendizaje activando los botones correspondientes a las historias. La misma clase controlara la carga de los videos segun el valor de la variable video que se le pasa
-            ImageButton alegria = (ImageButton) findViewById(R.id.historiaAlegri);
+            final ImageButton alegria = (ImageButton) findViewById(R.id.historiaAlegri);
             alegria.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -138,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
             });
 
-            ImageButton sorpresa = (ImageButton) findViewById(R.id.historiaSorpres);
+            final ImageButton sorpresa = (ImageButton) findViewById(R.id.historiaSorpres);
             sorpresa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -153,10 +157,42 @@ public class MainActivity extends AppCompatActivity {
 
             });
 
+            final ImageView creditos = (ImageView) findViewById(R.id.creditos);
+            ImageButton buttonCreditos = (ImageButton) findViewById(R.id.buttonCreditos);
+            buttonCreditos.setOnClickListener(new View.OnClickListener() {
+
+                public void onClick(View v) {
+                    /*if(mPlayer.isPlaying()){
+                        mPlayer.stop(); //Paramos la musica del menu
+                    }*/
+
+                    bottonMusic(); //Musica de interaccion con el boton
+                    if(entrar==1) {
+
+                        creditos.setVisibility(creditos.VISIBLE);
+                        alegria.setClickable(false);
+                        sorpresa.setClickable(false);
+                        //reconocimientoOpenCV.setClickable(false);
+                        //Intent cvIntent1 = new Intent(MainActivity.this, OpenCVCascade.class);
+                        //startActivity(cvIntent1);
+                        entrar=0;
+                    }else{
+
+                        creditos.setVisibility(creditos.GONE);
+                        alegria.setClickable(true);
+                        sorpresa.setClickable(true);
+                        //reconocimientoOpenCV.setClickable(true);
+                        entrar=1;
+                    }
+                }
+
+            });
 
         }
 
     }
+
+
 
     /** Esta funcion se encarga de reanudar la aplicacion despues de una pausa
      * @author manu
@@ -168,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
         mPlayer.start();
         super.onResume();
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); //Se obliga a utilizar el telefono en modo horizontal
+        //creditos.setImageResource(R.drawable.background_creditos2);
 
     }
 
