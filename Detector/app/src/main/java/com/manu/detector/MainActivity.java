@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     /** Variable de control para los créditos */
     public int entrar=1;
 
+    public ImageView creditos;
     /** Esta funcion se encarga de la creacion de la actividad
      * @author manu
      * @since 1.0
@@ -104,11 +105,12 @@ public class MainActivity extends AppCompatActivity {
         // Se muestra el menu principal
         }else{
 
+            reconocimientoOpenCV = (ImageButton) findViewById(R.id.reconocimient);
             //Si el usuario ha visto los videos
             if(terminado==1){
 
             //Se le permite acceder al modulo de reconocimiento activando el boton
-            reconocimientoOpenCV = (ImageButton) findViewById(R.id.reconocimient);
+
             reconocimientoOpenCV.setImageResource(R.drawable.boton);
             reconocimientoOpenCV.setClickable(true);
                 reconocimientoOpenCV.setOnClickListener(new View.OnClickListener() {
@@ -157,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
             });
 
-            final ImageView creditos = (ImageView) findViewById(R.id.creditos);
+            creditos = (ImageView) findViewById(R.id.creditos);
             ImageButton buttonCreditos = (ImageButton) findViewById(R.id.buttonCreditos);
             buttonCreditos.setOnClickListener(new View.OnClickListener() {
 
@@ -172,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                         creditos.setVisibility(creditos.VISIBLE);
                         alegria.setClickable(false);
                         sorpresa.setClickable(false);
-                        //reconocimientoOpenCV.setClickable(false);
+                        reconocimientoOpenCV.setClickable(false);
                         //Intent cvIntent1 = new Intent(MainActivity.this, OpenCVCascade.class);
                         //startActivity(cvIntent1);
                         entrar=0;
@@ -181,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                         creditos.setVisibility(creditos.GONE);
                         alegria.setClickable(true);
                         sorpresa.setClickable(true);
-                        //reconocimientoOpenCV.setClickable(true);
+                        reconocimientoOpenCV.setClickable(true);
                         entrar=1;
                     }
                 }
