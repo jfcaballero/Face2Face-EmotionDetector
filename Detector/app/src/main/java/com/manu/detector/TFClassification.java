@@ -383,7 +383,7 @@ public class TFClassification extends Fragment {
                                 getActivity().finish();
                             }
                             exp=0;
-                            if(etiqueta.equals("smileimg") && (confianza > 0.54)) { //Acierto Alegria
+                            if(etiqueta.equals("smileimg") && (confianza > 0.45)) { //Acierto Alegria
                                 //Realiza lo correspondiente segun resultado en el hilo principal
                                 getActivity().runOnUiThread(new Runnable() {
 
