@@ -79,7 +79,7 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="765dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:srcCompat="@drawable/cuerda" />
@@ -196,7 +196,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/control_background"
         android:screenOrientation="landscape"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:id="@+id/text"
@@ -207,7 +207,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="visible"
-            tools:visibility="gone" />
+            tools:visibility="visible" />
 
 
     </FrameLayout>
@@ -216,48 +216,9 @@
         android:id="@+id/libro"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:srcCompat="@drawable/libroabierto" />
 
-
-    <Space
-        android:id="@+id/space"
-        android:layout_width="94dp"
-        android:layout_height="30dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="143dp" />
-
-    <ImageView
-        android:id="@+id/textorecuerda"
-        android:layout_width="214dp"
-        android:layout_height="395dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginBottom="10dp"
-        android:rotation="1"
-        android:visibility="visible" />
-
-    <Space
-        android:id="@+id/space2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="100dp" />
-
-
-    <ImageView
-        android:id="@+id/imagenrecuerda"
-        android:layout_width="170dp"
-        android:layout_height="200dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="63dp"
-        android:layout_marginEnd="120dp"
-        android:visibility="visible" />
 
     <ImageButton
         android:id="@+id/tryagain"

@@ -70,16 +70,10 @@ public class TFClassification extends Fragment {
     public ImageView muelle;
     /** Variable que almacena la imagen del libro*/
     public ImageView recuerdalibro;
-    /** Variable que almacena la imagen de una pagina del libro*/
-    public ImageView fotolibro;
-    /** Variable que almacena la imagen del texto del libro*/
-    public ImageView textolibro;
     /** Variable que almacena la imagen capturada*/
     public ImageView imagen = null;
-
     /**Variable que mostrara los resultados de la clasificacion cuando se necesite, solo para el programador*/
     public TextView textView;
-
     /**Variable que almacena el valor de la clasificacion*/
     public Float confianza;
     /**Variable que almacena el valor y etiqueta de la clasificacion, solo para el programador*/
@@ -240,8 +234,6 @@ public class TFClassification extends Fragment {
         muelle= (ImageView) view.findViewById(R.id.muelle);
         imagen = (ImageView) view.findViewById(R.id.image);
         recuerdalibro = (ImageView) view.findViewById(R.id.libro);
-        fotolibro = (ImageView) view.findViewById(R.id.imagenrecuerda);
-        textolibro = (ImageView) view.findViewById(R.id.textorecuerda);
         volver = (ImageButton) view.findViewById(R.id.botonvolver);
         volverMain = (ImageButton) view.findViewById(R.id.volverAtras);
         reintentar = (ImageButton) view.findViewById(R.id.tryagain);
@@ -430,12 +422,8 @@ public class TFClassification extends Fragment {
                                             e.printStackTrace();
                                         }
                                         vozRecuerda(1);
-                                        recuerdalibro.setImageResource(R.drawable.libroabierto);
-                                        fotolibro.setImageResource(R.drawable.recuerdamariafoto2);
-                                        textolibro.setImageResource(R.drawable.recorte2_historia_maria);
+                                        recuerdalibro.setImageResource(R.drawable.libro_historia_maria1);
                                         recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
-                                        fotolibro.setVisibility(fotolibro.VISIBLE);
-                                        textolibro.setVisibility(textolibro.VISIBLE);
                                         reintentar.setVisibility(reintentar.VISIBLE);
                                         volverMain.setClickable(false);
                                         volver.setClickable(false);
@@ -460,12 +448,8 @@ public class TFClassification extends Fragment {
                                             e.printStackTrace();
                                         }
                                         vozRecuerda(2);
-                                        recuerdalibro.setImageResource(R.drawable.libroabierto);
-                                        fotolibro.setImageResource(R.drawable.recuerdamariafoto);
-                                        textolibro.setImageResource(R.drawable.recorte_historia_maria);
+                                        recuerdalibro.setImageResource(R.drawable.libro_historia_maria2);
                                         recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
-                                        fotolibro.setVisibility(fotolibro.VISIBLE);
-                                        textolibro.setVisibility(textolibro.VISIBLE);
                                         reintentar.setVisibility(reintentar.VISIBLE);
                                         volverMain.setClickable(false);
                                         volver.setClickable(false);
@@ -521,12 +505,8 @@ public class TFClassification extends Fragment {
                                         }
                                         vozRecuerda(3);
 
-                                        recuerdalibro.setImageResource(R.drawable.libroabierto);
-                                        fotolibro.setImageResource(R.drawable.recuerdajavierfoto2);
-                                        textolibro.setImageResource(R.drawable.recorte2_historia_javier);
+                                        recuerdalibro.setImageResource(R.drawable.libro_historia_javier1);
                                         recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
-                                        fotolibro.setVisibility(fotolibro.VISIBLE);
-                                        textolibro.setVisibility(textolibro.VISIBLE);
                                         reintentar.setVisibility(reintentar.VISIBLE);
                                         volverMain.setClickable(false);
                                         volver.setClickable(false);
@@ -551,12 +531,8 @@ public class TFClassification extends Fragment {
                                             e.printStackTrace();
                                         }
                                         vozRecuerda(4);
-                                        recuerdalibro.setImageResource(R.drawable.libroabierto);
-                                        fotolibro.setImageResource(R.drawable.recuerdajavierfoto);
-                                        textolibro.setImageResource(R.drawable.recorte_historia_javier);
+                                        recuerdalibro.setImageResource(R.drawable.libro_historia_javier2);
                                         recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
-                                        fotolibro.setVisibility(fotolibro.VISIBLE);
-                                        textolibro.setVisibility(textolibro.VISIBLE);
                                         reintentar.setVisibility(reintentar.VISIBLE);
                                         volverMain.setClickable(false);
                                         volver.setClickable(false);
