@@ -188,7 +188,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //Inicializar el dibujo de la cara animada
         imagencara = (ImageView)findViewById(R.id.cara);
-        imagencara.setImageResource(R.drawable.cara);
+        imagencara.setImageResource(R.mipmap.cara);
 
         //Se carga la liberia de OpenCV
         Log.i(TAG, "Cargando libreria .so incluida en proyecto...");
@@ -325,7 +325,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
                         public void run() {
 
                             imagencara = (ImageView) findViewById(R.id.cara);
-                            imagencara.setImageResource(R.drawable.cara_alegria);
+                            imagencara.setImageResource(R.mipmap.cara_alegria);
 
                         }
                     });
@@ -374,7 +374,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
                         public void run() {
 
                             imagencara = (ImageView) findViewById(R.id.cara);
-                            imagencara.setImageResource(R.drawable.cara_asombro);
+                            imagencara.setImageResource(R.mipmap.cara_asombro);
 
                         }
                     });

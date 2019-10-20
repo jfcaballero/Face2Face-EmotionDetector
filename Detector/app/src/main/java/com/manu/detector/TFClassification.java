@@ -383,7 +383,7 @@ public class TFClassification extends Fragment {
                                 getActivity().finish();
                             }
                             exp=0;
-                            if(etiqueta.equals("smileimg") && (confianza > 0.45)) { //Acierto Alegria
+                            if(etiqueta.equals("smileimg") && (confianza > 0.49)) { //Acierto Alegria
                                 //Realiza lo correspondiente segun resultado en el hilo principal
                                 getActivity().runOnUiThread(new Runnable() {
 
@@ -422,7 +422,7 @@ public class TFClassification extends Fragment {
                                             e.printStackTrace();
                                         }
                                         vozRecuerda(1);
-                                        recuerdalibro.setImageResource(R.drawable.libro_historia_maria1);
+                                        recuerdalibro.setImageResource(R.mipmap.libro_historia_maria1);
                                         recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
                                         reintentar.setVisibility(reintentar.VISIBLE);
                                         volverMain.setClickable(false);
@@ -448,7 +448,7 @@ public class TFClassification extends Fragment {
                                             e.printStackTrace();
                                         }
                                         vozRecuerda(2);
-                                        recuerdalibro.setImageResource(R.drawable.libro_historia_maria2);
+                                        recuerdalibro.setImageResource(R.mipmap.libro_historia_maria2);
                                         recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
                                         reintentar.setVisibility(reintentar.VISIBLE);
                                         volverMain.setClickable(false);
@@ -505,7 +505,7 @@ public class TFClassification extends Fragment {
                                         }
                                         vozRecuerda(3);
 
-                                        recuerdalibro.setImageResource(R.drawable.libro_historia_javier1);
+                                        recuerdalibro.setImageResource(R.mipmap.libro_historia_javier1);
                                         recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
                                         reintentar.setVisibility(reintentar.VISIBLE);
                                         volverMain.setClickable(false);
@@ -531,7 +531,7 @@ public class TFClassification extends Fragment {
                                             e.printStackTrace();
                                         }
                                         vozRecuerda(4);
-                                        recuerdalibro.setImageResource(R.drawable.libro_historia_javier2);
+                                        recuerdalibro.setImageResource(R.mipmap.libro_historia_javier2);
                                         recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
                                         reintentar.setVisibility(reintentar.VISIBLE);
                                         volverMain.setClickable(false);
