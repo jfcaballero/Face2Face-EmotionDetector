@@ -62,12 +62,16 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
     public MediaPlayer mCamara;
     /** Variable que almacena el sonido al pulsar un boton */
     public MediaPlayer mBoton;
+    /** Variable que almacena el sonido de la voz de la cara que tienes que poner */
+    public MediaPlayer mPonerCara;
     /** Variable que almacena el una imagen de la cara animada */
     public ImageView imagencara;   //Imagen animada cara
     /** Variable que almacena el boton para volver */
     public ImageButton volver;
     /** Objeto Mat que almacena cada frame de la camra en gris */
     public Mat gray;
+    /** Variable que controla el flujo del usuario (video que visualizo el usuario) */
+    public int videoElegido;
 
 
     /** Esta funcion Se encarga de inicializar la libreria y el modelo que se encarga de la deteccion
@@ -153,6 +157,10 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
         */
         //Se asigna el layout correspondiente
         setContentView(R.layout.activity_detector);
+        //Recupero el valor entero del video que visualizó el usuario
+        videoElegido = getIntent().getIntExtra("videoElegido", 0);
+
+        vozPonerExpresion(videoElegido);
 
         //Se inicializan la camara con el View del layout correspondiente
         camara = new JavaCameraView(this, CameraBridgeViewBase.CAMERA_ID_FRONT);
@@ -185,6 +193,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
     public void onResume() {
 
         super.onResume();
+        videoElegido = getIntent().getIntExtra("videoElegido", 0);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //Inicializar el dibujo de la cara animada
         imagencara = (ImageView)findViewById(R.id.cara);
@@ -307,6 +316,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
                         new Size(70, 70), new Size(150, 150)); //Con el modelo cargado se aplica el clasificador para detectar la sorpresa en tiempo real
             }
             //min 189
+            if (videoElegido == 1) {
                 // Itera para la cantidad de sonrisas que se han encontrado
                 for (int y = 0; y < sDetections.toArray().length; y++) {
                     Rect sRect = sDetections.toArray()[y];
@@ -357,7 +367,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
                     startActivity(cvIntent);
 
                 }
-
+            } else if (videoElegido == 2) {
                 //Ocurre lo mismo que con la sonrisa(esto se realiza para cada frame)
                 for (int y = 0; y < surDetections.toArray().length; y++) {
 
@@ -405,6 +415,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
                     startActivity(cvIntent);
 
                 }
+            }
         }
 
             return src;
@@ -423,6 +434,30 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
         mCamara.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer mCamara) {
                 mCamara.reset();
+
+            };
+        });
+
+    }
+
+    /** Esta funcion se encarga de la voz para poner la expresion correspondiente
+     * @author manu
+     * @since 1.0
+     * */
+
+    public void vozPonerExpresion(int videoElegido){
+
+        if(videoElegido==1) {
+            mPonerCara = MediaPlayer.create(this, R.raw.poneralegria);
+        }
+        else if(videoElegido==2){
+            mPonerCara = MediaPlayer.create(this, R.raw.ponersorpresa);
+        }
+        mPonerCara.seekTo(0);
+        mPonerCara.start();
+        mPonerCara.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mPonerCara) {
+                mPonerCara.reset();
 
             };
         });

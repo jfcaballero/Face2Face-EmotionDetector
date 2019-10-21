@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     /** Controla el paso entre actividades */
     public Intent cvIntent2;
+    /** Controla el paso entre actividades */
+    public Intent cvIntent1;
     /** Variable de control de la musica del programa */
     public MediaPlayer mPlayer;
     /** Variable de control de la musica de los botones. */
@@ -36,11 +38,10 @@ public class MainActivity extends AppCompatActivity {
     /** Variable que almacena el boton para ir al modulo de práctica */
     public ImageButton reconocimientoOpenCV;
     /** Variable que almacena la vista de los créditos de la app */
-    //public ImageView creditos;
+    public ImageView creditos;
     /** Variable de control para los créditos */
     public int entrar=1;
 
-    public ImageView creditos;
     /** Esta funcion se encarga de la creacion de la actividad
      * @author manu
      * @since 1.0
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Se recupera el valor de las variables de otras actividades
         int aMostrar= (int) getIntent().getIntExtra("var", 0); //Se inicializa el menu o la actividad TFClass
-        int terminado = getIntent().getIntExtra("terminado", 0); //Para ver si vio los videos antes
+        final int terminado = getIntent().getIntExtra("terminado", 0); //Para ver si vio los videos antes y cual vió
 
         //Se muestra la actividad TFClassification (Esto es porque viene de la actividad OpenCVCascade)
         if(aMostrar==1){
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
             reconocimientoOpenCV = (ImageButton) findViewById(R.id.reconocimient);
             //Si el usuario ha visto los videos
-            if(terminado==1){
+            if(terminado==1 || terminado==2){
 
             //Se le permite acceder al modulo de reconocimiento activando el boton
 
@@ -120,7 +121,12 @@ public class MainActivity extends AppCompatActivity {
                             mPlayer.stop(); //Paramos la musica del menu
                         }
                         bottonMusic(); //Musica de interaccion con el boton
-                        Intent cvIntent1 = new Intent(MainActivity.this, OpenCVCascade.class);
+                        cvIntent1 = new Intent(MainActivity.this, OpenCVCascade.class);
+                        if(terminado==1) {
+                            cvIntent1.putExtra("videoElegido", 1); //Se le pasa el valor de la variable video (1=alegria)
+                        }else{
+                            cvIntent1.putExtra("videoElegido", 2); //Se le pasa el valor de la variable video (1=alegria)
+                        }
                         startActivity(cvIntent1);
                     }
 

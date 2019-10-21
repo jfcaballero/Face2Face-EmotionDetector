@@ -17,27 +17,22 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java" line="198" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java" line="204" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3e5c693-51e3-432e-8e71-5ceb2bdf7c2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/manu/detector/TFClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/manu/detector/TFClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cara.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cara_alegria.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cara_asombro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/libro_historia_javier1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/libro_historia_javier2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/libro_historia_maria1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/libro_historia_maria2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pizarrasinpinza.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_detector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_detector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/creditos.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/creditos.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/manu/detector/cargaVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/manu/detector/cargaVideo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,13 +58,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/TFClassification.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="383" column="29" lean-forward="true" selection-start-line="383" selection-start-column="29" selection-end-line="383" selection-end-column="29" />
+            <state relative-caret-position="-17">
+              <caret line="110" column="45" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#10858#11990#0" expanded="true" />
+                <element signature="e#11989#11990#0" expanded="true" />
+                <element signature="e#27976#28137#0" expanded="true" />
+                <element signature="e#28136#28137#0" expanded="true" />
+                <element signature="e#28531#28696#0" expanded="true" />
+                <element signature="e#28695#28696#0" expanded="true" />
+                <element signature="e#29594#29753#0" expanded="true" />
+                <element signature="e#29752#29753#0" expanded="true" />
+                <element signature="e#30877#31034#0" expanded="true" />
+                <element signature="e#31033#31034#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,10 +83,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/cargaVideo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="180" column="30" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="30" />
+            <state relative-caret-position="1326">
+              <caret line="95" column="32" lean-forward="true" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2851#3790#0" expanded="true" />
+                <element signature="e#3789#3790#0" expanded="true" />
                 <element signature="e#6259#6418#0" expanded="true" />
                 <element signature="e#6417#6418#0" expanded="true" />
               </folding>
@@ -89,13 +96,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="190" column="51" lean-forward="true" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+            <state relative-caret-position="-1458">
+              <caret line="418" column="9" lean-forward="true" selection-start-line="418" selection-start-column="9" selection-end-line="418" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#18762#18921#0" expanded="true" />
+                <element signature="e#18920#18921#0" expanded="true" />
+                <element signature="e#19289#19454#0" expanded="true" />
+                <element signature="e#19453#19454#0" expanded="true" />
+                <element signature="e#19833#19996#0" expanded="true" />
+                <element signature="e#19995#19996#0" expanded="true" />
+                <element signature="e#20334#20493#0" expanded="true" />
+                <element signature="e#20492#20493#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,7 +119,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_camera2_basic.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="3808">
+            <state relative-caret-position="234">
               <caret line="224" column="36" selection-start-line="224" selection-start-column="36" selection-end-line="224" selection-end-column="36" />
             </state>
           </provider>
@@ -124,10 +139,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1663">
-              <caret line="185" column="24" selection-start-line="185" selection-start-column="24" selection-end-line="185" selection-end-column="24" />
+            <state relative-caret-position="187">
+              <caret line="119" column="48" lean-forward="true" selection-start-line="119" selection-start-column="48" selection-end-line="119" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4888#5714#0" expanded="true" />
+                <element signature="e#5713#5714#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,13 +191,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>imageview6</find>
-      <find>imageview7</find>
-      <find>imageview8</find>
-      <find>imageView9</find>
-      <find>imageView</find>
-      <find>imageview9</find>
-      <find>private</find>
       <find>protected</find>
       <find>-</find>
       <find>ó</find>
@@ -204,6 +214,13 @@
       <find>textolibro</find>
       <find>fotolibro</find>
       <find>cara</find>
+      <find>ponerCara</find>
+      <find>tag</find>
+      <find>tagYou</find>
+      <find>pues</find>
+      <find>pues ha</find>
+      <find>tagY</find>
+      <find>exp</find>
     </findStrings>
     <replaceStrings>
       <replace>etiqueta</replace>
@@ -250,16 +267,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/FolderUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/ImageUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/cargaVideo.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/ImageClassifier.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/video.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_camera2_basic.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_detector.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/cargaVideo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/TFClassification.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -661,28 +678,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/cargaVideo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="180" column="30" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6259#6418#0" expanded="true" />
-            <element signature="e#6417#6418#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1663">
-          <caret line="185" column="24" selection-start-line="185" selection-start-column="24" selection-end-line="185" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -693,28 +688,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_camera2_basic.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="3808">
+        <state relative-caret-position="234">
           <caret line="224" column="36" selection-start-line="224" selection-start-column="36" selection-end-line="224" selection-end-column="36" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/cargaVideo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="190" column="51" lean-forward="true" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+        <state relative-caret-position="1326">
+          <caret line="95" column="32" lean-forward="true" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2851#3790#0" expanded="true" />
+            <element signature="e#3789#3790#0" expanded="true" />
+            <element signature="e#6259#6418#0" expanded="true" />
+            <element signature="e#6417#6418#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/TFClassification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="383" column="29" lean-forward="true" selection-start-line="383" selection-start-column="29" selection-end-line="383" selection-end-column="29" />
+        <state relative-caret-position="-17">
+          <caret line="110" column="45" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#10858#11990#0" expanded="true" />
+            <element signature="e#11989#11990#0" expanded="true" />
+            <element signature="e#27976#28137#0" expanded="true" />
+            <element signature="e#28136#28137#0" expanded="true" />
+            <element signature="e#28531#28696#0" expanded="true" />
+            <element signature="e#28695#28696#0" expanded="true" />
+            <element signature="e#29594#29753#0" expanded="true" />
+            <element signature="e#29752#29753#0" expanded="true" />
+            <element signature="e#30877#31034#0" expanded="true" />
+            <element signature="e#31033#31034#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="119" column="48" lean-forward="true" selection-start-line="119" selection-start-column="48" selection-end-line="119" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4888#5714#0" expanded="true" />
+            <element signature="e#5713#5714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1458">
+          <caret line="418" column="9" lean-forward="true" selection-start-line="418" selection-start-column="9" selection-end-line="418" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#18762#18921#0" expanded="true" />
+            <element signature="e#18920#18921#0" expanded="true" />
+            <element signature="e#19289#19454#0" expanded="true" />
+            <element signature="e#19453#19454#0" expanded="true" />
+            <element signature="e#19833#19996#0" expanded="true" />
+            <element signature="e#19995#19996#0" expanded="true" />
+            <element signature="e#20334#20493#0" expanded="true" />
+            <element signature="e#20492#20493#0" expanded="true" />
           </folding>
         </state>
       </provider>

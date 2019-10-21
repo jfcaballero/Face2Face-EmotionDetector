@@ -93,7 +93,11 @@ public class cargaVideo extends AppCompatActivity{
                 bottonMusic();
                 musicDesaparecer(); //Musica de cambiar de actividad
                 Intent cvIntent = new Intent(cargaVideo.this, MainActivity.class); //Se le pasa el control a la actividad Main
-                cvIntent.putExtra("terminado", 1);  //Se le pasa el valor de la variable para saber que puede acceder al otro modulo porque vio las historias y aprendio a realizar la expresion
+                if(video == 2) {
+                    cvIntent.putExtra("terminado", 2);  //Se le pasa el valor de la variable para saber que puede acceder al otro modulo porque vio las historias y aprendio a realizar la expresion sorpresa
+                }else{
+                    cvIntent.putExtra("terminado", 1);  //Se le pasa el valor de la variable para saber que puede acceder al otro modulo porque vio las historias y aprendio a realizar la expresion alegria
+                }
                 startActivity(cvIntent);
             }
         });
@@ -121,7 +125,7 @@ public class cargaVideo extends AppCompatActivity{
             String path = "android.resource://" + getPackageName() + "/" + R.raw.alegria;
             videoA.setVideoURI(Uri.parse(path));
 
-        } else if(video==2){ //Si el valor de la variable de entrada es 1 -> sorpresa
+        } else if(video==2){ //Si el valor de la variable de entrada es 2 -> sorpresa
 
             videoS = (VideoView) findViewById(R.id.videoView);
             String path = "android.resource://" + getPackageName() + "/" + R.raw.sorpresa;

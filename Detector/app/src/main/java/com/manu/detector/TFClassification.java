@@ -84,6 +84,8 @@ public class TFClassification extends Fragment {
     public static String foto2;
     /**Variable que almacena el valor de la expresion detectada por OpenCV*/
     public static int exp;
+    /**Variable auxiliar que almacena el valor de la expresion detectada por OpenCV (copia de exp, se utiliza para pasarle la expresion al volver a la actividad de OpenCV)*/
+    public int exp2;
     /**Variable que almacena el numero de epocas*/
     public int count = 0;
     /**Variable que almacena si se acerto al realizar la expresion*/
@@ -106,6 +108,8 @@ public class TFClassification extends Fragment {
     public final Object lock = new Object();
     /**Objeto que almacena un dialogo de espera, se muestra mientras se realiza la clasificacion */
     public ProgressDialog pd = null;
+    /** Controla el paso entre actividades */
+    public Intent cvIntent2;
 
     /** Un hilo adicional para ejecutar tareas en segundo plano y no bloquear el hilo principal */
     public HandlerThread backgroundThread;
@@ -284,7 +288,14 @@ public class TFClassification extends Fragment {
                         mRecuerdaplayer.stop();
                     }
                 }
-                Intent cvIntent2 = new Intent(getActivity(), OpenCVCascade.class);
+                cvIntent2 = new Intent(getActivity(), OpenCVCascade.class);
+                //Para controlar la voz de OpenCV tras pulsar los botones para volver a la actividad anterior
+
+                if(exp2==1) {
+                    cvIntent2.putExtra("videoElegido", 1);
+                }else if (exp2==2){
+                    cvIntent2.putExtra("videoElegido", 2);
+                }
                 startActivity(cvIntent2);
             }
 
@@ -310,7 +321,14 @@ public class TFClassification extends Fragment {
                         mRecuerdaplayer.stop();
                     }
                 }
-                Intent cvIntent2 = new Intent(getActivity(), OpenCVCascade.class);
+                cvIntent2 = new Intent(getActivity(), OpenCVCascade.class);
+
+                if(exp2==1) {
+                    Log.i("tagYoutuber", "Pues ha entrado");
+                    cvIntent2.putExtra("videoElegido", 1);
+                }else if (exp2==2){
+                    cvIntent2.putExtra("videoElegido", 2);
+                }
                 startActivity(cvIntent2);
             }
 
@@ -382,6 +400,7 @@ public class TFClassification extends Fragment {
                             if(etiqueta==null){ //Control de errores
                                 getActivity().finish();
                             }
+                            exp2=exp;
                             exp=0;
                             if(etiqueta.equals("smileimg") && (confianza > 0.49)) { //Acierto Alegria
                                 //Realiza lo correspondiente segun resultado en el hilo principal
@@ -464,6 +483,7 @@ public class TFClassification extends Fragment {
                             if(etiqueta==null){ //Control de errores
                                 getActivity().finish();
                             }
+                            exp2=exp;
                             exp=0;
                             if(etiqueta.equals("surprisedimg") && (confianza > 0.79)) { //Acierto sorpresa, antes 0,82
 
