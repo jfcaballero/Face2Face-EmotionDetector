@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                         mPlayer.stop(); //Paramos la musica del menu
                     }
                     bottonMusic(); //Musica de interaccion con el boton
-                    cvIntent2 = new Intent(MainActivity.this, cargaVideo.class); //Se le pasa el control a la actividad cargaVideo
+                    cvIntent2 = new Intent(MainActivity.this, loadStory.class); //Se le pasa el control a la actividad loadStory
                     cvIntent2.putExtra("video", 1); //Se le pasa el valor de la variable video (1=alegria)
                     startActivity(cvIntent2);
                 }
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                         mPlayer.stop(); //Paramos la musica del menu
                     }
                     bottonMusic();
-                    cvIntent2 = new Intent(MainActivity.this, cargaVideo.class);
+                    cvIntent2 = new Intent(MainActivity.this, loadStory.class);
                     cvIntent2.putExtra("video", 2); //Se le pasa el valor de la variable video (2=sorpresa)
                     startActivity(cvIntent2);
                 }
