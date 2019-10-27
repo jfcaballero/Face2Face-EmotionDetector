@@ -63,7 +63,7 @@ public class loadStory extends AppCompatActivity{
 
 
         //Boton de iniciar la historia
-        btnPlay = (ImageButton) findViewById(R.id.buttonPlay);
+        btnPlay = findViewById(R.id.buttonPlay);
         btnPlay.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -81,7 +81,7 @@ public class loadStory extends AppCompatActivity{
 
 
         //Boton de parar la historia
-        btnStop = (ImageButton) findViewById(R.id.buttonStop);
+        btnStop = findViewById(R.id.buttonStop);
         btnStop.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -121,13 +121,13 @@ public class loadStory extends AppCompatActivity{
 
         if (video == 1) { //Si el valor de la variable de entrada es 1 -> alegria
 
-            videoA = (VideoView) findViewById(R.id.videoView);
+            videoA = findViewById(R.id.videoView);
             String path = "android.resource://" + getPackageName() + "/" + R.raw.alegria;
             videoA.setVideoURI(Uri.parse(path));
 
         } else if(video==2){ //Si el valor de la variable de entrada es 2 -> sorpresa
 
-            videoS = (VideoView) findViewById(R.id.videoView);
+            videoS = findViewById(R.id.videoView);
             String path = "android.resource://" + getPackageName() + "/" + R.raw.sorpresa;
             videoS.setVideoURI(Uri.parse(path));
 
@@ -148,7 +148,7 @@ public class loadStory extends AppCompatActivity{
             public void onCompletion(MediaPlayer mAparecer) {
                 mAparecer.reset();
 
-            };
+            }
         });
 
     }
@@ -166,7 +166,7 @@ public class loadStory extends AppCompatActivity{
             public void onCompletion(MediaPlayer mDesaparecer) {
                 mDesaparecer.reset();
 
-            };
+            }
         });
 
     }
@@ -184,7 +184,7 @@ public class loadStory extends AppCompatActivity{
             public void onCompletion(MediaPlayer mBoton) {
                 mBoton.release();
 
-            };
+            }
         });
 
     }
@@ -202,7 +202,7 @@ public class loadStory extends AppCompatActivity{
             public void onCompletion(MediaPlayer mTV) {
                 mTV.release();
 
-            };
+            }
         });
 
 

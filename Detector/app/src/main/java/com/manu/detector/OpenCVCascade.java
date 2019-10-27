@@ -164,13 +164,13 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
 
         //Se inicializan la camara con el View del layout correspondiente
         camara = new JavaCameraView(this, CameraBridgeViewBase.CAMERA_ID_FRONT);
-        camara = (JavaCameraView) findViewById(R.id.camera_view);
+        camara = findViewById(R.id.camera_view);
         camara.setVisibility(SurfaceView.VISIBLE);
         camara.setCvCameraViewListener(this);
         //camara.disableFpsMeter();
 
         //Se inicializa el boton de volver  a la actividad Main
-        volver = (ImageButton) findViewById(R.id.volverAtras);
+        volver = findViewById(R.id.volverAtras);
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,7 +196,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
         videoElegido = getIntent().getIntExtra("videoElegido", 0);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //Inicializar el dibujo de la cara animada
-        imagencara = (ImageView)findViewById(R.id.cara);
+        imagencara = findViewById(R.id.cara);
         imagencara.setImageResource(R.mipmap.cara);
 
         //Se carga la liberia de OpenCV
@@ -334,7 +334,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
                         @Override
                         public void run() {
 
-                            imagencara = (ImageView) findViewById(R.id.cara);
+                            imagencara = findViewById(R.id.cara);
                             imagencara.setImageResource(R.mipmap.cara_alegria);
 
                         }
@@ -383,7 +383,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
                         @Override
                         public void run() {
 
-                            imagencara = (ImageView) findViewById(R.id.cara);
+                            imagencara = findViewById(R.id.cara);
                             imagencara.setImageResource(R.mipmap.cara_asombro);
 
                         }
@@ -435,7 +435,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
             public void onCompletion(MediaPlayer mCamara) {
                 mCamara.reset();
 
-            };
+            }
         });
 
     }
@@ -459,7 +459,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
             public void onCompletion(MediaPlayer mPonerCara) {
                 mPonerCara.reset();
 
-            };
+            }
         });
 
     }
@@ -478,7 +478,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
             public void onCompletion(MediaPlayer mAparecer) {
                 mAparecer.reset();
 
-            };
+            }
         });
 
     }
@@ -496,7 +496,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
             public void onCompletion(MediaPlayer mBoton) {
                 mBoton.release();
 
-            };
+            }
         });
 
     }
@@ -514,7 +514,7 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
             public void onCompletion(MediaPlayer mDesaparecer) {
                 mDesaparecer.reset();
 
-            };
+            }
         });
     }
 

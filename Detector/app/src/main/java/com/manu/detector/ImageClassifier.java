@@ -142,7 +142,7 @@ public class ImageClassifier {
         long startTime = SystemClock.uptimeMillis();
         tflite.run(imgData, labelProbArray); //Se inicia la clasificacion
         long endTime = SystemClock.uptimeMillis();
-        Log.d(TAG, "Timecost to run model inference: " + Long.toString(endTime - startTime));
+        Log.d(TAG, "Timecost to run model inference: " + (endTime - startTime));
 
         // suaviza los resultados
         applyFilter();
@@ -252,7 +252,7 @@ public class ImageClassifier {
       }
     }
     long endTime = SystemClock.uptimeMillis();
-    Log.d(TAG, "Timecost to put values into ByteBuffer: " + Long.toString(endTime - startTime));
+    Log.d(TAG, "Timecost to put values into ByteBuffer: " + (endTime - startTime));
   }
 
   /** Esta funcion se encarga de almacenar el resultado de la clasificacion en una variable de tipo String para posteriormente devolverla

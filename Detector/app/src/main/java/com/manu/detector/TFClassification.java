@@ -232,16 +232,16 @@ public class TFClassification extends Fragment {
     public void onViewCreated(final View view, Bundle savedInstanceState) {
 
         //Inicializacion de objetos que contienen imagenes, sonidos, botones
-        marco= (ImageView) view.findViewById(R.id.marco);
-        bombilla= (ImageView) view.findViewById(R.id.bombilla);
-        cartelMuyBien= (ImageView) view.findViewById(R.id.cartelMuyBien);
-        muelle= (ImageView) view.findViewById(R.id.muelle);
-        imagen = (ImageView) view.findViewById(R.id.image);
-        recuerdalibro = (ImageView) view.findViewById(R.id.libro);
-        volver = (ImageButton) view.findViewById(R.id.botonvolver);
-        volverMain = (ImageButton) view.findViewById(R.id.volverAtras);
-        reintentar = (ImageButton) view.findViewById(R.id.tryagain);
-        textView = (TextView) view.findViewById(R.id.text);
+        marco= view.findViewById(R.id.marco);
+        bombilla= view.findViewById(R.id.bombilla);
+        cartelMuyBien= view.findViewById(R.id.cartelMuyBien);
+        muelle= view.findViewById(R.id.muelle);
+        imagen = view.findViewById(R.id.image);
+        recuerdalibro = view.findViewById(R.id.libro);
+        volver = view.findViewById(R.id.botonvolver);
+        volverMain = view.findViewById(R.id.volverAtras);
+        reintentar = view.findViewById(R.id.tryagain);
+        textView = view.findViewById(R.id.text);
 
         volverMain.setOnClickListener(new View.OnClickListener() {
 
@@ -409,11 +409,11 @@ public class TFClassification extends Fragment {
                                     @Override
                                     public void run() {
 
-                                        imagen.setVisibility(imagen.VISIBLE);
-                                        marco.setVisibility(marco.VISIBLE);
-                                        bombilla.setVisibility(bombilla.VISIBLE);
-                                        cartelMuyBien.setVisibility(cartelMuyBien.VISIBLE);
-                                        muelle.setVisibility(muelle.VISIBLE);
+                                        imagen.setVisibility(View.VISIBLE);
+                                        marco.setVisibility(View.VISIBLE);
+                                        bombilla.setVisibility(View.VISIBLE);
+                                        cartelMuyBien.setVisibility(View.VISIBLE);
+                                        muelle.setVisibility(View.VISIBLE);
 
                                     }
                                 });
@@ -442,8 +442,8 @@ public class TFClassification extends Fragment {
                                         }
                                         vozRecuerda(1);
                                         recuerdalibro.setImageResource(R.mipmap.libro_historia_maria1);
-                                        recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
-                                        reintentar.setVisibility(reintentar.VISIBLE);
+                                        recuerdalibro.setVisibility(View.VISIBLE);
+                                        reintentar.setVisibility(View.VISIBLE);
                                         volverMain.setClickable(false);
                                         volver.setClickable(false);
 
@@ -468,8 +468,8 @@ public class TFClassification extends Fragment {
                                         }
                                         vozRecuerda(2);
                                         recuerdalibro.setImageResource(R.mipmap.libro_historia_maria2);
-                                        recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
-                                        reintentar.setVisibility(reintentar.VISIBLE);
+                                        recuerdalibro.setVisibility(View.VISIBLE);
+                                        reintentar.setVisibility(View.VISIBLE);
                                         volverMain.setClickable(false);
                                         volver.setClickable(false);
 
@@ -493,11 +493,11 @@ public class TFClassification extends Fragment {
                                     @Override
                                     public void run() {
 
-                                        imagen.setVisibility(imagen.VISIBLE);
-                                        marco.setVisibility(marco.VISIBLE);
-                                        bombilla.setVisibility(bombilla.VISIBLE);
-                                        cartelMuyBien.setVisibility(cartelMuyBien.VISIBLE);
-                                        muelle.setVisibility(muelle.VISIBLE);
+                                        imagen.setVisibility(View.VISIBLE);
+                                        marco.setVisibility(View.VISIBLE);
+                                        bombilla.setVisibility(View.VISIBLE);
+                                        cartelMuyBien.setVisibility(View.VISIBLE);
+                                        muelle.setVisibility(View.VISIBLE);
 
                                     }
                                 });
@@ -526,8 +526,8 @@ public class TFClassification extends Fragment {
                                         vozRecuerda(3);
 
                                         recuerdalibro.setImageResource(R.mipmap.libro_historia_javier1);
-                                        recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
-                                        reintentar.setVisibility(reintentar.VISIBLE);
+                                        recuerdalibro.setVisibility(View.VISIBLE);
+                                        reintentar.setVisibility(View.VISIBLE);
                                         volverMain.setClickable(false);
                                         volver.setClickable(false);
 
@@ -552,8 +552,8 @@ public class TFClassification extends Fragment {
                                         }
                                         vozRecuerda(4);
                                         recuerdalibro.setImageResource(R.mipmap.libro_historia_javier2);
-                                        recuerdalibro.setVisibility(recuerdalibro.VISIBLE);
-                                        reintentar.setVisibility(reintentar.VISIBLE);
+                                        recuerdalibro.setVisibility(View.VISIBLE);
+                                        reintentar.setVisibility(View.VISIBLE);
                                         volverMain.setClickable(false);
                                         volver.setClickable(false);
 
@@ -673,7 +673,7 @@ public class TFClassification extends Fragment {
             public void onCompletion(MediaPlayer mRecuerdaPlayer) {
                 mRecuerdaplayer.reset();
 
-            };
+            }
         });
 
     }
@@ -692,7 +692,7 @@ public class TFClassification extends Fragment {
             public void onCompletion(MediaPlayer mAcierto) {
                 mAcierto.reset();
 
-            };
+            }
         });
 
 
@@ -712,7 +712,7 @@ public class TFClassification extends Fragment {
             public void onCompletion(MediaPlayer mRedobles) {
                 mRedobles.release();
 
-            };
+            }
         });
     }
 
@@ -730,7 +730,7 @@ public class TFClassification extends Fragment {
             public void onCompletion(MediaPlayer mDesaparecer) {
                 mDesaparecer.reset();
 
-            };
+            }
         });
 
     }
@@ -749,7 +749,7 @@ public class TFClassification extends Fragment {
             public void onCompletion(MediaPlayer mBoton) {
                 mBoton.release();
 
-            };
+            }
         });
 
     }
@@ -780,7 +780,7 @@ public class TFClassification extends Fragment {
             public void onCompletion(MediaPlayer mExpresion) {
                 mExpresion.reset();
 
-            };
+            }
         });
 
     }
@@ -799,7 +799,7 @@ public class TFClassification extends Fragment {
             public void onCompletion(MediaPlayer mfallo) {
                 mfallo.reset();
 
-            };
+            }
         });
 
     }

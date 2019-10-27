@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Se recupera el valor de las variables de otras actividades
-        int aMostrar= (int) getIntent().getIntExtra("var", 0); //Se inicializa el menu o la actividad TFClass
+        int aMostrar= getIntent().getIntExtra("var", 0); //Se inicializa el menu o la actividad TFClass
         final int terminado = getIntent().getIntExtra("terminado", 0); //Para ver si vio los videos antes y cual vió
 
         //Se muestra la actividad TFClassification (Esto es porque viene de la actividad OpenCVCascade)
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         // Se muestra el menu principal
         }else{
 
-            reconocimientoOpenCV = (ImageButton) findViewById(R.id.reconocimient);
+            reconocimientoOpenCV = findViewById(R.id.reconocimient);
             //Si el usuario ha visto los videos
             if(terminado==1 || terminado==2){
 
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Se le permite acceder al modulo de aprendizaje activando los botones correspondientes a las historias. La misma clase controlara la carga de los videos segun el valor de la variable video que se le pasa
-            final ImageButton alegria = (ImageButton) findViewById(R.id.historiaAlegri);
+            final ImageButton alegria = findViewById(R.id.historiaAlegri);
             alegria.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
             });
 
-            final ImageButton sorpresa = (ImageButton) findViewById(R.id.historiaSorpres);
+            final ImageButton sorpresa = findViewById(R.id.historiaSorpres);
             sorpresa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -165,8 +165,8 @@ public class MainActivity extends AppCompatActivity {
 
             });
 
-            creditos = (ImageView) findViewById(R.id.creditos);
-            ImageButton buttonCreditos = (ImageButton) findViewById(R.id.buttonCreditos);
+            creditos = findViewById(R.id.creditos);
+            ImageButton buttonCreditos = findViewById(R.id.buttonCreditos);
             buttonCreditos.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                     bottonMusic(); //Musica de interaccion con el boton
                     if(entrar==1) {
 
-                        creditos.setVisibility(creditos.VISIBLE);
+                        creditos.setVisibility(View.VISIBLE);
                         alegria.setClickable(false);
                         sorpresa.setClickable(false);
                         reconocimientoOpenCV.setClickable(false);
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                         entrar=0;
                     }else{
 
-                        creditos.setVisibility(creditos.GONE);
+                        creditos.setVisibility(View.GONE);
                         alegria.setClickable(true);
                         sorpresa.setClickable(true);
                         reconocimientoOpenCV.setClickable(true);
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
                 mPlayer.reset();
                 //mPlayer.release();
 
-            };
+            }
         });
 
     }
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                 mBoton.reset();
                 //mBoton.release();
 
-            };
+            }
         });
     }
 }
