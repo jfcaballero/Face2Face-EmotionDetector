@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Face2Face-EmotionDetector4TEA</string>
+    <string name="app_name">Face2Face-EmotionDetector4ASD</string>
     <string name="source_image">Source Image</string>
     <string name="select_gallery">Select Image from galslery</string>
     <string name="historia_sorpresa">Historia Sorpresa</string>

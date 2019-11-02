@@ -319,14 +319,15 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
             if (videoElegido == 1) {
                 // Itera para la cantidad de sonrisas que se han encontrado
                 for (int y = 0; y < sDetections.toArray().length; y++) {
-                    Rect sRect = sDetections.toArray()[y];
+
+                    /*Rect sRect = sDetections.toArray()[y];
 
                     // Proporciona la posicion relativa de las sonrisas con respecto a la cara
                     Point center = new Point(faceRect.x + sRect.x + sRect.width / 2,
                             faceRect.y + sRect.y + sRect.height / 2);
                     // Dibuja una elipse para cada sonrisa detectada de color morado
                     Imgproc.ellipse(src, center, new Size(sRect.width / 2, sRect.height / 2),
-                            0, 0, 360, new Scalar(255, 0, 255), 2, 0, 0);
+                            0, 0, 360, new Scalar(255, 0, 255), 2, 0, 0);*/
 
                     //El hilo principal (que es el que puede modificar las vista en tiempo real) cambia la cara dibujo de la expresion
                     runOnUiThread(new Runnable() {
@@ -371,12 +372,12 @@ public class OpenCVCascade extends AppCompatActivity implements CameraBridgeView
                 //Ocurre lo mismo que con la sonrisa(esto se realiza para cada frame)
                 for (int y = 0; y < surDetections.toArray().length; y++) {
 
-                    Rect surRect = surDetections.toArray()[y];
+                    /*Rect surRect = surDetections.toArray()[y];
 
                     Point center2 = new Point(faceRect.x + surRect.x + surRect.width / 2,
                             faceRect.y + surRect.y + surRect.height / 2);
                     Imgproc.ellipse(src, center2, new Size(surRect.width / 2, surRect.height / 2),
-                            0, 0, 360, new Scalar(0, 0, 255), 2, 0, 0);
+                            0, 0, 360, new Scalar(0, 0, 255), 2, 0, 0);*/
 
                     runOnUiThread(new Runnable() {
 

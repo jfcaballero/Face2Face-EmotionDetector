@@ -196,7 +196,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/control_background"
         android:screenOrientation="landscape"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/text"
@@ -207,7 +207,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="visible"
-            tools:visibility="visible" />
+            tools:visibility="gone" />
 
 
     </FrameLayout>
