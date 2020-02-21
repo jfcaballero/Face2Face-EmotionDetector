@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_opencv_camera"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondotela"
+    android:paddingLeft="0dp"
+    android:paddingTop="0dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="0dp"
+    tools:context=".OpenCVCascade">
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/camera_view"
+        android:layout_width="390dp"
+        android:layout_height="270dp"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="43dp"
+        opencv:camera_id="front" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="436dp"
+        android:layout_height="336dp"
+        android:layout_marginStart="217dp"
+        android:layout_marginTop="6dp"
+        opencv:srcCompat="@mipmap/pizarrasinpinza" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/reconocimient"
+        android:layout_marginTop="215dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:rotation="15"
+        android:visibility="visible"
+        opencv:srcCompat="@mipmap/carton2"
+        tools:src="@mipmap/carton2" />
+
+
+    <ImageButton
+        android:id="@+id/volverAtras"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="220dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        opencv:srcCompat="@drawable/boton" />
+
+
+    <ImageView
+        android:id="@+id/tira1"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="265dp"
+        android:alpha=".95"
+        android:rotation="15"
+        opencv:srcCompat="@drawable/adhesiva" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="112dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="265dp"
+        android:fontFamily="@font/f3dumb"
+        android:rotation="15"
+        android:text="VOLVER"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="765dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        opencv:srcCompat="@drawable/cuerda" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="242dp"
+        android:layout_height="207dp"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        opencv:srcCompat="@drawable/lienzoypinza"
+        tools:src="@drawable/lienzoypinza" />
+
+    <ImageView
+        android:id="@+id/cara"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp" />
+
+
+</FrameLayout>
