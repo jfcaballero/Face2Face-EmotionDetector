@@ -105,22 +105,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vol_up" />
 
-    <ImageButton
-        android:id="@+id/salir"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginLeft="1100dp"
-        android:layout_marginTop="330dp"
-        android:adjustViewBounds="false"
-        android:background="@drawable/roundcorner"
-        android:clickable="true"
-        android:cropToPadding="false"
-        android:scaleType="fitXY"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/boton_salir" />
-
     <ImageView
         android:id="@+id/tira1"
         android:layout_width="861dp"
