@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
     public ImageButton reconocimientoOpenCV2;
     /** Variable que almacena el boton para controlar los sonidos */
     public ImageButton sonido;
-    /** Variable que almacena el botón para salir de la app */
-    public ImageButton salir;
     /** Variable que almacena la vista de los créditos de la app */
     public ImageView creditos;
     /** Variable de control para los créditos */
@@ -138,18 +136,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Se muestra el menu principal
         }else{
-
-            salir = findViewById(R.id.salir);
-
-                salir.setOnClickListener(new View.OnClickListener() {
-
-                    public void onClick(View v) {
-                         if(mute ==0) bottonMusic();
-                         finishAffinity();
-                    }
-
-                });
-
 
                 sonido.setOnClickListener(new View.OnClickListener() {
 
