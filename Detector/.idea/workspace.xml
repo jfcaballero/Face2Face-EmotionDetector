@@ -16,9 +16,6 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java" line="307" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="c3e5c693-51e3-432e-8e71-5ceb2bdf7c2e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -26,62 +23,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_calib3d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_core.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_dnn.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_features2d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_flann.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_highgui.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_imgcodecs.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_imgproc.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_java3.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_ml.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_objdetect.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_photo.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_shape.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_stitching.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_superres.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_video.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_videoio.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips/libopencv_videostab.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_calib3d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_core.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_dnn.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_features2d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_flann.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_highgui.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_imgcodecs.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_imgproc.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_java3.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_ml.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_objdetect.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_photo.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_shape.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_stitching.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_superres.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_video.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_videoio.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/jniLibs/mips64/libopencv_videostab.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/generated/source/buildConfig/debug/org/opencv/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/generated/source/buildConfig/debug/org/opencv/BuildConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/packageDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/packageDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/incremental/packageDebugResources/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/local_only_symbol_list/debug/parseDebugLibraryResources/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/local_only_symbol_list/debug/parseDebugLibraryResources/R-def.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/packaged_res/debug/values/values.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/intermediates/symbols/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary341/openCVLibrary341.iml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/openCVLibrary341.iml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +42,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="ce091829e9ce54f00b" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_10_API_25" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -102,9 +54,6 @@
         <projects_view />
       </state>
     </system>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -167,6 +116,12 @@
       <replace>reset</replace>
     </replaceStrings>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="C:\Users\manu2\Desktop\ManuelPerezLedesmaTFG\upload-key.jks" />
+    <option name="KEY_ALIAS" value="key" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
@@ -175,149 +130,22 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/carmelo/detector/TFClassification.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/carmelo/detector/OpenCVCascade.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/musica.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/Utilities.java" />
-        <option value="$PROJECT_DIR$/app/src/androidTest/java/com/manu/detector/ExampleInstrumentedTest.java" />
-        <option value="$PROJECT_DIR$/app/src/test/java/com/manu/detector/ExampleUnitTest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/CascadeHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/FolderUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/ImageUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/ImageClassifier.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/video.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/cargaVideo.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-xlarge-land/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-large-land/video.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-xlarge-land/video.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-sw800dp-land/video.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_detector.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detector.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-large/activity_detector.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-large-land/activity_detector.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-sw800dp/activity_detector.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-sw800dp-land/activity_detector.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/TFClassification.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/loadStory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_camera2_basic.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-large-land/fragment_camera2_basic.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-sw800dp-land/fragment_camera2_basic.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" />
-        <option value="$PROJECT_DIR$/openCVLibrary341/build.gradle" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-large/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-large-land/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-sw800dp/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-sw800dp-land/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-      </list>
-    </option>
-  </component>
   <component name="NamedScopeManager">
     <scope name="app" pattern="src[app]:com.manu.detector.*||src[app]:com.manu.detector.utils.*" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
-  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <hideEmptyPackages AndroidView="false" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Detector" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Detector" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Detector" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Detector" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-              <item name="activity_detector" type="c431d0b8:AndroidResGroupNode" />
-            </path>
-            <path>
-              <item name="Detector" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-              <item name="activity_main" type="c431d0b8:AndroidResGroupNode" />
-            </path>
-            <path>
-              <item name="Detector" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-              <item name="fragment_camera2_basic" type="c431d0b8:AndroidResGroupNode" />
-            </path>
-            <path>
-              <item name="Detector" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-              <item name="video" type="c431d0b8:AndroidResGroupNode" />
-            </path>
-            <path>
-              <item name="Detector" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
+    <property name="BundleExportedModule" value="app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ce091829e9ce54f00b" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-01-04T14:11:21.646Z" />
+    <property name="ExportApk.ApkPath" value="C:\Users\manu2\Desktop\ManuelPerezLedesmaTFG\Detector\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="ce091829e9ce54f00b" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -342,8 +170,6 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
@@ -432,39 +258,6 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49407783" visible="true" weight="0.2585288" />
-      <window_info id="Structure" order="2" sideWeight="0.50592214" side_tool="true" weight="0.15100671" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Build Variants" order="4" side_tool="true" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Designer" order="6" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info id="Resources Explorer" order="8" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49676377" weight="0.21235102" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32756633" />
-      <window_info anchor="bottom" id="TODO" order="2" weight="0.32756633" />
-      <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32756633" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50323623" side_tool="true" weight="0.3298731" />
-      <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.4986577" weight="0.3286119" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49597314" weight="0.16251354" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.32756633" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Analyze App Size" order="11" weight="0.32936078" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Preview" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Assistant" order="6" weight="0.32885906" />
-    </layout>
-  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
@@ -476,301 +269,11 @@
     <MESSAGE value="Prueba para ver que funciona correctamente" />
     <option name="LAST_COMMIT_MESSAGE" value="Prueba para ver que funciona correctamente" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/TensorFlowImageClassifier.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/Classifier.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCameraView.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/preprocess/ImagePreprocessor.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/ImagePicker.java" />
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/os/Bundle.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/musica.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/haarcascade_smile.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/Constants.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/Utilities.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/manu/detector/ExampleInstrumentedTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="68" lean-forward="true" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/manu/detector/ExampleUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/ImageUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="24" column="113" selection-start-line="24" selection-start-column="113" selection-end-line="24" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/utils/FolderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/video.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/CascadeHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="65" selection-start-line="64" selection-start-column="20" selection-end-line="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/ImageClassifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3893">
-          <caret line="262" column="14" selection-start-line="262" selection-start-column="14" selection-end-line="262" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge/activity_detector.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge-land/activity_main.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#1168#1186#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge-land/video.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw720dp-land/video.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large-land/video.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="52" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="73" selection-end-column="52" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw800dp-land/video.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="52" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="73" selection-end-column="52" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_camera2_basic.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw800dp-land/activity_detector.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="92" column="55" selection-start-line="30" selection-start-column="4" selection-end-line="92" selection-end-column="55" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw800dp/activity_detector.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_detector.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large-land/activity_detector.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_detector.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/activity_detector.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/loadStory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5591#5753#0" expanded="true" />
-            <element signature="e#5752#5753#0" expanded="true" />
-            <element signature="e#6653#6811#0" expanded="true" />
-            <element signature="e#6810#6811#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/OpenCVCascade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4998">
-          <caret line="326" selection-start-line="326" selection-end-line="326" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openCVLibrary341/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw800dp-land/fragment_camera2_basic.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large-land/fragment_camera2_basic.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="3009">
-          <caret line="177" column="36" selection-start-line="177" selection-start-column="36" selection-end-line="177" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_camera2_basic.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw800dp/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="59" column="103" selection-start-line="59" selection-start-column="98" selection-end-line="59" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="3128">
-          <caret line="229" column="58" selection-start-line="229" selection-start-column="58" selection-end-line="229" selection-end-column="58" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large-land/activity_main.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw800dp-land/activity_main.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/manu/detector/TFClassification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="2719" y="275" key="FileChooserDialogImpl" timestamp="1592653599993">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2719" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592653599993" />
   </component>
   <component name="masterDetails">
     <states>
