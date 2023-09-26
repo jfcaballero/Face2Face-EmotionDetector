@@ -1,0 +1,22 @@
+AKDEF&KDEF -> https://www.kdef.se/home/using%20and%20publishing%20kdef%20and%20akdef.html
+
+Radboud dataset -> http://www.socsci.ru.nl:8180/RaFD2/RaFD?p=main
+
+Jaffe dataset -> https://zenodo.org/record/3451524#.XvCU7GgzaUk
+
+
+Librerias usadas:
+------------------
+tensorflow lite
+ 
+https://www.tensorflow.org/lite/guide/android  
+
+Librería que se encarga de pedir los permisos al principio de la app
+
+https://github.com/Karumi/Dexter
+
+OpenCV
+
+https://opencv.org/android/
+
+

@@ -8,12 +8,12 @@
     android:background="@drawable/fondotela"
     tools:context="com.manu.detector.loadStory">
 
+    <!-- Eliminado nueva compilacion          android:layout_alignTop="@+id/reconocimient" -->
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="260dp"
         android:layout_height="197dp"
-        android:layout_alignTop="@+id/reconocimient"
         android:layout_marginTop="490dp"
         android:adjustViewBounds="false"
         android:baselineAligned="false"

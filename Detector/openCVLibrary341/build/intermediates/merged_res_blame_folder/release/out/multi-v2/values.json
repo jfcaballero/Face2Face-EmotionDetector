@@ -1,0 +1,52 @@
+{
+    "logs": [
+        {
+            "outputFile": "org.opencv.openCVLibrary341-merged_res-3:/values/values.xml",
+            "map": [
+                {
+                    "source": "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/src/main/res/values/attrs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "24",
+                        "endOffsets": "368"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "24",
+                        "endOffsets": "361"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "org.opencv.openCVLibrary341-mergeReleaseResources-1:/values/values.xml",
+            "map": [
+                {
+                    "source": "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/src/main/res/values/attrs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "24",
+                        "endOffsets": "368"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "24",
+                        "endOffsets": "361"
+                    }
+                }
+            ]
+        }
+    ]
+}

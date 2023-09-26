@@ -1,17 +1,20 @@
 package com.manu.detector;
 
 
+import static java.lang.Thread.sleep;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.manu.detector.utils.FolderUtil;
 import com.manu.detector.utils.ImageUtils;
@@ -23,7 +26,6 @@ import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
-import org.opencv.core.Point;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
@@ -32,8 +34,6 @@ import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
 import java.io.File;
-
-import static java.lang.Thread.sleep;
 
 /** Esta actividad se encarga de detectar la cara y la emocion del niño y si es correcta de capturar una fotografia para posteriormente clasificarla
  * @author manu
