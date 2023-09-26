@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdk 33
 
     defaultConfig {
-        minSdkVersion 23
-        targetSdkVersion 28
+        minSdk 29
+        targetSdk 34
     }
 
     buildTypes {
@@ -13,5 +13,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+    namespace 'org.opencv'
+    buildFeatures {
+        aidl true
     }
 }

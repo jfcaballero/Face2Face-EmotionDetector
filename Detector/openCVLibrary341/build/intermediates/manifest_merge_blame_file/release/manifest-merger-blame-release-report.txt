@@ -4,10 +4,6 @@
 4    android:versionCode="3410"
 5    android:versionName="3.4.1" >
 6
-7    <uses-sdk
-8        android:minSdkVersion="23"
-8-->C:\Users\manu2\Desktop\ManuelPerezLedesmaTFG\Detector\openCVLibrary341\src\main\AndroidManifest.xml
-9        android:targetSdkVersion="28" />
-9-->C:\Users\manu2\Desktop\ManuelPerezLedesmaTFG\Detector\openCVLibrary341\src\main\AndroidManifest.xml
-10
-11</manifest>
+7    <uses-sdk android:minSdkVersion="29" />
+8
+9</manifest>
