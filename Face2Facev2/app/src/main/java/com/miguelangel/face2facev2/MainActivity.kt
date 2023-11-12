@@ -1,6 +1,7 @@
 package com.miguelangel.face2facev2
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Utils.setWindowPresentation(this)
+        Utils.requestPermission(this)
         playBackgroundMusic()
 
         // Se activa un listener para poder poner la aplicacion en mute
@@ -118,5 +120,16 @@ class MainActivity : AppCompatActivity() {
 
         buttonSound?.seekTo(0)
         buttonSound?.start()
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(grantResults.isNotEmpty() && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+            Utils.requestPermission(this)
+        }
     }
 }

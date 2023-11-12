@@ -2,6 +2,9 @@ package com.miguelangel.face2facev2
 
 import android.app.Activity
 import android.content.pm.ActivityInfo
+import android.content.pm.PackageManager
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -19,6 +22,13 @@ class Utils {
 
             // Poner aplicacion en modo apaisado
             activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        }
+
+        fun requestPermission(activity: Activity) {
+            if(ContextCompat.checkSelfPermission(activity, android.Manifest.permission.CAMERA) ==
+                PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(activity, arrayOf(android.Manifest.permission.CAMERA), 100)
+            }
         }
     }
 }
