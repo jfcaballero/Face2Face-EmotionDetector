@@ -10,9 +10,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
-    private var backgroundMusic: MediaPlayer? = null
-
-    private var buttonSound: MediaPlayer? = null
+    private lateinit  var backgroundMusic: MediaPlayer
 
     private var mute: Boolean = false
 
@@ -23,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var historiaSorpresa: ImageButton
 
     private lateinit var historiaAlegria: ImageButton
+
+    private lateinit var practicaSorpresa: ImageButton
+
+    private lateinit var practicaAlegria: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,30 +42,36 @@ class MainActivity : AppCompatActivity() {
                 sonidoButton.setImageResource(R.drawable.vol_mute)
                 mute = true
 
-                if (backgroundMusic?.isPlaying == true) {
-                    backgroundMusic?.pause()
+                if (backgroundMusic.isPlaying == true) {
+                    backgroundMusic.pause()
                 }
             } else {
                 sonidoButton.setImageResource(R.drawable.vol_up)
                 mute = false
 
-                if (backgroundMusic?.isPlaying == false) {
-                    backgroundMusic?.start()
+                if (backgroundMusic.isPlaying == false) {
+                    backgroundMusic.start()
                 }
             }
         })
 
         historiaAlegria = findViewById(R.id.historiaAlegria)
-        setStoryListener(historiaAlegria, 0)
+        setStoryListener(historiaAlegria, R.raw.alegria)
         historiaSorpresa = findViewById(R.id.historiaSorpresa)
-        setStoryListener(historiaSorpresa, 1)
+        setStoryListener(historiaSorpresa, R.id.historiaSorpresa)
+
+        practicaAlegria = findViewById(R.id.practicaAlegria)
+        setPracticeListener(practicaAlegria, 0)
+        practicaSorpresa = findViewById(R.id.practicaSorpresa)
+        setPracticeListener(practicaSorpresa, 1)
+
 
         creditos = findViewById(R.id.creditos)
         val creditosButton = findViewById<ImageButton>(R.id.buttonCreditos)
 
         creditosButton.setOnClickListener(View.OnClickListener {
             if (!mute)
-                playButtonSound()
+                Utils.playSound(applicationContext, R.raw.pulsar_boton)
 
             if (creditos.visibility != View.VISIBLE)
                 creditos.visibility = View.VISIBLE
@@ -76,31 +84,42 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         // Se libera la memoria del MediaPlayer
-        backgroundMusic?.release()
-        buttonSound?.release()
+        backgroundMusic.release()
     }
 
     override fun onPause() {
         super.onPause()
         // Si esta sonando la musica, se pausa
-        if (backgroundMusic?.isPlaying == true) {
-            backgroundMusic?.pause()
+        if (backgroundMusic.isPlaying) {
+            backgroundMusic.pause()
         }
     }
 
     override fun onResume() {
         super.onResume()
         // Se reaunda la musica por donde se quedo en onPause
-        backgroundMusic?.start()
+        backgroundMusic.start()
     }
 
-    private fun setStoryListener(button: ImageButton, id: Int) {
+    private fun setStoryListener(button: ImageButton, videoId: Int) {
         button.setOnClickListener(View.OnClickListener {
             if(!mute)
-                playButtonSound()
+                Utils.playSound(applicationContext, R.raw.pulsar_boton)
             val context = button.context
             val intent = Intent(context, StoryActivity::class.java)
-            intent.putExtra("storyId", id)
+            intent.putExtra("videoId", videoId)
+            intent.putExtra("mute", mute)
+            context.startActivity(intent)
+        })
+    }
+
+    private fun setPracticeListener(button: ImageButton, id: Int) {
+        button.setOnClickListener(View.OnClickListener {
+            if(!mute)
+                Utils.playSound(applicationContext, R.raw.pulsar_boton)
+            val context = button.context
+            val intent = Intent(context, DetectorActivity::class.java)
+            intent.putExtra("emotionId", id)
             intent.putExtra("mute", mute)
             context.startActivity(intent)
         })
@@ -108,18 +127,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun playBackgroundMusic() {
         backgroundMusic = MediaPlayer.create(applicationContext, R.raw.menumusic)
-        backgroundMusic?.start()
+        backgroundMusic.start()
 
-        backgroundMusic?.setOnCompletionListener { backgroundMusic?.start() }
-    }
-
-    private fun playButtonSound() {
-        if (buttonSound == null) {
-            buttonSound = MediaPlayer.create(applicationContext, R.raw.pulsar_boton)
-        }
-
-        buttonSound?.seekTo(0)
-        buttonSound?.start()
+        backgroundMusic.setOnCompletionListener { backgroundMusic.start() }
     }
 
     override fun onRequestPermissionsResult(

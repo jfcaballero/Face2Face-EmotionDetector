@@ -1,8 +1,10 @@
 package com.miguelangel.face2facev2
 
 import android.app.Activity
+import android.content.Context
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
+import android.media.MediaPlayer
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
@@ -28,6 +30,16 @@ class Utils {
             if(ContextCompat.checkSelfPermission(activity, android.Manifest.permission.CAMERA) ==
                 PackageManager.PERMISSION_DENIED) {
                 ActivityCompat.requestPermissions(activity, arrayOf(android.Manifest.permission.CAMERA), 100)
+            }
+        }
+
+        fun playSound(context: Context, soundId: Int) {
+            val sound = MediaPlayer.create(context, soundId)
+
+            sound.seekTo(0)
+            sound.start()
+            sound.setOnCompletionListener {
+                sound.release()
             }
         }
     }

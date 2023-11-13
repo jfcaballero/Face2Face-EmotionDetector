@@ -11,12 +11,6 @@ import android.widget.VideoView
 class StoryActivity : AppCompatActivity() {
     private var mute: Boolean = false
 
-    private var buttonSound: MediaPlayer? = null
-
-    private var violinSound: MediaPlayer? = null
-
-    private var tvSound: MediaPlayer? = null
-
     private lateinit var volverButton: ImageButton
 
     private lateinit var playButton: ImageButton
@@ -29,25 +23,23 @@ class StoryActivity : AppCompatActivity() {
 
         Utils.setWindowPresentation(this)
 
-        val storyId = intent?.extras?.getInt("storyId")
+        val videoId = intent?.extras?.getInt("videoId")
 
-        val videoPath = "android.resource://${packageName}/${if(storyId == 0) R.raw.alegria else R.raw.sorpresa}"
+        val videoPath = "android.resource://${packageName}/${videoId}"
 
         video = findViewById(R.id.videoView)
         video.setVideoURI(Uri.parse(videoPath))
 
-        val muteIntent = intent?.extras?.getBoolean("mute")
-        if(muteIntent != null)
-            mute = muteIntent
+        mute = intent?.extras?.getBoolean("mute") ?: false
 
         if(!mute)
-            playViolinSound(0)
+            Utils.playSound(applicationContext, R.raw.violin_aparecer)
 
         playButton = findViewById(R.id.buttonPlay)
 
         playButton.setOnClickListener(View.OnClickListener {
             if (!mute)
-                playTvSound()
+                Utils.playSound(applicationContext, R.raw.tvon)
             video.start()
         })
 
@@ -55,8 +47,8 @@ class StoryActivity : AppCompatActivity() {
 
         volverButton.setOnClickListener(View.OnClickListener {
             if(!mute) {
-                playButtonSound()
-                playViolinSound(1)
+                Utils.playSound(applicationContext, R.raw.pulsar_boton)
+                Utils.playSound(applicationContext, R.raw.violin_desaparecer)
             }
 
             /*
@@ -80,32 +72,4 @@ class StoryActivity : AppCompatActivity() {
         video.resume()
     }
      */
-
-    private fun playButtonSound() {
-        buttonSound = MediaPlayer.create(applicationContext, R.raw.pulsar_boton)
-
-        buttonSound?.seekTo(0)
-        buttonSound?.start()
-        buttonSound?.setOnCompletionListener {
-            buttonSound?.release()
-        }
-    }
-
-    private fun playViolinSound(type: Int) {
-        violinSound = MediaPlayer.create(applicationContext, if(type == 0) R.raw.violin_aparecer else R.raw.violin_desaparecer)
-
-        violinSound?.start()
-        violinSound?.setOnCompletionListener {
-            violinSound?.release()
-        }
-    }
-
-    private fun playTvSound() {
-        tvSound = MediaPlayer.create(applicationContext, R.raw.tvon)
-
-        tvSound?.start()
-        tvSound?.setOnCompletionListener {
-            tvSound?.release()
-        }
-    }
 }
