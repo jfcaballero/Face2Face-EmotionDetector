@@ -1,2 +1,0 @@
-ninja: Entering directory `/home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/7fo8673w/x86'
-ninja: no work to do.

@@ -1,4 +1,0 @@
-/home/migue/Android/Sdk/cmake/3.22.1/bin/ninja \
-  -C \
-  "/home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/7fo8673w/x86" \
-  opencv_jni_shared

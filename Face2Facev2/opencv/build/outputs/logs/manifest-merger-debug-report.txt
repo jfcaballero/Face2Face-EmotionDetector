@@ -1,25 +1,17 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:2:1-4:12
-INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:2:1-4:12
-INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:2:1-4:12
+ADDED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:2:1-4:12
+INJECTED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:2:1-4:12
 	package
-		ADDED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:3:7-27
-		INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
-		INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
+		ADDED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:3:7-27
+		INJECTED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:2:11-69
+		ADDED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml:2:11-69
 uses-sdk
-INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
-INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
-INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
-INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
+INJECTED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
+INJECTED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
-		ADDED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
-		INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
+		INJECTED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
-		ADDED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
-		INJECTED from /home/migue/UCO/Alumno Colaborador/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
+		INJECTED from /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/AndroidManifest.xml
