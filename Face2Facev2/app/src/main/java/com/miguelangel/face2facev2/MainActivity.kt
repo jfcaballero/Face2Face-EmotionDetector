@@ -42,14 +42,14 @@ class MainActivity : AppCompatActivity() {
                 sonidoButton.setImageResource(R.drawable.vol_mute)
                 mute = true
 
-                if (backgroundMusic.isPlaying == true) {
+                if (backgroundMusic.isPlaying) {
                     backgroundMusic.pause()
                 }
             } else {
                 sonidoButton.setImageResource(R.drawable.vol_up)
                 mute = false
 
-                if (backgroundMusic.isPlaying == false) {
+                if (backgroundMusic.isPlaying) {
                     backgroundMusic.start()
                 }
             }

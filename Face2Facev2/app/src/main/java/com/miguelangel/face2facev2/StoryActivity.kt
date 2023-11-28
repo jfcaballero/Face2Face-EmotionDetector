@@ -1,6 +1,5 @@
 package com.miguelangel.face2facev2
 
-import android.media.MediaPlayer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
