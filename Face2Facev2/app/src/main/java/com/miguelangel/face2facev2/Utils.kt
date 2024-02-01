@@ -10,6 +10,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 class Utils {
     // Se utiliza companion object para que la funcion pueda llamarse como a una funcion static de Java
@@ -41,6 +44,36 @@ class Utils {
             sound.setOnCompletionListener {
                 sound.release()
             }
+        }
+
+        fun assetFilePath(context: Context, assetName: String): String {
+            val file = File(context.filesDir, assetName)
+
+            if (file.exists() && file.length() > 0) {
+                return file.absolutePath;
+            }
+
+            try {
+                val inputStream = context.assets.open(assetName)
+                val outputStream = FileOutputStream(file)
+
+                val buffer = ByteArray(4096)
+                var readBytes = inputStream.read(buffer)
+
+                while(readBytes != -1) {
+                    outputStream.write(buffer, 0, readBytes)
+                    readBytes = inputStream.read(buffer)
+                }
+
+                inputStream.close()
+                outputStream.close()
+                return file.absolutePath
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+
+            return ""
         }
     }
 }

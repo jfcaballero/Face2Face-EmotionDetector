@@ -14,10 +14,6 @@ import org.opencv.core.Scalar
 import org.opencv.core.Size
 import org.opencv.imgproc.Imgproc
 import org.opencv.objdetect.FaceDetectorYN
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
-import java.io.IOException
 import java.util.*
 
 class DetectorActivity : CameraActivity() {
@@ -104,33 +100,9 @@ class DetectorActivity : CameraActivity() {
 
         if(OpenCVLoader.initDebug()) {
             cameraView.enableView()
-
-            try {
-                val inputStream = resources.openRawResource(R.raw.face_detection_yunet_2023mar)
-                val file = File(getDir("yunet", MODE_PRIVATE),
-                    "face_detection_yunet_2023mar.onnx")
-                val fileOut = FileOutputStream(file)
-
-                val data = ByteArray(4096)
-                var readBytes = inputStream.read(data)
-
-                while(readBytes != -1) {
-                    fileOut.write(data, 0, readBytes)
-                    readBytes = inputStream.read(data)
-                }
-
-                detector = FaceDetectorYN.create(file.absolutePath, "",
-                    Size(320.0, 320.0)
-                )
-
-                inputStream.close()
-                fileOut.close()
-
-            } catch (e: FileNotFoundException) {
-                e.printStackTrace()
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
+            detector = FaceDetectorYN.create(Utils.assetFilePath(applicationContext, "face_detection_yunet_2023mar.onnx"),
+                "", Size(320.0, 320.0)
+            )
         }
     }
 
