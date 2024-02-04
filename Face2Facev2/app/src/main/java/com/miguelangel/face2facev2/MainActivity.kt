@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         historiaAlegria = findViewById(R.id.historiaAlegria)
         setStoryListener(historiaAlegria, R.raw.alegria)
         historiaSorpresa = findViewById(R.id.historiaSorpresa)
-        setStoryListener(historiaSorpresa, R.id.historiaSorpresa)
+        setStoryListener(historiaSorpresa, R.raw.sorpresa)
 
         practicaAlegria = findViewById(R.id.practicaAlegria)
         setPracticeListener(practicaAlegria, 0)

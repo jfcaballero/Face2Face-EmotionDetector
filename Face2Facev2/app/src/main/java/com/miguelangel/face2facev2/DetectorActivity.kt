@@ -8,6 +8,7 @@ import org.opencv.android.CameraActivity
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.JavaCameraView
 import org.opencv.android.OpenCVLoader
+import org.opencv.core.CvType
 import org.opencv.core.Mat
 import org.opencv.core.Point
 import org.opencv.core.Scalar
@@ -34,6 +35,10 @@ class DetectorActivity : CameraActivity() {
     private var emotionId: Int = 0
 
     private lateinit var faceIcon: ImageView
+
+    private lateinit var classifiactionModel: ClassificationModel
+
+    private var frameCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +82,7 @@ class DetectorActivity : CameraActivity() {
 
             override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame?): Mat {
                 frame = inputFrame!!.rgba()
+                val frameGray = inputFrame.gray()
 
                 Imgproc.cvtColor(frame, detectorInput, Imgproc.COLOR_BGRA2RGB)
 
@@ -92,8 +98,20 @@ class DetectorActivity : CameraActivity() {
                     Imgproc.rectangle(frame, Point(rectX, rectY),
                         Point(rectX + rectWidth, rectY + rectHeight),
                         Scalar(0.0, 255.0, 0.0), 4)
+
+                    val faceMat = frameGray.submat(rectY.toInt(), (rectY + rectHeight).toInt(),
+                        rectX.toInt(), (rectX + rectWidth).toInt())
+
+                    if (frameCount % 30 == 0) {
+                        classifiactionModel.predict(faceMat)
+                        frameCount = 0
+                    }
+
+                    faceMat.release()
                 }
 
+                frameGray.release()
+                frameCount++
                 return frame
             }
         })
@@ -103,6 +121,7 @@ class DetectorActivity : CameraActivity() {
             detector = FaceDetectorYN.create(Utils.assetFilePath(applicationContext, "face_detection_yunet_2023mar.onnx"),
                 "", Size(320.0, 320.0)
             )
+            classifiactionModel = ClassificationModel(applicationContext)
         }
     }
 
