@@ -17,6 +17,8 @@ class ClassificationModel(context: Context) {
 
     private val classes = arrayOf("Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral")
 
+    private val threshold = 0.25
+
     fun predict(face: Mat) {
         val resized = Mat()
         Imgproc.resize(face, resized, Size(48.0, 48.0))

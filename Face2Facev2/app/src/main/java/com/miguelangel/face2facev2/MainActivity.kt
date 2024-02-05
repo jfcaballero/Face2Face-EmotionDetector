@@ -10,7 +10,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit  var backgroundMusic: MediaPlayer
+    private var backgroundMusic: MediaPlayer? = null
 
     private var mute: Boolean = false
 
@@ -32,25 +32,36 @@ class MainActivity : AppCompatActivity() {
 
         Utils.setWindowPresentation(this)
         Utils.requestPermission(this)
-        playBackgroundMusic()
+
+        mute = intent?.extras?.getBoolean("mute") ?: false
+
+        sonidoButton = findViewById(R.id.sonido)
+        if (!mute) {
+            sonidoButton.setImageResource(R.drawable.vol_up)
+            playBackgroundMusic()
+        }
+        else {
+            sonidoButton.setImageResource(R.drawable.vol_mute)
+        }
 
         // Se activa un listener para poder poner la aplicacion en mute
-        sonidoButton = findViewById(R.id.sonido)
-
         sonidoButton.setOnClickListener(View.OnClickListener {
             if (!mute) {
                 sonidoButton.setImageResource(R.drawable.vol_mute)
                 mute = true
 
-                if (backgroundMusic.isPlaying) {
-                    backgroundMusic.pause()
+                if (backgroundMusic?.isPlaying == true) {
+                    backgroundMusic?.pause()
                 }
-            } else {
+            }
+            else {
                 sonidoButton.setImageResource(R.drawable.vol_up)
                 mute = false
-
-                if (backgroundMusic.isPlaying) {
-                    backgroundMusic.start()
+                if (backgroundMusic != null) {
+                    backgroundMusic?.start()
+                }
+                else {
+                    playBackgroundMusic()
                 }
             }
         })
@@ -84,21 +95,21 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         // Se libera la memoria del MediaPlayer
-        backgroundMusic.release()
+        backgroundMusic?.release()
     }
 
     override fun onPause() {
         super.onPause()
         // Si esta sonando la musica, se pausa
-        if (backgroundMusic.isPlaying) {
-            backgroundMusic.pause()
+        if (backgroundMusic?.isPlaying == true) {
+            backgroundMusic?.pause()
         }
     }
 
     override fun onResume() {
         super.onResume()
         // Se reaunda la musica por donde se quedo en onPause
-        backgroundMusic.start()
+        backgroundMusic?.start()
     }
 
     private fun setStoryListener(button: ImageButton, videoId: Int) {
@@ -127,9 +138,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun playBackgroundMusic() {
         backgroundMusic = MediaPlayer.create(applicationContext, R.raw.menumusic)
-        backgroundMusic.start()
+        backgroundMusic?.start()
 
-        backgroundMusic.setOnCompletionListener { backgroundMusic.start() }
+        backgroundMusic?.setOnCompletionListener { backgroundMusic?.start() }
     }
 
     override fun onRequestPermissionsResult(

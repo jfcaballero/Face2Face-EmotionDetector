@@ -1,5 +1,6 @@
 package com.miguelangel.face2facev2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
@@ -8,7 +9,6 @@ import org.opencv.android.CameraActivity
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.JavaCameraView
 import org.opencv.android.OpenCVLoader
-import org.opencv.core.CvType
 import org.opencv.core.Mat
 import org.opencv.core.Point
 import org.opencv.core.Scalar
@@ -57,7 +57,11 @@ class DetectorActivity : CameraActivity() {
                 Utils.playSound(applicationContext, R.raw.pulsar_boton)
                 Utils.playSound(applicationContext, R.raw.violin_desaparecer)
             }
-            finish()
+
+            val context = volverButton.context
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("mute", mute)
+            context.startActivity(intent)
         })
 
         emotionId = intent?.extras?.getInt("emotionId") ?: 0

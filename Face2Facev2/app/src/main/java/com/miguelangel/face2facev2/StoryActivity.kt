@@ -1,5 +1,6 @@
 package com.miguelangel.face2facev2
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,8 @@ class StoryActivity : AppCompatActivity() {
     private lateinit var playButton: ImageButton
 
     private lateinit var video: VideoView
+
+    private var videoStopPos: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,25 +53,27 @@ class StoryActivity : AppCompatActivity() {
                 Utils.playSound(applicationContext, R.raw.violin_desaparecer)
             }
 
-            /*
-            Preguntar a Juan Carlos si aqui se debe volver a MainActivity indicando si el usuario ha visto los videos completos.
-            En el codigo de Manuel Perez esto estaba hecho pero las lineas que lo hacen estan comentadas.
-            */
-            finish()
+            val context = volverButton.context
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("mute", mute)
+            context.startActivity(intent)
         })
     }
 
-    /*
+
     override fun onPause() {
         super.onPause()
         if (video.isPlaying) {
+            videoStopPos = video.currentPosition
             video.pause()
+
         }
     }
 
     override fun onResume() {
         super.onResume()
+        video.seekTo(videoStopPos)
         video.resume()
     }
-     */
+
 }
