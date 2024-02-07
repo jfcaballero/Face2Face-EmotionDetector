@@ -50,7 +50,6 @@ class ClassificationModel(context: Context) {
         var highestProbIdx = 0
         for ((i, score) in scores.withIndex()) {
             val prob = Math.E.pow(score.toDouble()) / expSum
-            println(prob)
             if (prob > highestProb) {
                 highestProb = prob
                 highestProbIdx = i

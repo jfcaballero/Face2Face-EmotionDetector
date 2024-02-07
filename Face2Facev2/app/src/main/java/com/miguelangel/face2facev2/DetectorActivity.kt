@@ -15,6 +15,7 @@ import org.opencv.core.Scalar
 import org.opencv.core.Size
 import org.opencv.imgproc.Imgproc
 import org.opencv.objdetect.FaceDetectorYN
+import java.lang.Double.min
 import java.util.*
 
 class DetectorActivity : CameraActivity() {
@@ -30,6 +31,8 @@ class DetectorActivity : CameraActivity() {
 
     private lateinit var volverButton: ImageButton
 
+    private lateinit var cameraButton: ImageButton
+
     private var mute: Boolean = false
 
     private var emotionId: Int = 0
@@ -38,7 +41,7 @@ class DetectorActivity : CameraActivity() {
 
     private lateinit var classifiactionModel: ClassificationModel
 
-    private var frameCount = 0
+    private var predictCurrentFrame: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +66,12 @@ class DetectorActivity : CameraActivity() {
             intent.putExtra("mute", mute)
             context.startActivity(intent)
         })
+
+        cameraButton = findViewById(R.id.camara)
+        cameraButton.setOnClickListener {
+            Utils.playSound(applicationContext, R.raw.disparocamara)
+            predictCurrentFrame = true
+        }
 
         emotionId = intent?.extras?.getInt("emotionId") ?: 0
         faceIcon = findViewById(R.id.cara)
@@ -93,29 +102,43 @@ class DetectorActivity : CameraActivity() {
                 detector.inputSize = detectorInput.size()
                 detector.detect(detectorInput, faces)
 
-                for(i in 0 until faces.rows()) {
-                    val rectX = faces.get(i, 0)[0]
-                    val rectY = faces.get(i, 1)[0]
-                    val rectWidth = faces.get(i, 2)[0]
-                    val rectHeight = faces.get(i, 3)[0]
-
-                    Imgproc.rectangle(frame, Point(rectX, rectY),
-                        Point(rectX + rectWidth, rectY + rectHeight),
-                        Scalar(0.0, 255.0, 0.0), 4)
-
-                    val faceMat = frameGray.submat(rectY.toInt(), (rectY + rectHeight).toInt(),
-                        rectX.toInt(), (rectX + rectWidth).toInt())
-
-                    if (frameCount % 30 == 0) {
-                        classifiactionModel.predict(faceMat)
-                        frameCount = 0
+                if(faces.rows() > 0) {
+                    runOnUiThread {
+                            cameraButton.isClickable = true
+                            cameraButton.visibility = View.VISIBLE
                     }
 
-                    faceMat.release()
+                    for(i in 0 until faces.rows()) {
+                        val rectX = faces.get(i, 0)[0]
+                        val rectY = faces.get(i, 1)[0]
+                        val rectWidth = faces.get(i, 2)[0]
+                        val rectHeight = faces.get(i, 3)[0]
+
+                        val rectBottomCorner = Point(min(frame.width().toDouble(), rectX + rectWidth),
+                            min(frame.height().toDouble(), rectY + rectHeight))
+
+                        Imgproc.rectangle(frame, Point(rectX, rectY), rectBottomCorner,
+                            Scalar(0.0, 255.0, 0.0), 4)
+
+                        val faceMat = frameGray.submat(rectY.toInt(), rectBottomCorner.y.toInt(),
+                            rectX.toInt(), rectBottomCorner.x.toInt())
+
+                        if (predictCurrentFrame) {
+                            classifiactionModel.predict(faceMat)
+                            predictCurrentFrame = false
+                        }
+
+                        faceMat.release()
+                    }
+                }
+                else {
+                    runOnUiThread {
+                        cameraButton.isClickable = false
+                        cameraButton.visibility = View.INVISIBLE
+                    }
                 }
 
                 frameGray.release()
-                frameCount++
                 return frame
             }
         })

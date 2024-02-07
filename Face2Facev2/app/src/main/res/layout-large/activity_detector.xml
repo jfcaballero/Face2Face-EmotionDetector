@@ -16,7 +16,7 @@
         android:id="@+id/camera_view"
         android:layout_width="390dp"
         android:layout_height="270dp"
-        android:layout_marginStart="235dp"
+        android:layout_marginStart="230dp"
         android:layout_marginTop="43dp"
         opencv:camera_id="front" />
 
@@ -24,7 +24,7 @@
         android:id="@+id/imageView5"
         android:layout_width="436dp"
         android:layout_height="336dp"
-        android:layout_marginStart="217dp"
+        android:layout_marginStart="210dp"
         android:layout_marginTop="6dp"
         android:src="@mipmap/pizarrasinpinza" />
 
@@ -104,6 +104,30 @@
         android:layout_height="120dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="60dp" />
+
+    <ImageView
+        android:id="@+id/carton"
+        android:layout_width="160dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="600dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:visibility="visible"
+        android:src="@mipmap/carton2" />
+
+    <ImageButton
+        android:id="@+id/camara"
+        android:layout_height="70dp"
+        android:layout_width="70dp"
+        android:layout_marginStart="640dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/roundcorner"
+        android:scaleType="fitXY"
+        android:visibility="visible"
+        android:src="@drawable/camara" />
+
 
 
 </FrameLayout>
