@@ -17,7 +17,9 @@ class ClassificationModel(context: Context) {
 
     private val classes = arrayOf("Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral")
 
-    private val threshold = 0.25
+    var predictedClass: String = ""
+
+    var predictedProb: Double = 0.0
 
     fun predict(face: Mat) {
         val resized = Mat()
@@ -37,10 +39,7 @@ class ClassificationModel(context: Context) {
         val outputTensor = module.forward(IValue.from(tensor)).toTensor()
         val scores = outputTensor.dataAsFloatArray
 
-        println(getPredictedClass(scores))
-    }
-
-    private fun getPredictedClass(scores: FloatArray): String {
+        // Softmax
         var expSum = 0.0
         for (score in scores) {
             expSum += Math.E.pow(score.toDouble())
@@ -56,6 +55,7 @@ class ClassificationModel(context: Context) {
             }
         }
 
-        return classes[highestProbIdx]
+        predictedClass = classes[highestProbIdx]
+        predictedProb = highestProb
     }
 }

@@ -1,10 +1,12 @@
 package com.miguelangel.face2facev2
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.fragment.app.FragmentManager
 import org.opencv.android.CameraActivity
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.JavaCameraView
@@ -15,6 +17,7 @@ import org.opencv.core.Scalar
 import org.opencv.core.Size
 import org.opencv.imgproc.Imgproc
 import org.opencv.objdetect.FaceDetectorYN
+import java.io.ByteArrayOutputStream
 import java.lang.Double.min
 import java.util.*
 
@@ -33,13 +36,15 @@ class DetectorActivity : CameraActivity() {
 
     private lateinit var cameraButton: ImageButton
 
+    private lateinit var cameraButtonBackground: ImageView
+
     private var mute: Boolean = false
 
-    private var emotionId: Int = 0
+    private var emotion: String = ""
 
     private lateinit var faceIcon: ImageView
 
-    private lateinit var classifiactionModel: ClassificationModel
+    private lateinit var classificationModel: ClassificationModel
 
     private var predictCurrentFrame: Boolean = false
 
@@ -72,8 +77,11 @@ class DetectorActivity : CameraActivity() {
             Utils.playSound(applicationContext, R.raw.disparocamara)
             predictCurrentFrame = true
         }
+        cameraButtonBackground = findViewById(R.id.botonblanco)
 
-        emotionId = intent?.extras?.getInt("emotionId") ?: 0
+        val emotionId = intent?.extras?.getInt("emotionId") ?: 0
+        emotion = if(emotionId == 0) "Happy" else "Surprise"
+
         faceIcon = findViewById(R.id.cara)
         faceIcon.setImageResource(if(emotionId == 0) R.mipmap.cara_alegria else R.mipmap.cara_asombro)
 
@@ -104,8 +112,9 @@ class DetectorActivity : CameraActivity() {
 
                 if(faces.rows() > 0) {
                     runOnUiThread {
-                            cameraButton.isClickable = true
-                            cameraButton.visibility = View.VISIBLE
+                        cameraButton.isClickable = true
+                        cameraButton.visibility = View.VISIBLE
+                        cameraButtonBackground.visibility = View.VISIBLE
                     }
 
                     for(i in 0 until faces.rows()) {
@@ -117,16 +126,33 @@ class DetectorActivity : CameraActivity() {
                         val rectBottomCorner = Point(min(frame.width().toDouble(), rectX + rectWidth),
                             min(frame.height().toDouble(), rectY + rectHeight))
 
-                        Imgproc.rectangle(frame, Point(rectX, rectY), rectBottomCorner,
-                            Scalar(0.0, 255.0, 0.0), 4)
-
                         val faceMat = frameGray.submat(rectY.toInt(), rectBottomCorner.y.toInt(),
                             rectX.toInt(), rectBottomCorner.x.toInt())
 
                         if (predictCurrentFrame) {
-                            classifiactionModel.predict(faceMat)
-                            predictCurrentFrame = false
+                            classificationModel.predict(faceMat)
+
+                            val bitmap = Bitmap.createBitmap(frame.cols(), frame.rows(), Bitmap.Config.ARGB_8888)
+                            org.opencv.android.Utils.matToBitmap(frame, bitmap)
+                            val stream = ByteArrayOutputStream()
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+
+                            runOnUiThread {
+                                val context = this@DetectorActivity
+                                val intent = Intent(context, PredictionResultActivity::class.java)
+                                intent.putExtra("mute", mute)
+                                intent.putExtra("emotionId", emotionId)
+                                intent.putExtra("correct", classificationModel.predictedClass == emotion)
+                                intent.putExtra("predictedProb", classificationModel.predictedProb)
+                                intent.putExtra("image", stream.toByteArray())
+
+                                context.startActivity(intent)
+                            }
+
                         }
+
+                        Imgproc.rectangle(frame, Point(rectX, rectY), rectBottomCorner,
+                            Scalar(0.0, 255.0, 0.0), 4)
 
                         faceMat.release()
                     }
@@ -135,6 +161,7 @@ class DetectorActivity : CameraActivity() {
                     runOnUiThread {
                         cameraButton.isClickable = false
                         cameraButton.visibility = View.INVISIBLE
+                        cameraButtonBackground.visibility = View.INVISIBLE
                     }
                 }
 
@@ -148,7 +175,7 @@ class DetectorActivity : CameraActivity() {
             detector = FaceDetectorYN.create(Utils.assetFilePath(applicationContext, "face_detection_yunet_2023mar.onnx"),
                 "", Size(320.0, 320.0)
             )
-            classifiactionModel = ClassificationModel(applicationContext)
+            classificationModel = ClassificationModel(applicationContext)
         }
     }
 

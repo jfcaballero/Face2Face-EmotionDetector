@@ -106,23 +106,23 @@
         android:layout_marginTop="60dp" />
 
     <ImageView
-        android:id="@+id/carton"
+        android:id="@+id/botonblanco"
         android:layout_width="160dp"
         android:layout_height="95dp"
         android:layout_marginTop="130dp"
-        android:layout_marginStart="600dp"
+        android:layout_marginStart="595dp"
         android:adjustViewBounds="false"
         android:baselineAligned="false"
         android:contentDescription="@string/todo"
         android:visibility="visible"
-        android:src="@mipmap/carton2" />
+        android:src="@drawable/botonblanco" />
 
     <ImageButton
         android:id="@+id/camara"
         android:layout_height="70dp"
         android:layout_width="70dp"
         android:layout_marginStart="640dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="143dp"
         android:background="@drawable/roundcorner"
         android:scaleType="fitXY"
         android:visibility="visible"
