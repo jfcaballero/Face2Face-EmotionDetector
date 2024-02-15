@@ -25,12 +25,9 @@ class ClassificationModel(context: Context) {
         val resized = Mat()
         Imgproc.resize(face, resized, Size(48.0, 48.0))
 
-        val resized4C = Mat()
-        Imgproc.cvtColor(resized, resized4C, Imgproc.COLOR_GRAY2RGBA)
-
         // Conversion de Mat a Bitmap
-        val bitmap = Bitmap.createBitmap(resized4C.cols(), resized4C.rows(), Bitmap.Config.ARGB_8888)
-        org.opencv.android.Utils.matToBitmap(resized4C, bitmap)
+        val bitmap = Bitmap.createBitmap(resized.cols(), resized.rows(), Bitmap.Config.ARGB_8888)
+        org.opencv.android.Utils.matToBitmap(resized, bitmap)
 
         // Conversion de Bitmap a Tensor sin aplicar normalizacion
         val tensor = TensorImageUtils.bitmapToFloat32Tensor(bitmap,

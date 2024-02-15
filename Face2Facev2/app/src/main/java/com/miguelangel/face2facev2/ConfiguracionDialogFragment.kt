@@ -33,7 +33,6 @@ class ConfiguracionDialogFragment(private var preferences: SharedPreferences) : 
         }
 
         val checkCamara = dialog?.findViewById<ImageView>(R.id.check_camara)
-        println(checkCamara)
         val checkTemp = dialog?.findViewById<ImageView>(R.id.check_tempo)
 
         val plus = dialog?.findViewById<ImageButton>(R.id.plus)

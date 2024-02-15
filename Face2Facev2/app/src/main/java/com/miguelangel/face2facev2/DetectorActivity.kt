@@ -85,7 +85,6 @@ class DetectorActivity : CameraActivity() {
         if (useCameraButton) {
             cameraButton = findViewById(R.id.camara)
             cameraButton?.setOnClickListener {
-                Utils.playSound(applicationContext, R.raw.disparocamara)
                 cameraButtonPressed = true
             }
             cameraButtonBackground = findViewById(R.id.botonblanco)
@@ -160,6 +159,9 @@ class DetectorActivity : CameraActivity() {
                             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
 
                             runOnUiThread {
+                                this@DetectorActivity.cameraView.disableView()
+                                Utils.playSound(applicationContext, R.raw.disparocamara)
+
                                 val context = this@DetectorActivity
                                 val intent = Intent(context, PredictionResultActivity::class.java)
                                 intent.putExtra("mute", mute)
