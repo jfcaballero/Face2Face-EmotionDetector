@@ -108,6 +108,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vol_up" />
 
+    <ImageButton
+        android:id="@+id/config"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="118dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:clickable="true"
+        android:focusable="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/configuracion" />
+
     <ImageView
         android:id="@+id/tira1"
         android:layout_width="350dp"

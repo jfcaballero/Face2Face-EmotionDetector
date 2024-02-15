@@ -114,7 +114,7 @@
         android:adjustViewBounds="false"
         android:baselineAligned="false"
         android:contentDescription="@string/todo"
-        android:visibility="visible"
+        android:visibility="gone"
         android:src="@drawable/botonblanco" />
 
     <ImageButton
@@ -125,7 +125,7 @@
         android:layout_marginTop="143dp"
         android:background="@drawable/roundcorner"
         android:scaleType="fitXY"
-        android:visibility="visible"
+        android:visibility="gone"
         android:src="@drawable/camara" />
 
 

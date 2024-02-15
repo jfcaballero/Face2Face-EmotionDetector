@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">Face2Face v2</string>
-    <string name="source_image">Source Image</string>
-    <string name="select_gallery">Select Image from galslery</string>
     <string name="historia_sorpresa">HISTORIA SORPRESA</string>
     <string name="todo">TODO</string>
-    <string name="opencv_camera">OpenCV Camera</string>
     <string name="aprendizaje">APRENDIZAJE</string>
     <string name="practica_interactiva">PRÁCTICA INTERACTIVA</string>
     <string name="historia_alegria">HISTORIA ALEGRÍA</string>
@@ -12,4 +9,9 @@
     <string name="sorpresa">SORPRESA</string>
     <string name="volver">VOLVER</string>
     <string name="seguir">SEGUIR</string>
+    <string name="modocaptura">MODO DE CAPTURA</string>
+    <string name="botoncamara">PULSAR BOTÓN\nDE CÁMARA</string>
+    <string name="temporizador">TEMPORIZADOR</string>
+    <string name="segundos">%d SEGUNDOS</string>
+    <string name="prefs_file">com.miguelangel.face2facev2.shared-preferences</string>
 </resources>

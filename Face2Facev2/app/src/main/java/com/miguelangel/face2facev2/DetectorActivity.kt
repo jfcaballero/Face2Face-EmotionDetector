@@ -1,12 +1,12 @@
 package com.miguelangel.face2facev2
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
-import androidx.fragment.app.FragmentManager
 import org.opencv.android.CameraActivity
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.JavaCameraView
@@ -34,9 +34,13 @@ class DetectorActivity : CameraActivity() {
 
     private lateinit var volverButton: ImageButton
 
-    private lateinit var cameraButton: ImageButton
+    private var useCameraButton = true
 
-    private lateinit var cameraButtonBackground: ImageView
+    private var cameraButtonPressed: Boolean = false
+
+    private var cameraButton: ImageButton? = null
+
+    private var cameraButtonBackground: ImageView? = null
 
     private var mute: Boolean = false
 
@@ -46,7 +50,9 @@ class DetectorActivity : CameraActivity() {
 
     private lateinit var classificationModel: ClassificationModel
 
-    private var predictCurrentFrame: Boolean = false
+    private var timerDuration: Int = 5
+
+    private var timerStart: Long = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,12 +78,19 @@ class DetectorActivity : CameraActivity() {
             context.startActivity(intent)
         })
 
-        cameraButton = findViewById(R.id.camara)
-        cameraButton.setOnClickListener {
-            Utils.playSound(applicationContext, R.raw.disparocamara)
-            predictCurrentFrame = true
+        val preferences = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        useCameraButton = preferences.getBoolean("useCameraButton", true)
+        timerDuration = preferences.getInt("temp", 5)
+
+        if (useCameraButton) {
+            cameraButton = findViewById(R.id.camara)
+            cameraButton?.setOnClickListener {
+                Utils.playSound(applicationContext, R.raw.disparocamara)
+                cameraButtonPressed = true
+            }
+            cameraButtonBackground = findViewById(R.id.botonblanco)
         }
-        cameraButtonBackground = findViewById(R.id.botonblanco)
+
 
         val emotionId = intent?.extras?.getInt("emotionId") ?: 0
         emotion = if(emotionId == 0) "Happy" else "Surprise"
@@ -111,10 +124,17 @@ class DetectorActivity : CameraActivity() {
                 detector.detect(detectorInput, faces)
 
                 if(faces.rows() > 0) {
-                    runOnUiThread {
-                        cameraButton.isClickable = true
-                        cameraButton.visibility = View.VISIBLE
-                        cameraButtonBackground.visibility = View.VISIBLE
+                    if (useCameraButton) {
+                        runOnUiThread {
+                            cameraButton?.isClickable = true
+                            cameraButton?.visibility = View.VISIBLE
+                            cameraButtonBackground?.visibility = View.VISIBLE
+                        }
+                    }
+                    else {
+                        if (timerStart == 0L) {
+                            timerStart = System.currentTimeMillis()
+                        }
                     }
 
                     for(i in 0 until faces.rows()) {
@@ -129,7 +149,9 @@ class DetectorActivity : CameraActivity() {
                         val faceMat = frameGray.submat(rectY.toInt(), rectBottomCorner.y.toInt(),
                             rectX.toInt(), rectBottomCorner.x.toInt())
 
-                        if (predictCurrentFrame) {
+                        val predCondition = (useCameraButton && cameraButtonPressed) ||
+                                (!useCameraButton && timerStart != 0L && System.currentTimeMillis() - timerStart >= timerDuration * 1000)
+                        if (predCondition) {
                             classificationModel.predict(faceMat)
 
                             val bitmap = Bitmap.createBitmap(frame.cols(), frame.rows(), Bitmap.Config.ARGB_8888)
@@ -158,10 +180,15 @@ class DetectorActivity : CameraActivity() {
                     }
                 }
                 else {
-                    runOnUiThread {
-                        cameraButton.isClickable = false
-                        cameraButton.visibility = View.INVISIBLE
-                        cameraButtonBackground.visibility = View.INVISIBLE
+                    if (useCameraButton) {
+                        runOnUiThread {
+                            cameraButton?.isClickable = false
+                            cameraButton?.visibility = View.INVISIBLE
+                            cameraButtonBackground?.visibility = View.INVISIBLE
+                        }
+                    }
+                    else {
+                        timerStart = 0L
                     }
                 }
 

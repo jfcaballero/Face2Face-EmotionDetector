@@ -1,6 +1,8 @@
 package com.miguelangel.face2facev2
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var sonidoButton: ImageButton
 
+    private lateinit var configButton: ImageButton
+
     private lateinit var creditos: ImageView
 
     private lateinit var historiaSorpresa: ImageButton
@@ -26,6 +30,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var practicaAlegria: ImageButton
 
+    private lateinit var preferences: SharedPreferences
+
+    private lateinit var configDialog: ConfiguracionDialogFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         Utils.requestPermission(this)
 
         mute = intent?.extras?.getBoolean("mute") ?: false
+
+        preferences = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
 
         sonidoButton = findViewById(R.id.sonido)
         if (!mute) {
@@ -65,6 +75,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+        configDialog = ConfiguracionDialogFragment(preferences)
+
+        configButton = findViewById(R.id.config)
+        configButton.setOnClickListener (View.OnClickListener {
+            configDialog.show(supportFragmentManager, "Configuracion")
+        })
+
 
         historiaAlegria = findViewById(R.id.historiaAlegria)
         setStoryListener(historiaAlegria, R.raw.alegria)

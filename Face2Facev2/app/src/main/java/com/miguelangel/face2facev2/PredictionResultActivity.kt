@@ -43,9 +43,6 @@ class PredictionResultActivity : AppCompatActivity() {
             context.startActivity(intent)
         })
 
-        Utils.playSound(this, R.raw.redobleyplatillos)
-        Toast.makeText(this, "Procesando...", Toast.LENGTH_LONG).show()
-
         if (isCorrect && predictedProb > predThreshold) {
                 val imageArray = intent?.extras?.getByteArray("image")
                 val bitmap = BitmapFactory.decodeByteArray(imageArray, 0, imageArray!!.size)
