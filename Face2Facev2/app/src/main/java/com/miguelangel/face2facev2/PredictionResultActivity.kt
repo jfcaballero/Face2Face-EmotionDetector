@@ -44,8 +44,7 @@ class PredictionResultActivity : AppCompatActivity() {
         })
 
         if (isCorrect && predictedProb > predThreshold) {
-                val imageArray = intent?.extras?.getByteArray("image")
-                val bitmap = BitmapFactory.decodeByteArray(imageArray, 0, imageArray!!.size)
+                val bitmap = DetectorActivity.getPredBitmap()
                 val predictedImage = findViewById<ImageView>(R.id.image)
                 predictedImage.setImageBitmap(bitmap)
                 predictedImage.visibility = View.VISIBLE
@@ -92,5 +91,10 @@ class PredictionResultActivity : AppCompatActivity() {
                 libro.setImageResource(if(emotionId == 0) R.mipmap.libro_historia_maria1 else R.mipmap.libro_historia_javier1)
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        DetectorActivity.destroyPredBitmap()
     }
 }

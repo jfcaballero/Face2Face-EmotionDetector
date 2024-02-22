@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.ImageView
 import org.opencv.android.CameraActivity
@@ -18,6 +20,7 @@ import org.opencv.core.Size
 import org.opencv.imgproc.Imgproc
 import org.opencv.objdetect.FaceDetectorYN
 import java.io.ByteArrayOutputStream
+import java.lang.Double.max
 import java.lang.Double.min
 import java.util.*
 
@@ -54,10 +57,24 @@ class DetectorActivity : CameraActivity() {
 
     private var timerStart: Long = 0L
 
+    // Companion object para poder acceder a la imagen donde se ha hecho la prediccion y mostrarla en la siguiente actividad
+    companion object {
+        private var predBitmap: Bitmap? = null
+
+        fun getPredBitmap(): Bitmap? {
+            return predBitmap
+        }
+
+        fun destroyPredBitmap() {
+            predBitmap = null
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detector)
         Utils.setWindowPresentation(this)
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         mute = intent?.extras?.getBoolean("mute") ?: false
 
@@ -142,21 +159,20 @@ class DetectorActivity : CameraActivity() {
                         val rectWidth = faces.get(i, 2)[0]
                         val rectHeight = faces.get(i, 3)[0]
 
+                        val rectTopCorner = Point(max(0.0, rectX), max(0.0, rectY))
                         val rectBottomCorner = Point(min(frame.width().toDouble(), rectX + rectWidth),
                             min(frame.height().toDouble(), rectY + rectHeight))
 
-                        val faceMat = frameGray.submat(rectY.toInt(), rectBottomCorner.y.toInt(),
-                            rectX.toInt(), rectBottomCorner.x.toInt())
+                        val faceMat = frameGray.submat(rectTopCorner.y.toInt(), rectBottomCorner.y.toInt(),
+                            rectTopCorner.x.toInt(), rectBottomCorner.x.toInt())
 
                         val predCondition = (useCameraButton && cameraButtonPressed) ||
                                 (!useCameraButton && timerStart != 0L && System.currentTimeMillis() - timerStart >= timerDuration * 1000)
                         if (predCondition) {
                             classificationModel.predict(faceMat)
 
-                            val bitmap = Bitmap.createBitmap(frame.cols(), frame.rows(), Bitmap.Config.ARGB_8888)
-                            org.opencv.android.Utils.matToBitmap(frame, bitmap)
-                            val stream = ByteArrayOutputStream()
-                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                            predBitmap = Bitmap.createBitmap(frame.cols(), frame.rows(), Bitmap.Config.ARGB_8888)
+                            org.opencv.android.Utils.matToBitmap(frame, predBitmap)
 
                             runOnUiThread {
                                 this@DetectorActivity.cameraView.disableView()
@@ -168,14 +184,13 @@ class DetectorActivity : CameraActivity() {
                                 intent.putExtra("emotionId", emotionId)
                                 intent.putExtra("correct", classificationModel.predictedClass == emotion)
                                 intent.putExtra("predictedProb", classificationModel.predictedProb)
-                                intent.putExtra("image", stream.toByteArray())
 
                                 context.startActivity(intent)
                             }
 
                         }
 
-                        Imgproc.rectangle(frame, Point(rectX, rectY), rectBottomCorner,
+                        Imgproc.rectangle(frame, rectTopCorner, rectBottomCorner,
                             Scalar(0.0, 255.0, 0.0), 4)
 
                         faceMat.release()
