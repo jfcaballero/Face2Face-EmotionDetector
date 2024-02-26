@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageButton
@@ -19,7 +18,6 @@ import org.opencv.core.Scalar
 import org.opencv.core.Size
 import org.opencv.imgproc.Imgproc
 import org.opencv.objdetect.FaceDetectorYN
-import java.io.ByteArrayOutputStream
 import java.lang.Double.max
 import java.lang.Double.min
 import java.util.*
@@ -57,6 +55,8 @@ class DetectorActivity : CameraActivity() {
 
     private var timerStart: Long = 0L
 
+    private var predicting: Boolean = false
+
     // Companion object para poder acceder a la imagen donde se ha hecho la prediccion y mostrarla en la siguiente actividad
     companion object {
         private var predBitmap: Bitmap? = null
@@ -73,7 +73,7 @@ class DetectorActivity : CameraActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detector)
-        Utils.setWindowPresentation(this)
+        Utils.hideSystemBars(this)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         mute = intent?.extras?.getBoolean("mute") ?: false
@@ -106,7 +106,6 @@ class DetectorActivity : CameraActivity() {
             }
             cameraButtonBackground = findViewById(R.id.botonblanco)
         }
-
 
         val emotionId = intent?.extras?.getInt("emotionId") ?: 0
         emotion = if(emotionId == 0) "Happy" else "Surprise"
@@ -168,16 +167,15 @@ class DetectorActivity : CameraActivity() {
 
                         val predCondition = (useCameraButton && cameraButtonPressed) ||
                                 (!useCameraButton && timerStart != 0L && System.currentTimeMillis() - timerStart >= timerDuration * 1000)
-                        if (predCondition) {
+                        if (predCondition && !predicting) {
+                            predicting = true
+                            Utils.playSound(applicationContext, R.raw.disparocamara)
                             classificationModel.predict(faceMat)
 
                             predBitmap = Bitmap.createBitmap(frame.cols(), frame.rows(), Bitmap.Config.ARGB_8888)
                             org.opencv.android.Utils.matToBitmap(frame, predBitmap)
 
                             runOnUiThread {
-                                this@DetectorActivity.cameraView.disableView()
-                                Utils.playSound(applicationContext, R.raw.disparocamara)
-
                                 val context = this@DetectorActivity
                                 val intent = Intent(context, PredictionResultActivity::class.java)
                                 intent.putExtra("mute", mute)
@@ -187,7 +185,6 @@ class DetectorActivity : CameraActivity() {
 
                                 context.startActivity(intent)
                             }
-
                         }
 
                         Imgproc.rectangle(frame, rectTopCorner, rectBottomCorner,

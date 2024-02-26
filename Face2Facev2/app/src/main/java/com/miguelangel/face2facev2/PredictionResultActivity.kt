@@ -1,12 +1,11 @@
 package com.miguelangel.face2facev2
 
 import android.content.Intent
-import android.graphics.BitmapFactory
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class PredictionResultActivity : AppCompatActivity() {
@@ -20,10 +19,18 @@ class PredictionResultActivity : AppCompatActivity() {
 
     private lateinit var seguirButton: ImageButton
 
+    private lateinit var vozMediaPlayer: MediaPlayer
+
+    private var voz: Int = 0
+
+    private lateinit var sonidoMediaPlayer: MediaPlayer
+
+    private var sonido: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prediction_result)
-        Utils.setWindowPresentation(this)
+        Utils.hideSystemBars(this)
 
         val emotionId = intent?.extras?.getInt("emotionId") ?: 0
         isCorrect = intent?.extras?.getBoolean("correct") ?: false
@@ -61,11 +68,11 @@ class PredictionResultActivity : AppCompatActivity() {
                 val bombilla = findViewById<ImageView>(R.id.bombilla)
                 bombilla.visibility = View.VISIBLE
 
-                Utils.playSound(this, R.raw.aplausos)
-                Utils.playSound(this, if(emotionId == 0) R.raw.muybienalegria else R.raw.muybiensorpresa)
+                sonido = R.raw.aplausos
+                voz = if(emotionId == 0) R.raw.muybienalegria else R.raw.muybiensorpresa
         }
         else {
-            Utils.playSound(this, R.raw.errorohh)
+            sonido = R.raw.errorohh
 
             val libro = findViewById<ImageView>(R.id.libro)
             libro.visibility = View.VISIBLE
@@ -83,18 +90,39 @@ class PredictionResultActivity : AppCompatActivity() {
             seguirButton.isClickable = false
 
             if (!isCorrect) {
-                Utils.playSound(this, if(emotionId == 0) R.raw.recuerdamaria2 else R.raw.recuerdajavier2)
+                voz = if(emotionId == 0) R.raw.recuerdamaria2 else R.raw.recuerdajavier2
                 libro.setImageResource(if(emotionId == 0) R.mipmap.libro_historia_maria2 else R.mipmap.libro_historia_javier2)
             }
             else {
-                Utils.playSound(this, if(emotionId == 0) R.raw.recuerdamaria else R.raw.recuerdajavier)
+                voz = if(emotionId == 0) R.raw.recuerdamaria else R.raw.recuerdajavier
                 libro.setImageResource(if(emotionId == 0) R.mipmap.libro_historia_maria1 else R.mipmap.libro_historia_javier1)
             }
+        }
+
+        sonidoMediaPlayer = MediaPlayer.create(applicationContext, sonido)
+        sonidoMediaPlayer.start()
+
+        vozMediaPlayer = MediaPlayer.create(applicationContext, voz)
+        vozMediaPlayer.start()
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        if (sonidoMediaPlayer.isPlaying) {
+            sonidoMediaPlayer.stop()
+        }
+
+        if (vozMediaPlayer.isPlaying) {
+            vozMediaPlayer.stop()
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         DetectorActivity.destroyPredBitmap()
+        sonidoMediaPlayer.release()
+        vozMediaPlayer.release()
     }
 }

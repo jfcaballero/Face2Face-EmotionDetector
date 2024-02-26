@@ -23,7 +23,7 @@ class StoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_story)
 
-        Utils.setWindowPresentation(this)
+        Utils.hideSystemBars(this)
 
         val videoId = intent?.extras?.getInt("videoId")
 

@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     private var backgroundMusic: MediaPlayer? = null
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Utils.setWindowPresentation(this)
+        Utils.hideSystemBars(this)
         Utils.requestPermission(this)
 
         mute = intent?.extras?.getBoolean("mute") ?: false
@@ -168,7 +169,8 @@ class MainActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if(grantResults.isNotEmpty() && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-            Utils.requestPermission(this)
+            finishAndRemoveTask()
+            exitProcess(1)
         }
     }
 }

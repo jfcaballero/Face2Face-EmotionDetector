@@ -102,4 +102,50 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/botontv" />
+
+    <ImageView
+        android:id="@+id/carton"
+        android:layout_width="250dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="585dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/carton2"
+        tools:src="@mipmap/carton2" />
+
+    <TextView
+        android:id="@+id/pulsar"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="650dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/f3dumb"
+        android:text="@string/pulsa"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/play"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="716dp"
+        android:layout_marginTop="104dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/botontv" />
 </androidx.constraintlayout.widget.ConstraintLayout>

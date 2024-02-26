@@ -13,5 +13,6 @@
     <string name="botoncamara">PULSAR BOTÓN\nDE CÁMARA</string>
     <string name="temporizador">TEMPORIZADOR</string>
     <string name="segundos">%d SEGUNDOS</string>
+    <string name="pulsa">PULSA EL BOTÓN DE PLAY</string>
     <string name="prefs_file">com.miguelangel.face2facev2.shared-preferences</string>
 </resources>
