@@ -8,10 +8,12 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import org.opencv.android.CameraActivity
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.JavaCameraView
 import org.opencv.android.OpenCVLoader
+import org.opencv.core.Core
 import org.opencv.core.Mat
 import org.opencv.core.Point
 import org.opencv.core.Scalar
@@ -21,6 +23,7 @@ import org.opencv.objdetect.FaceDetectorYN
 import java.lang.Double.max
 import java.lang.Double.min
 import java.util.*
+import kotlin.math.round
 
 class DetectorActivity : CameraActivity() {
     private lateinit var cameraView: JavaCameraView
@@ -54,6 +57,8 @@ class DetectorActivity : CameraActivity() {
     private var timerDuration: Int = 5
 
     private var timerStart: Long = 0L
+
+    private var countdown: TextView? = null
 
     private var predicting: Boolean = false
 
@@ -106,6 +111,10 @@ class DetectorActivity : CameraActivity() {
             }
             cameraButtonBackground = findViewById(R.id.botonblanco)
         }
+        else {
+            countdown = findViewById(R.id.countdown)
+            countdown?.visibility = View.VISIBLE
+        }
 
         val emotionId = intent?.extras?.getInt("emotionId") ?: 0
         emotion = if(emotionId == 0) "Happy" else "Surprise"
@@ -131,9 +140,13 @@ class DetectorActivity : CameraActivity() {
 
             override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame?): Mat {
                 frame = inputFrame!!.rgba()
-                val frameGray = inputFrame.gray()
+                val framePortrait = Mat()
+                Core.transpose(frame, framePortrait)
+                Core.rotate(framePortrait, framePortrait, Core.ROTATE_180)
+                val frameGray = Mat()
+                Imgproc.cvtColor(framePortrait, frameGray, Imgproc.COLOR_BGRA2GRAY)
 
-                Imgproc.cvtColor(frame, detectorInput, Imgproc.COLOR_BGRA2RGB)
+                Imgproc.cvtColor(framePortrait, detectorInput, Imgproc.COLOR_BGRA2RGB)
 
                 detector.inputSize = detectorInput.size()
                 detector.detect(detectorInput, faces)
@@ -150,6 +163,11 @@ class DetectorActivity : CameraActivity() {
                         if (timerStart == 0L) {
                             timerStart = System.currentTimeMillis()
                         }
+                        else {
+                            runOnUiThread {
+                                countdown?.text = (timerDuration - round((System.currentTimeMillis() - timerStart) / 1000.0).toInt()).toString()
+                            }
+                        }
                     }
 
                     for(i in 0 until faces.rows()) {
@@ -159,8 +177,8 @@ class DetectorActivity : CameraActivity() {
                         val rectHeight = faces.get(i, 3)[0]
 
                         val rectTopCorner = Point(max(0.0, rectX), max(0.0, rectY))
-                        val rectBottomCorner = Point(min(frame.width().toDouble(), rectX + rectWidth),
-                            min(frame.height().toDouble(), rectY + rectHeight))
+                        val rectBottomCorner = Point(min(framePortrait.width().toDouble(), rectX + rectWidth),
+                            min(framePortrait.height().toDouble(), rectY + rectHeight))
 
                         val faceMat = frameGray.submat(rectTopCorner.y.toInt(), rectBottomCorner.y.toInt(),
                             rectTopCorner.x.toInt(), rectBottomCorner.x.toInt())
@@ -187,8 +205,19 @@ class DetectorActivity : CameraActivity() {
                             }
                         }
 
-                        Imgproc.rectangle(frame, rectTopCorner, rectBottomCorner,
-                            Scalar(0.0, 255.0, 0.0), 4)
+                        // Rotacion de la esquina del rectangulo 180 grados sobre el centro de la imagen
+                        // para deshacer la rotacion hecha al principio
+                        val center = Point(framePortrait.size().width / 2, framePortrait.size().height / 2)
+                        val rectXRot = -(rectX - center.x) + center.x
+                        val rectYRot = -(rectY - center.y) + center.y
+
+                        Imgproc.rectangle(
+                            frame,
+                            Point(rectYRot, rectXRot),
+                            Point(rectYRot - rectHeight, rectXRot - rectWidth),
+                            Scalar(0.0, 255.0, 0.0),
+                            4
+                        )
 
                         faceMat.release()
                     }
@@ -203,9 +232,13 @@ class DetectorActivity : CameraActivity() {
                     }
                     else {
                         timerStart = 0L
+                        runOnUiThread {
+                            countdown?.text = timerDuration.toString()
+                        }
                     }
                 }
 
+                framePortrait.release()
                 frameGray.release()
                 return frame
             }

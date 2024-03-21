@@ -24,15 +24,17 @@
         android:layout_above="@+id/control"
         android:layout_marginStart="165dp"
         android:layout_marginTop="0dp"
+        android:rotation="-90"
         android:visibility="gone" />
 
     <ImageView
         android:id="@+id/marco"
         android:layout_width="480dp"
         android:layout_height="195dp"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="27dp"
         android:layout_marginTop="96dp"
-        android:visibility="gone"
+        android:rotation="90"
+        android:visibility="visible"
         app:srcCompat="@drawable/marcofoto" />
 
 

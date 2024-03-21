@@ -22,6 +22,8 @@
             android:exported="false" />
         <activity
             android:name=".DetectorActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".StoryActivity"
