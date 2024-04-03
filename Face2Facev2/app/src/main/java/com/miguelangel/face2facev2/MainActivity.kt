@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var configButton: ImageButton
 
+    private lateinit var salirButton: ImageButton
+
     private lateinit var creditos: ImageView
 
     private lateinit var historiaSorpresa: ImageButton
@@ -77,6 +79,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        salirButton = findViewById(R.id.buttonSalir)
+        salirButton.setOnClickListener {
+            finishAffinity()
+            exitProcess(0)
+        }
+
         configDialog = ConfiguracionDialogFragment(preferences)
 
         configButton = findViewById(R.id.config)
@@ -128,7 +136,9 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         // Se reaunda la musica por donde se quedo en onPause
-        backgroundMusic?.start()
+        if (!mute) {
+            backgroundMusic?.start()
+        }
     }
 
     private fun setStoryListener(button: ImageButton, videoId: Int) {

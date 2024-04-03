@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Face2Face v2</string>
+    <string name="app_name">Face2Face Emociones TEA</string>
     <string name="historia_sorpresa">HISTORIA SORPRESA</string>
     <string name="todo">TODO</string>
     <string name="aprendizaje">APRENDIZAJE</string>
@@ -13,6 +13,7 @@
     <string name="botoncamara">PULSAR BOTÓN\nDE CÁMARA</string>
     <string name="temporizador">TEMPORIZADOR</string>
     <string name="segundos">%d SEGUNDOS</string>
-    <string name="pulsa">PULSA EL BOTÓN DE PLAY</string>
+    <string name="pulsa_play">PULSA EL BOTÓN DE PLAY</string>
+    <string name="pulsa_camara">PULSA EL BOTÓN DE LA CÁMARA</string>
     <string name="prefs_file">com.miguelangel.face2facev2.shared-preferences</string>
 </resources>

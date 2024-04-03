@@ -43,6 +43,13 @@ class StoryActivity : AppCompatActivity() {
             if (!mute)
                 Utils.playSound(applicationContext, R.raw.tvon)
             video.start()
+            video.setOnCompletionListener {
+                video.stopPlayback()
+                val context = this
+                val intent = Intent(context, MainActivity::class.java)
+                intent.putExtra("mute", mute)
+                context.startActivity(intent)
+            }
         })
 
         volverButton = findViewById(R.id.buttonVolver)

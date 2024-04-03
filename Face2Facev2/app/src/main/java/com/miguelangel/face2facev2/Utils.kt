@@ -33,12 +33,12 @@ class Utils {
 
         fun playSound(context: Context, soundId: Int) {
             val sound = MediaPlayer.create(context, soundId)
-
-            sound.seekTo(0)
-            sound.start()
             sound.setOnCompletionListener {
                 sound.release()
             }
+
+            sound.seekTo(0)
+            sound.start()
         }
 
         fun assetFilePath(context: Context, assetName: String): String {

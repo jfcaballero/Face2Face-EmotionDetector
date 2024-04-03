@@ -3,12 +3,14 @@ package com.miguelangel.face2facev2
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import org.opencv.android.CameraActivity
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.JavaCameraView
@@ -102,14 +104,22 @@ class DetectorActivity : CameraActivity() {
 
         val preferences = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
         useCameraButton = preferences.getBoolean("useCameraButton", true)
-        timerDuration = preferences.getInt("temp", 5)
+        timerDuration = preferences.getInt("timer", 5)
 
         if (useCameraButton) {
             cameraButton = findViewById(R.id.camara)
+            cameraButton?.isClickable = false
+            cameraButton?.visibility = View.VISIBLE
+
             cameraButton?.setOnClickListener {
                 cameraButtonPressed = true
             }
             cameraButtonBackground = findViewById(R.id.botonblanco)
+            cameraButtonBackground?.visibility = View.VISIBLE
+
+            findViewById<ImageView>(R.id.carton_pulsar).visibility = View.VISIBLE
+            findViewById<TextView>(R.id.texto_pulsar).visibility = View.VISIBLE
+            findViewById<ImageView>(R.id.camara_pulsar).visibility = View.VISIBLE
         }
         else {
             countdown = findViewById(R.id.countdown)
@@ -155,8 +165,6 @@ class DetectorActivity : CameraActivity() {
                     if (useCameraButton) {
                         runOnUiThread {
                             cameraButton?.isClickable = true
-                            cameraButton?.visibility = View.VISIBLE
-                            cameraButtonBackground?.visibility = View.VISIBLE
                         }
                     }
                     else {
@@ -165,7 +173,8 @@ class DetectorActivity : CameraActivity() {
                         }
                         else {
                             runOnUiThread {
-                                countdown?.text = (timerDuration - round((System.currentTimeMillis() - timerStart) / 1000.0).toInt()).toString()
+                                val updatedCountdown = (timerDuration - round((System.currentTimeMillis() - timerStart) / 1000.0).toInt())
+                                countdown?.text = if (updatedCountdown > 0) updatedCountdown.toString() else "0"
                             }
                         }
                     }
@@ -200,6 +209,7 @@ class DetectorActivity : CameraActivity() {
                                 intent.putExtra("emotionId", emotionId)
                                 intent.putExtra("correct", classificationModel.predictedClass == emotion)
                                 intent.putExtra("predictedProb", classificationModel.predictedProb)
+                                //Toast.makeText(this@DetectorActivity, "${classificationModel.predictedClass}, ${classificationModel.predictedProb}", Toast.LENGTH_LONG).show()
 
                                 context.startActivity(intent)
                             }
@@ -226,12 +236,14 @@ class DetectorActivity : CameraActivity() {
                     if (useCameraButton) {
                         runOnUiThread {
                             cameraButton?.isClickable = false
-                            cameraButton?.visibility = View.INVISIBLE
-                            cameraButtonBackground?.visibility = View.INVISIBLE
                         }
                     }
                     else {
-                        timerStart = 0L
+                        if (timerStart > 0L) {
+                            val newTimerDuration = timerDuration - round((System.currentTimeMillis() - timerStart) / 1000.0).toInt()
+                            timerDuration = newTimerDuration
+                            timerStart = 0L
+                        }
                         runOnUiThread {
                             countdown?.text = timerDuration.toString()
                         }

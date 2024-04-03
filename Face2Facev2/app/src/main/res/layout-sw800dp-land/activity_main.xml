@@ -237,6 +237,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/botoncreditos" />
 
+    <ImageButton
+        android:id="@+id/buttonSalir"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/roundcorner"
+        android:layout_marginTop="160dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boton_salir" />
+
     <ImageView
         android:id="@+id/creditos"
         android:layout_width="wrap_content"

@@ -127,7 +127,7 @@
         android:id="@+id/temporizador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="135dp"
         android:layout_marginTop="190dp"
         android:text=""
         android:fontFamily="@font/f3dumb"
@@ -138,9 +138,9 @@
 
     <ImageButton
         android:id="@+id/minus"
-        android:layout_width="20dp"
+        android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="95dp"
         android:layout_marginTop="193dp"
         android:src="@drawable/minus"
         android:background="@drawable/roundcorner"
@@ -154,10 +154,10 @@
 
     <ImageButton
         android:id="@+id/plus"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="295dp"
-        android:layout_marginTop="197dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="195dp"
         android:src="@drawable/plus"
         android:background="@drawable/roundcorner"
         android:adjustViewBounds="false"

@@ -128,7 +128,7 @@
         android:layout_marginStart="650dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/f3dumb"
-        android:text="@string/pulsa"
+        android:text="@string/pulsa_play"
         android:textColor="@color/colorDarkBlue"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"

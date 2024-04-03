@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
@@ -14,7 +15,7 @@ import androidx.fragment.app.DialogFragment
 class ConfiguracionDialogFragment(private var preferences: SharedPreferences) : DialogFragment() {
     private var useCameraButtom = preferences.getBoolean("useCameraButton", true)
 
-    private var temp = preferences.getInt("temp", 5)
+    private var temp = preferences.getInt("timer", 5)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -100,7 +101,7 @@ class ConfiguracionDialogFragment(private var preferences: SharedPreferences) : 
         super.onDismiss(dialog)
         with (preferences.edit()) {
             putBoolean("useCameraButton", useCameraButtom)
-            putInt("temp", temp)
+            putInt("timer", temp)
             apply()
         }
     }
