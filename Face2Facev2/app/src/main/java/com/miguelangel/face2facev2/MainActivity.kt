@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.ScrollView
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var salirButton: ImageButton
 
-    private lateinit var creditos: ImageView
+    private lateinit var scrollCreditos: ScrollView
 
     private lateinit var historiaSorpresa: ImageButton
 
@@ -103,18 +104,19 @@ class MainActivity : AppCompatActivity() {
         practicaSorpresa = findViewById(R.id.practicaSorpresa)
         setPracticeListener(practicaSorpresa, 1)
 
-
-        creditos = findViewById(R.id.creditos)
+        scrollCreditos = findViewById(R.id.scroll)
         val creditosButton = findViewById<ImageButton>(R.id.buttonCreditos)
 
         creditosButton.setOnClickListener(View.OnClickListener {
             if (!mute)
                 Utils.playSound(applicationContext, R.raw.pulsar_boton)
 
-            if (creditos.visibility != View.VISIBLE)
-                creditos.visibility = View.VISIBLE
+            if (scrollCreditos.visibility != View.VISIBLE) {
+                scrollCreditos.visibility = View.VISIBLE
+            }
+
             else
-                creditos.visibility = View.GONE
+                scrollCreditos.visibility = View.GONE
         })
 
     }
