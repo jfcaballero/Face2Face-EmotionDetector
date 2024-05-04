@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/carton"
         android:layout_width="420dp"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
         android:adjustViewBounds="false"
         android:baselineAligned="false"
         android:contentDescription="@string/todo"
@@ -17,18 +17,20 @@
         android:rotation="0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@mipmap/carton2"
         tools:src="@mipmap/carton2" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/tira"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/adhesiva"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/carton"
+        app:layout_constraintStart_toStartOf="@id/carton"
+        app:layout_constraintTop_toTopOf="@id/carton" />
 
     <TextView
         android:id="@+id/textView2"
@@ -128,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="135dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="187dp"
         android:text=""
         android:fontFamily="@font/f3dumb"
         android:textColor="@color/colorDarkBlue"
@@ -141,7 +143,7 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:layout_marginStart="95dp"
-        android:layout_marginTop="193dp"
+        android:layout_marginTop="190dp"
         android:src="@drawable/minus"
         android:background="@drawable/roundcorner"
         android:adjustViewBounds="false"
@@ -157,7 +159,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="300dp"
-        android:layout_marginTop="195dp"
+        android:layout_marginTop="190dp"
         android:src="@drawable/plus"
         android:background="@drawable/roundcorner"
         android:adjustViewBounds="false"
@@ -172,8 +174,8 @@
         android:id="@+id/close"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="372dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="6dp"
         android:alpha="0.8"
         android:rotation="45"
         android:src="@drawable/plus"
@@ -181,7 +183,35 @@
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:scaleType="fitXY"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UMBRAL DE PREDICCIÓN"
+        android:fontFamily="@font/f3dumb"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="20sp"
+        app:layout_constraintVertical_bias="0.84"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderThreshold"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:trackColor="@color/control_background"
+        app:thumbColor="@color/control_background"
+        android:valueFrom="0.1"
+        android:valueTo="0.5"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

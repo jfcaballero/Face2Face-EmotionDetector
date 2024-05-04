@@ -40,6 +40,8 @@ class DetectorActivity : CameraActivity() {
 
     private lateinit var volverButton: ImageButton
 
+    private lateinit var vozMediaPlayer: MediaPlayer
+
     private var useCameraButton = true
 
     private var cameraButtonPressed: Boolean = false
@@ -132,7 +134,8 @@ class DetectorActivity : CameraActivity() {
         faceIcon = findViewById(R.id.cara)
         faceIcon.setImageResource(if(emotionId == 0) R.mipmap.cara_alegria else R.mipmap.cara_asombro)
 
-        Utils.playSound(this, if(emotionId == 0) R.raw.poneralegria else R.raw.ponersorpresa)
+        vozMediaPlayer = MediaPlayer.create(applicationContext, if(emotionId == 0) R.raw.poneralegria else R.raw.ponersorpresa)
+        vozMediaPlayer.start()
 
         cameraView = findViewById(R.id.camera_view)
         cameraView.setCvCameraViewListener(object: CameraBridgeViewBase.CvCameraViewListener2 {
@@ -207,9 +210,8 @@ class DetectorActivity : CameraActivity() {
                                 val intent = Intent(context, PredictionResultActivity::class.java)
                                 intent.putExtra("mute", mute)
                                 intent.putExtra("emotionId", emotionId)
-                                intent.putExtra("correct", classificationModel.predictedClass == emotion)
-                                intent.putExtra("predictedProb", classificationModel.predictedProb)
-                                //Toast.makeText(this@DetectorActivity, "${classificationModel.predictedClass}, ${classificationModel.predictedProb}", Toast.LENGTH_LONG).show()
+                                intent.putExtra("predictedProbs", classificationModel.predictedProbs)
+                                Toast.makeText(this@DetectorActivity, "${classificationModel.predictedClass}, ${classificationModel.predictedProb}", Toast.LENGTH_LONG).show()
 
                                 context.startActivity(intent)
                             }
@@ -258,10 +260,10 @@ class DetectorActivity : CameraActivity() {
 
         if(OpenCVLoader.initDebug()) {
             cameraView.enableView()
-            detector = FaceDetectorYN.create(Utils.assetFilePath(applicationContext, "face_detection_yunet_2023mar.onnx"),
+            detector = FaceDetectorYN.create(Utils.assetFilePath(applicationContext, getString(R.string.detection_model)),
                 "", Size(320.0, 320.0)
             )
-            classificationModel = ClassificationModel(applicationContext)
+            classificationModel = ClassificationModel(Utils.assetFilePath(applicationContext, getString(R.string.classification_model)))
         }
     }
 
@@ -277,10 +279,15 @@ class DetectorActivity : CameraActivity() {
     override fun onDestroy() {
         super.onDestroy()
         cameraView.disableView()
+        vozMediaPlayer.release()
     }
 
     override fun onPause() {
         super.onPause()
         cameraView.disableView()
+
+        if (vozMediaPlayer.isPlaying) {
+            vozMediaPlayer.stop()
+        }
     }
 }

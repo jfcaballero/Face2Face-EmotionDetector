@@ -11,11 +11,14 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import com.google.android.material.slider.Slider
 
 class ConfiguracionDialogFragment(private var preferences: SharedPreferences) : DialogFragment() {
     private var useCameraButtom = preferences.getBoolean("useCameraButton", true)
 
     private var temp = preferences.getInt("timer", 5)
+
+    private var predThreshold = preferences.getFloat("predThreshold", 0.25f)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -95,6 +98,12 @@ class ConfiguracionDialogFragment(private var preferences: SharedPreferences) : 
                 textoTemp?.text = getString(R.string.segundos, temp)
             }
         }
+
+        val sliderThreshold = dialog?.findViewById<Slider>(R.id.sliderThreshold)
+        sliderThreshold?.value = predThreshold
+        sliderThreshold?.addOnChangeListener {_, value, _ ->
+            predThreshold = value
+        }
     }
 
     override fun onDismiss(dialog: DialogInterface) {
@@ -102,6 +111,7 @@ class ConfiguracionDialogFragment(private var preferences: SharedPreferences) : 
         with (preferences.edit()) {
             putBoolean("useCameraButton", useCameraButtom)
             putInt("timer", temp)
+            putFloat("predThreshold", predThreshold)
             apply()
         }
     }

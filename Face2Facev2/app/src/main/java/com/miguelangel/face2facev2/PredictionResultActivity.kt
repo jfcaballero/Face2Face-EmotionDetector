@@ -1,5 +1,6 @@
 package com.miguelangel.face2facev2
 
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -9,11 +10,11 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class PredictionResultActivity : AppCompatActivity() {
-    private val predThreshold: Double = 0.25
+    private var predThreshold: Double = 0.25
 
-    private var isCorrect: Boolean = false
+    private var predictedProbs: DoubleArray = DoubleArray(3)
 
-    private var predictedProb: Double = 0.0
+    private var minDifference: Double = 1.0
 
     private var mute: Boolean = false
 
@@ -33,9 +34,20 @@ class PredictionResultActivity : AppCompatActivity() {
         Utils.hideSystemBars(this)
 
         val emotionId = intent?.extras?.getInt("emotionId") ?: 0
-        isCorrect = intent?.extras?.getBoolean("correct") ?: false
-        predictedProb = intent?.extras?.getDouble("predictedProb") ?: 0.0
+        predictedProbs = intent?.extras?.getDoubleArray("predictedProbs") ?: DoubleArray(3)
         mute = intent?.extras?.getBoolean("mute") ?: false
+
+        val preferences = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        predThreshold = preferences.getFloat("predThreshold", 0.25f).toDouble()
+
+        for ((i, prob) in predictedProbs.withIndex()) {
+            if (i != emotionId) {
+                val difference = predictedProbs[emotionId] - prob
+                if (difference < minDifference) {
+                    minDifference = difference
+                }
+            }
+        }
 
         seguirButton = findViewById(R.id.buttonSeguir)
 
@@ -50,7 +62,7 @@ class PredictionResultActivity : AppCompatActivity() {
             context.startActivity(intent)
         })
 
-        if (isCorrect && predictedProb > predThreshold) {
+        if (minDifference >= predThreshold) {
                 val bitmap = DetectorActivity.getPredBitmap()
                 val predictedImage = findViewById<ImageView>(R.id.image)
                 predictedImage.setImageBitmap(bitmap)
@@ -89,7 +101,7 @@ class PredictionResultActivity : AppCompatActivity() {
 
             seguirButton.isClickable = false
 
-            if (!isCorrect) {
+            if (minDifference < 0) {
                 voz = if(emotionId == 0) R.raw.recuerdamaria2 else R.raw.recuerdajavier2
                 libro.setImageResource(if(emotionId == 0) R.mipmap.libro_historia_maria2 else R.mipmap.libro_historia_javier2)
             }

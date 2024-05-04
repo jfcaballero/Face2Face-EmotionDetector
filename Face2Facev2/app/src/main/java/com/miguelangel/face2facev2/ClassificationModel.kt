@@ -1,6 +1,5 @@
 package com.miguelangel.face2facev2
 
-import android.content.Context
 import android.graphics.Bitmap
 import org.opencv.core.Mat
 import org.opencv.core.Size
@@ -11,15 +10,17 @@ import org.pytorch.torchvision.TensorImageUtils
 import kotlin.math.pow
 
 
-class ClassificationModel(context: Context) {
+class ClassificationModel(modelPath: String) {
 
-    private val module = LiteModuleLoader.load(Utils.assetFilePath(context, "vgg19_fer.ptl"))
+    private val module = LiteModuleLoader.load(modelPath)
 
-    private val classes = arrayOf("Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral")
+    private val classes = arrayOf("Happy", "Surprise", "Others")
 
     var predictedClass: String = ""
 
     var predictedProb: Double = 0.0
+
+    val predictedProbs: DoubleArray = DoubleArray(3)
 
     fun predict(face: Mat) {
         val resized = Mat()
@@ -46,6 +47,7 @@ class ClassificationModel(context: Context) {
         var highestProbIdx = 0
         for ((i, score) in scores.withIndex()) {
             val prob = Math.E.pow(score.toDouble()) / expSum
+            predictedProbs[i] = prob
             if (prob > highestProb) {
                 highestProb = prob
                 highestProbIdx = i

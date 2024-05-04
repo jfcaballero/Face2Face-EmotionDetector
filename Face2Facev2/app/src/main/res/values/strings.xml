@@ -16,4 +16,6 @@
     <string name="pulsa_play">PULSA EL BOTÓN DE PLAY</string>
     <string name="pulsa_camara">PULSA EL BOTÓN DE LA CÁMARA</string>
     <string name="prefs_file">com.miguelangel.face2facev2.shared-preferences</string>
+    <string name="classification_model">vgg19_affectnet.ptl</string>
+    <string name="detection_model">face_detection_yunet_2023mar.onnx</string>
 </resources>

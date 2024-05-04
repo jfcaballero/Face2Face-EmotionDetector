@@ -16,7 +16,11 @@ import java.io.IOException
 class Utils {
     // Se utiliza companion object para que la funcion pueda llamarse como a una funcion static de Java
     companion object {
-        // Establece la presentacion de la ventana con las barras del sistema ocultas y en modo apaisado
+        /**
+         * Establece la presentacion de la ventana con las barras del sistema ocultas y en modo apaisado
+         *
+         * @param activity Actividad desde la que se llama a la funcion
+         */
         fun hideSystemBars(activity: Activity) {
             val windowInsetsController = WindowCompat.getInsetsController(activity.window, activity.window.decorView)
             windowInsetsController.systemBarsBehavior =
@@ -24,6 +28,11 @@ class Utils {
             windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
         }
 
+        /**
+         * Funcion para solicitar al usuario permiso para utilizar la camara de su dispositivo
+         *
+         * @param activity Actividad desde la que se llama a la funcion
+         */
         fun requestPermission(activity: Activity) {
             if(ContextCompat.checkSelfPermission(activity, android.Manifest.permission.CAMERA) ==
                 PackageManager.PERMISSION_DENIED) {
@@ -31,6 +40,12 @@ class Utils {
             }
         }
 
+        /**
+         * Funcion que reproduce un sonido
+         *
+         * @param context Contexto de la actividad desde la que se llama a la funcion
+         * @param soundId Identificador del recurso asociado al sonido a reproducir
+         */
         fun playSound(context: Context, soundId: Int) {
             val sound = MediaPlayer.create(context, soundId)
             sound.setOnCompletionListener {
