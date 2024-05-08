@@ -18,4 +18,5 @@
     <string name="prefs_file">com.miguelangel.face2facev2.shared-preferences</string>
     <string name="classification_model">vgg19_affectnet.ptl</string>
     <string name="detection_model">face_detection_yunet_2023mar.onnx</string>
+    <string name="tryagain">Inténtalo de nuevo</string>
 </resources>

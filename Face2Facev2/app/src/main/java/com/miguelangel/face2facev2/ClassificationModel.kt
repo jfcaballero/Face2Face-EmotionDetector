@@ -6,23 +6,29 @@ import org.opencv.core.Size
 import org.opencv.imgproc.Imgproc
 import org.pytorch.IValue
 import org.pytorch.LiteModuleLoader
+import org.pytorch.Module
 import org.pytorch.torchvision.TensorImageUtils
 import kotlin.math.pow
 
 
-class ClassificationModel(modelPath: String) {
-
-    private val module = LiteModuleLoader.load(modelPath)
-
-    private val classes = arrayOf("Happy", "Surprise", "Others")
-
-    var predictedClass: String = ""
-
-    var predictedProb: Double = 0.0
+class ClassificationModel {
 
     val predictedProbs: DoubleArray = DoubleArray(3)
 
+    companion object {
+        private var module: Module? = null
+    }
+
+    fun load(modelPath: String) {
+        if (module == null) {
+            module = LiteModuleLoader.load(modelPath)
+        }
+    }
     fun predict(face: Mat) {
+        if (module == null) {
+            throw IllegalStateException("La red neuronal no ha sido cargada mediante el metodo create")
+        }
+
         val resized = Mat()
         Imgproc.resize(face, resized, Size(48.0, 48.0))
 
@@ -34,7 +40,7 @@ class ClassificationModel(modelPath: String) {
         val tensor = TensorImageUtils.bitmapToFloat32Tensor(bitmap,
             arrayOf(0.0f, 0.0f, 0.0f).toFloatArray(), arrayOf(1.0f, 1.0f, 1.0f).toFloatArray())
 
-        val outputTensor = module.forward(IValue.from(tensor)).toTensor()
+        val outputTensor = module!!.forward(IValue.from(tensor)).toTensor()
         val scores = outputTensor.dataAsFloatArray
 
         // Softmax
@@ -43,18 +49,10 @@ class ClassificationModel(modelPath: String) {
             expSum += Math.E.pow(score.toDouble())
         }
 
-        var highestProb = 0.0
-        var highestProbIdx = 0
         for ((i, score) in scores.withIndex()) {
-            val prob = Math.E.pow(score.toDouble()) / expSum
-            predictedProbs[i] = prob
-            if (prob > highestProb) {
-                highestProb = prob
-                highestProbIdx = i
-            }
+            predictedProbs[i] = Math.E.pow(score.toDouble()) / expSum
         }
 
-        predictedClass = classes[highestProbIdx]
-        predictedProb = highestProb
+        resized.release()
     }
 }

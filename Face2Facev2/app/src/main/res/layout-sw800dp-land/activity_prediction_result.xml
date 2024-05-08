@@ -37,7 +37,6 @@
         android:id="@+id/image"
         android:layout_width="225dp"
         android:layout_height="match_parent"
-        android:layout_above="@+id/control"
         app:layout_constraintRight_toRightOf="@id/marco"
         app:layout_constraintTop_toTopOf="parent"
         android:rotation="-90"
@@ -141,32 +140,6 @@
         app:srcCompat="@drawable/cartelmuybien" />
 
 
-    <FrameLayout
-        android:id="@+id/control"
-        android:layout_width="match_parent"
-        android:layout_height="29dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:background="@color/control_background"
-        android:screenOrientation="landscape"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="80dp"
-            android:textColor="#FFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:visibility="visible"
-            tools:visibility="gone" />
-
-
-    </FrameLayout>
-
     <ImageView
         android:id="@+id/libro"
         android:layout_width="750dp"
@@ -181,16 +154,31 @@
 
     <ImageButton
         android:id="@+id/tryagain"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="70dp"
         app:layout_constraintLeft_toLeftOf="@+id/libro"
         app:layout_constraintRight_toRightOf="@+id/libro"
         app:layout_constraintTop_toTopOf="@id/libro"
         app:layout_constraintBottom_toBottomOf="@id/libro"
-        app:layout_constraintVertical_bias="0.75"
-        app:layout_constraintHorizontal_bias="0.15"
-        android:background="@drawable/nada"
+        app:layout_constraintVertical_bias="0.77"
+        app:layout_constraintHorizontal_bias="0.22"
+        android:background="@drawable/adhesiva"
         android:rotation="1"
+        android:alpha="1"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tryagainText"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        app:layout_constraintLeft_toLeftOf="@+id/tryagain"
+        app:layout_constraintRight_toRightOf="@+id/tryagain"
+        app:layout_constraintTop_toTopOf="@id/tryagain"
+        app:layout_constraintBottom_toBottomOf="@id/tryagain"
+        android:fontFamily="@font/learningcurve"
+        android:textSize="28sp"
+        android:text="@string/tryagain"
+        android:textStyle="bold"
         android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

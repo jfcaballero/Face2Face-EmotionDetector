@@ -32,8 +32,6 @@ class DetectorActivity : CameraActivity() {
 
     private lateinit var frame: Mat
 
-    private lateinit var detector: FaceDetectorYN
-
     private lateinit var faces: Mat
 
     private lateinit var detectorInput: Mat
@@ -56,7 +54,7 @@ class DetectorActivity : CameraActivity() {
 
     private lateinit var faceIcon: ImageView
 
-    private lateinit var classificationModel: ClassificationModel
+    private val classificationModel = ClassificationModel()
 
     private var timerDuration: Int = 5
 
@@ -66,8 +64,10 @@ class DetectorActivity : CameraActivity() {
 
     private var predicting: Boolean = false
 
-    // Companion object para poder acceder a la imagen donde se ha hecho la prediccion y mostrarla en la siguiente actividad
+    // Companion object para almacenar objetos y funciones static
     companion object {
+        private var detector: FaceDetectorYN? = null    // Evita consumo innecesario de memoria creando el detector muchas veces
+
         private var predBitmap: Bitmap? = null
 
         fun getPredBitmap(): Bitmap? {
@@ -161,8 +161,8 @@ class DetectorActivity : CameraActivity() {
 
                 Imgproc.cvtColor(framePortrait, detectorInput, Imgproc.COLOR_BGRA2RGB)
 
-                detector.inputSize = detectorInput.size()
-                detector.detect(detectorInput, faces)
+                detector!!.inputSize = detectorInput.size()
+                detector!!.detect(detectorInput, faces)
 
                 if(faces.rows() > 0) {
                     if (useCameraButton) {
@@ -211,7 +211,6 @@ class DetectorActivity : CameraActivity() {
                                 intent.putExtra("mute", mute)
                                 intent.putExtra("emotionId", emotionId)
                                 intent.putExtra("predictedProbs", classificationModel.predictedProbs)
-                                Toast.makeText(this@DetectorActivity, "${classificationModel.predictedClass}, ${classificationModel.predictedProb}", Toast.LENGTH_LONG).show()
 
                                 context.startActivity(intent)
                             }
@@ -259,11 +258,14 @@ class DetectorActivity : CameraActivity() {
         })
 
         if(OpenCVLoader.initDebug()) {
+            if (detector == null) {
+                detector = FaceDetectorYN.create(Utils.assetFilePath(applicationContext, getString(R.string.detection_model)),
+                    "", Size(320.0, 320.0)
+                )
+            }
+            classificationModel.load(Utils.assetFilePath(applicationContext, getString(R.string.classification_model)))
+
             cameraView.enableView()
-            detector = FaceDetectorYN.create(Utils.assetFilePath(applicationContext, getString(R.string.detection_model)),
-                "", Size(320.0, 320.0)
-            )
-            classificationModel = ClassificationModel(Utils.assetFilePath(applicationContext, getString(R.string.classification_model)))
         }
     }
 
