@@ -18,7 +18,7 @@ class ConfiguracionDialogFragment(private var preferences: SharedPreferences) : 
 
     private var temp = preferences.getInt("timer", 5)
 
-    private var predThreshold = preferences.getFloat("predThreshold", 0.25f)
+    private var predThreshold = preferences.getFloat("predThreshold", 0.3f)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -100,6 +100,13 @@ class ConfiguracionDialogFragment(private var preferences: SharedPreferences) : 
         }
 
         val sliderThreshold = dialog?.findViewById<Slider>(R.id.sliderThreshold)
+        sliderThreshold?.setLabelFormatter {
+            when(it) {
+                0.2f -> "BAJO"
+                0.3f -> "MEDIO"
+                else -> "ALTO"
+            }
+        }
         sliderThreshold?.value = predThreshold
         sliderThreshold?.addOnChangeListener {_, value, _ ->
             predThreshold = value

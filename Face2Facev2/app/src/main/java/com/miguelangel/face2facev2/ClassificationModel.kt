@@ -54,5 +54,6 @@ class ClassificationModel {
         }
 
         resized.release()
+        bitmap.recycle()
     }
 }

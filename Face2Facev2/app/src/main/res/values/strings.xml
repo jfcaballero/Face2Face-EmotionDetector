@@ -16,7 +16,23 @@
     <string name="pulsa_play">PULSA EL BOTÓN DE PLAY</string>
     <string name="pulsa_camara">PULSA EL BOTÓN DE LA CÁMARA</string>
     <string name="prefs_file">com.miguelangel.face2facev2.shared-preferences</string>
-    <string name="classification_model">vgg19_affectnet.ptl</string>
+    <string name="classification_model">vgg19_affectnet_balanced.ptl</string>
     <string name="detection_model">face_detection_yunet_2023mar.onnx</string>
+    <string name="umbral">UMBRAL DE PREDICCIÓN</string>
     <string name="tryagain">Inténtalo de nuevo</string>
+    <string name="ayuda">
+        &lt;ul>
+            &lt;li>Colóquese en un lugar donde haya suficiente claridad, a ser posible sin demasiados objetos alrededor.&lt;/li>
+            &lt;li>Evite llevar complementos en la cabeza que puedan confundir a la aplicación de reconocimiento.&lt;/li>
+            &lt;li>La predicción de la similitud de una emoción depende de muchos factores: entorno en el que se esté dando lugar la emoción, grado de la emoción, condicionantes sociales, personales, raza, cultura, etc.&lt;/li>
+        &lt;/ul>
+        &lt;br/>
+        &lt;b>¿Que es el "Umbral de similitud"?&lt;/b>
+        &lt;ul>
+            &lt;li>Bajo: Aunque la imitación no sea buena, frecuentemente no se le dirá que repita.  Si la imitación es buena no tendrá que repetirla.&lt;/li>
+            &lt;li>Medio: Aunque la imitación no sea buena, a veces se le dirá que la repita. Si la imitación es buena es poco frecuente que tenga que repetirla.&lt;/li>
+            &lt;li>Alto: Si la imitación no es buena se le pedirá que la repita. Si la imitación es buena puede que alguna vez se le diga que repita.&lt;/li>
+        &lt;/ul>
+        Lo aconsejable es que intente imitar lo más fielmente posible una emoción y dejar el umbral en "Medio".
+    </string>
 </resources>

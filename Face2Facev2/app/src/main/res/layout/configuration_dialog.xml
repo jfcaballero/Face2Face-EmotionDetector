@@ -190,7 +190,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UMBRAL DE PREDICCIÓN"
+        android:text="@string/umbral"
         android:fontFamily="@font/f3dumb"
         android:textColor="@color/colorDarkBlue"
         android:textSize="20sp"
@@ -211,7 +211,8 @@
         app:layout_constraintVertical_bias="0.95"
         app:trackColor="@color/control_background"
         app:thumbColor="@color/control_background"
-        android:valueFrom="0.1"
-        android:valueTo="0.5"/>
+        android:valueFrom="0.2"
+        android:valueTo="0.4"
+        android:stepSize="0.1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import org.opencv.android.CameraActivity
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.JavaCameraView
@@ -27,7 +28,7 @@ import java.lang.Double.min
 import java.util.*
 import kotlin.math.round
 
-class DetectorActivity : CameraActivity() {
+class DetectorActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListener2 {
     private lateinit var cameraView: JavaCameraView
 
     private lateinit var frame: Mat
@@ -50,7 +51,7 @@ class DetectorActivity : CameraActivity() {
 
     private var mute: Boolean = false
 
-    private var emotion: String = ""
+    private var emotionId: Int = 0
 
     private lateinit var faceIcon: ImageView
 
@@ -66,16 +67,23 @@ class DetectorActivity : CameraActivity() {
 
     // Companion object para almacenar objetos y funciones static
     companion object {
+
         private var detector: FaceDetectorYN? = null    // Evita consumo innecesario de memoria creando el detector muchas veces
 
         private var predBitmap: Bitmap? = null
+
+        private var cvInitialized: Boolean = false
+
+        init {
+            cvInitialized = OpenCVLoader.initDebug()
+        }
 
         fun getPredBitmap(): Bitmap? {
             return predBitmap
         }
 
         fun destroyPredBitmap() {
-            predBitmap = null
+            predBitmap?.recycle()
         }
     }
 
@@ -128,136 +136,24 @@ class DetectorActivity : CameraActivity() {
             countdown?.visibility = View.VISIBLE
         }
 
-        val emotionId = intent?.extras?.getInt("emotionId") ?: 0
-        emotion = if(emotionId == 0) "Happy" else "Surprise"
+        emotionId = intent?.extras?.getInt("emotionId") ?: 0
 
         faceIcon = findViewById(R.id.cara)
         faceIcon.setImageResource(if(emotionId == 0) R.mipmap.cara_alegria else R.mipmap.cara_asombro)
 
         vozMediaPlayer = MediaPlayer.create(applicationContext, if(emotionId == 0) R.raw.poneralegria else R.raw.ponersorpresa)
-        vozMediaPlayer.start()
+        vozMediaPlayer.setOnPreparedListener {
+            vozMediaPlayer.start()
+        }
 
         cameraView = findViewById(R.id.camera_view)
-        cameraView.setCvCameraViewListener(object: CameraBridgeViewBase.CvCameraViewListener2 {
-            override fun onCameraViewStarted(width: Int, height: Int) {
-                frame = Mat()
-                faces = Mat()
-                detectorInput = Mat()
-            }
+        cameraView = findViewById<JavaCameraView>(R.id.camera_view).apply {
+            visibility = CameraBridgeViewBase.VISIBLE
+            setCameraPermissionGranted()
+            setCvCameraViewListener(this@DetectorActivity)
+        }
 
-            override fun onCameraViewStopped() {
-                frame.release()
-                faces.release()
-                detectorInput.release()
-            }
-
-            override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame?): Mat {
-                frame = inputFrame!!.rgba()
-                val framePortrait = Mat()
-                Core.transpose(frame, framePortrait)
-                Core.rotate(framePortrait, framePortrait, Core.ROTATE_180)
-                val frameGray = Mat()
-                Imgproc.cvtColor(framePortrait, frameGray, Imgproc.COLOR_BGRA2GRAY)
-
-                Imgproc.cvtColor(framePortrait, detectorInput, Imgproc.COLOR_BGRA2RGB)
-
-                detector!!.inputSize = detectorInput.size()
-                detector!!.detect(detectorInput, faces)
-
-                if(faces.rows() > 0) {
-                    if (useCameraButton) {
-                        runOnUiThread {
-                            cameraButton?.isClickable = true
-                        }
-                    }
-                    else {
-                        if (timerStart == 0L) {
-                            timerStart = System.currentTimeMillis()
-                        }
-                        else {
-                            runOnUiThread {
-                                val updatedCountdown = (timerDuration - round((System.currentTimeMillis() - timerStart) / 1000.0).toInt())
-                                countdown?.text = if (updatedCountdown > 0) updatedCountdown.toString() else "0"
-                            }
-                        }
-                    }
-
-                    for(i in 0 until faces.rows()) {
-                        val rectX = faces.get(i, 0)[0]
-                        val rectY = faces.get(i, 1)[0]
-                        val rectWidth = faces.get(i, 2)[0]
-                        val rectHeight = faces.get(i, 3)[0]
-
-                        val rectTopCorner = Point(max(0.0, rectX), max(0.0, rectY))
-                        val rectBottomCorner = Point(min(framePortrait.width().toDouble(), rectX + rectWidth),
-                            min(framePortrait.height().toDouble(), rectY + rectHeight))
-
-                        val faceMat = frameGray.submat(rectTopCorner.y.toInt(), rectBottomCorner.y.toInt(),
-                            rectTopCorner.x.toInt(), rectBottomCorner.x.toInt())
-
-                        val predCondition = (useCameraButton && cameraButtonPressed) ||
-                                (!useCameraButton && timerStart != 0L && System.currentTimeMillis() - timerStart >= timerDuration * 1000)
-                        if (predCondition && !predicting) {
-                            predicting = true
-                            Utils.playSound(applicationContext, R.raw.disparocamara)
-                            classificationModel.predict(faceMat)
-
-                            predBitmap = Bitmap.createBitmap(frame.cols(), frame.rows(), Bitmap.Config.ARGB_8888)
-                            org.opencv.android.Utils.matToBitmap(frame, predBitmap)
-
-                            runOnUiThread {
-                                val context = this@DetectorActivity
-                                val intent = Intent(context, PredictionResultActivity::class.java)
-                                intent.putExtra("mute", mute)
-                                intent.putExtra("emotionId", emotionId)
-                                intent.putExtra("predictedProbs", classificationModel.predictedProbs)
-
-                                context.startActivity(intent)
-                            }
-                        }
-
-                        // Rotacion de la esquina del rectangulo 180 grados sobre el centro de la imagen
-                        // para deshacer la rotacion hecha al principio
-                        val center = Point(framePortrait.size().width / 2, framePortrait.size().height / 2)
-                        val rectXRot = -(rectX - center.x) + center.x
-                        val rectYRot = -(rectY - center.y) + center.y
-
-                        Imgproc.rectangle(
-                            frame,
-                            Point(rectYRot, rectXRot),
-                            Point(rectYRot - rectHeight, rectXRot - rectWidth),
-                            Scalar(0.0, 255.0, 0.0),
-                            4
-                        )
-
-                        faceMat.release()
-                    }
-                }
-                else {
-                    if (useCameraButton) {
-                        runOnUiThread {
-                            cameraButton?.isClickable = false
-                        }
-                    }
-                    else {
-                        if (timerStart > 0L) {
-                            val newTimerDuration = timerDuration - round((System.currentTimeMillis() - timerStart) / 1000.0).toInt()
-                            timerDuration = newTimerDuration
-                            timerStart = 0L
-                        }
-                        runOnUiThread {
-                            countdown?.text = timerDuration.toString()
-                        }
-                    }
-                }
-
-                framePortrait.release()
-                frameGray.release()
-                return frame
-            }
-        })
-
-        if(OpenCVLoader.initDebug()) {
+        if(cvInitialized) {
             if (detector == null) {
                 detector = FaceDetectorYN.create(Utils.assetFilePath(applicationContext, getString(R.string.detection_model)),
                     "", Size(320.0, 320.0)
@@ -267,10 +163,6 @@ class DetectorActivity : CameraActivity() {
 
             cameraView.enableView()
         }
-    }
-
-    override fun getCameraViewList(): MutableList<out CameraBridgeViewBase> {
-        return Collections.singletonList(cameraView)
     }
 
     override fun onResume() {
@@ -291,5 +183,122 @@ class DetectorActivity : CameraActivity() {
         if (vozMediaPlayer.isPlaying) {
             vozMediaPlayer.stop()
         }
+    }
+
+    override fun onCameraViewStarted(width: Int, height: Int) {
+        frame = Mat()
+        faces = Mat()
+        detectorInput = Mat()
+    }
+
+    override fun onCameraViewStopped() {
+        frame.release()
+        faces.release()
+        detectorInput.release()
+    }
+
+    override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame?): Mat {
+        frame = inputFrame!!.rgba()
+        val framePortrait = Mat()
+        Core.transpose(frame, framePortrait)
+        Core.rotate(framePortrait, framePortrait, Core.ROTATE_180)
+        val frameGray = Mat()
+        Imgproc.cvtColor(framePortrait, frameGray, Imgproc.COLOR_BGRA2GRAY)
+
+        Imgproc.cvtColor(framePortrait, detectorInput, Imgproc.COLOR_BGRA2RGB)
+
+        detector!!.inputSize = detectorInput.size()
+        detector!!.detect(detectorInput, faces)
+
+        if(faces.rows() > 0) {
+            if (useCameraButton) {
+                runOnUiThread {
+                    cameraButton?.isClickable = true
+                }
+            }
+            else {
+                if (timerStart == 0L) {
+                    timerStart = System.currentTimeMillis()
+                }
+                else {
+                    runOnUiThread {
+                        val updatedCountdown = (timerDuration - round((System.currentTimeMillis() - timerStart) / 1000.0).toInt())
+                        countdown?.text = if (updatedCountdown > 0) updatedCountdown.toString() else "0"
+                    }
+                }
+            }
+
+            for(i in 0 until faces.rows()) {
+                val rectX = faces.get(i, 0)[0]
+                val rectY = faces.get(i, 1)[0]
+                val rectWidth = faces.get(i, 2)[0]
+                val rectHeight = faces.get(i, 3)[0]
+
+                val rectTopCorner = Point(max(0.0, rectX), max(0.0, rectY))
+                val rectBottomCorner = Point(min(framePortrait.width().toDouble(), rectX + rectWidth),
+                    min(framePortrait.height().toDouble(), rectY + rectHeight))
+
+                val faceMat = frameGray.submat(rectTopCorner.y.toInt(), rectBottomCorner.y.toInt(),
+                    rectTopCorner.x.toInt(), rectBottomCorner.x.toInt())
+
+                val predCondition = (useCameraButton && cameraButtonPressed) ||
+                        (!useCameraButton && timerStart != 0L && System.currentTimeMillis() - timerStart >= timerDuration * 1000)
+                if (predCondition && !predicting) {
+                    predicting = true
+                    Utils.playSound(applicationContext, R.raw.disparocamara)
+                    classificationModel.predict(faceMat)
+
+                    predBitmap = Bitmap.createBitmap(frame.cols(), frame.rows(), Bitmap.Config.ARGB_8888)
+                    org.opencv.android.Utils.matToBitmap(frame, predBitmap)
+
+                    runOnUiThread {
+                        val context = this@DetectorActivity
+                        val intent = Intent(context, PredictionResultActivity::class.java)
+                        intent.putExtra("mute", mute)
+                        intent.putExtra("emotionId", emotionId)
+                        intent.putExtra("predictedProbs", classificationModel.predictedProbs)
+
+                        context.startActivity(intent)
+                    }
+                }
+
+                // Rotacion de la esquina del rectangulo 180 grados sobre el centro de la imagen
+                // para deshacer la rotacion hecha al principio
+                val center = Point(framePortrait.size().width / 2, framePortrait.size().height / 2)
+                val rectXRot = -(rectX - center.x) + center.x
+                val rectYRot = -(rectY - center.y) + center.y
+
+                Imgproc.rectangle(
+                    frame,
+                    Point(rectYRot, rectXRot),
+                    Point(rectYRot - rectHeight, rectXRot - rectWidth),
+                    Scalar(0.0, 255.0, 0.0),
+                    4
+                )
+
+                faceMat.release()
+            }
+        }
+        else {
+            if (useCameraButton) {
+                runOnUiThread {
+                    cameraButton?.isClickable = false
+                }
+            }
+            else {
+                if (timerStart > 0L) {
+                    val newTimerDuration = timerDuration - round((System.currentTimeMillis() - timerStart) / 1000.0).toInt()
+                    timerDuration = newTimerDuration
+                    timerStart = 0L
+                }
+                runOnUiThread {
+                    countdown?.text = timerDuration.toString()
+                }
+            }
+        }
+
+        framePortrait.release()
+        frameGray.release()
+        return frame
     }
 }

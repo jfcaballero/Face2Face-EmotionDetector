@@ -7,10 +7,14 @@ import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
+import android.text.Html.FROM_HTML_MODE_LEGACY
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ScrollView
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sonidoButton: ImageButton
 
     private lateinit var configButton: ImageButton
+
+    private lateinit var helpButton: ImageButton
 
     private lateinit var salirButton: ImageButton
 
@@ -37,6 +43,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var preferences: SharedPreferences
 
     private lateinit var configDialog: ConfiguracionDialogFragment
+
+    private lateinit var helpDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,6 +101,19 @@ class MainActivity : AppCompatActivity() {
             configDialog.show(supportFragmentManager, "Configuracion")
         })
 
+        val builder = AlertDialog.Builder(this)
+        builder
+            .setMessage(Html.fromHtml(getString(R.string.ayuda), FROM_HTML_MODE_LEGACY))
+            .setTitle("Ayuda")
+            .setPositiveButton("Cerrar") { dialog, _ ->
+                dialog.dismiss()
+            }
+        helpDialog = builder.create()
+
+        helpButton = findViewById(R.id.help)
+        helpButton.setOnClickListener (View.OnClickListener {
+            helpDialog.show()
+        })
 
         historiaAlegria = findViewById(R.id.historiaAlegria)
         setStoryListener(historiaAlegria, R.raw.alegria)

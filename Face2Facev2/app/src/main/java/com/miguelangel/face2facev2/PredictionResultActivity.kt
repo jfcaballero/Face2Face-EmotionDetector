@@ -120,21 +120,24 @@ class PredictionResultActivity : AppCompatActivity() {
             seguirButton.isClickable = false
 
             if (minDifference < 0) {
-                voz = if(emotionId == 0) R.raw.recuerdamaria2 else R.raw.recuerdajavier2
+                voz = if(emotionId == 0) R.raw.recuerdamaria else R.raw.recuerdajavier
                 libro.setImageResource(if(emotionId == 0) R.mipmap.libro_historia_maria2 else R.mipmap.libro_historia_javier2)
             }
             else {
-                voz = if(emotionId == 0) R.raw.recuerdamaria else R.raw.recuerdajavier
+                voz = if(emotionId == 0) R.raw.recuerdamaria2 else R.raw.recuerdajavier2
                 libro.setImageResource(if(emotionId == 0) R.mipmap.libro_historia_maria1 else R.mipmap.libro_historia_javier1)
             }
         }
 
         sonidoMediaPlayer = MediaPlayer.create(applicationContext, sonido)
-        sonidoMediaPlayer.start()
+        sonidoMediaPlayer.setOnPreparedListener {
+            sonidoMediaPlayer.start()
+        }
 
         vozMediaPlayer = MediaPlayer.create(applicationContext, voz)
-        vozMediaPlayer.start()
-
+        vozMediaPlayer.setOnPreparedListener {
+            vozMediaPlayer.start()
+        }
     }
 
     override fun onPause() {
