@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class PredictionResultActivity : AppCompatActivity() {
@@ -50,19 +49,6 @@ class PredictionResultActivity : AppCompatActivity() {
                 }
             }
         }
-
-        // DEBUG: Mostrar resultados de la prediccion en dialogo
-        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder
-            .setMessage("Happy = ${predictedProbs[0]}\nSurprise = ${predictedProbs[1]}\nOthers = ${predictedProbs[2]}\nminDifference = ${minDifference}")
-            .setTitle("Resultado prediccion")
-            .setPositiveButton("OK") { dialog, _ ->
-                dialog.dismiss()
-            }
-
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-        //
 
         seguirButton = findViewById(R.id.buttonSeguir)
 
