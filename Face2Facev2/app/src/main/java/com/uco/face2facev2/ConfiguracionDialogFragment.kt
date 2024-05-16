@@ -1,10 +1,9 @@
-package com.miguelangel.face2facev2
+package com.uco.face2facev2
 
 import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton

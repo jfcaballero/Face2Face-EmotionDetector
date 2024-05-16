@@ -1,4 +1,4 @@
-package com.miguelangel.face2facev2
+package com.uco.face2facev2
 
 import android.content.Context
 import android.content.Intent
@@ -12,7 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class PredictionResultActivity : AppCompatActivity() {
-    private var predThreshold: Double = 0.25
+    private var predThreshold: Double = 0.3
 
     private var predictedProbs: DoubleArray = DoubleArray(3)
 
@@ -40,7 +40,7 @@ class PredictionResultActivity : AppCompatActivity() {
         mute = intent?.extras?.getBoolean("mute") ?: false
 
         val preferences = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
-        predThreshold = preferences.getFloat("predThreshold", 0.25f).toDouble()
+        predThreshold = preferences.getFloat("predThreshold", 0.3f).toDouble()
 
         for ((i, prob) in predictedProbs.withIndex()) {
             if (i != emotionId) {

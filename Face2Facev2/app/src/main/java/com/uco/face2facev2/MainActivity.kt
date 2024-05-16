@@ -1,4 +1,4 @@
-package com.miguelangel.face2facev2
+package com.uco.face2facev2
 
 import android.content.Context
 import android.content.Intent
@@ -11,9 +11,7 @@ import android.text.Html
 import android.text.Html.FROM_HTML_MODE_LEGACY
 import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.ScrollView
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import kotlin.system.exitProcess
 

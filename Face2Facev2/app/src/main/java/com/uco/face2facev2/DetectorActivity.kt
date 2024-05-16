@@ -1,4 +1,4 @@
-package com.miguelangel.face2facev2
+package com.uco.face2facev2
 
 import android.content.Context
 import android.content.Intent
@@ -10,9 +10,7 @@ import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import org.opencv.android.CameraActivity
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.JavaCameraView
 import org.opencv.android.OpenCVLoader

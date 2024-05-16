@@ -1,4 +1,4 @@
-package com.miguelangel.face2facev2
+package com.uco.face2facev2
 
 import android.graphics.Bitmap
 import org.opencv.core.Mat

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.miguelangel.face2facev2'
+    namespace 'com.uco.face2facev2'
     compileSdk 34
 
     packagingOptions {
@@ -15,7 +15,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.miguelangel.face2facev2"
+        applicationId "com.uco.face2facev2"
         minSdk 28
         targetSdk 34
         versionCode 3

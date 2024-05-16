@@ -1,4 +1,4 @@
-package com.miguelangel.face2facev2
+package com.uco.face2facev2
 
 import android.content.Intent
 import android.net.Uri
