@@ -14,7 +14,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.uco.face2facev2"
+        applicationId 'com.manu.detector'
         minSdk 29
         targetSdk 34
         versionCode 3
