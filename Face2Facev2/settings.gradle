@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Face2Face v2"
+rootProject.name = "face2facev2"
 include ':app'
 include ':opencv'
