@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -103,6 +104,14 @@ class PredictionResultActivity : AppCompatActivity() {
             val tryAgainText = findViewById<TextView>(R.id.tryagainText)
             tryAgainText.visibility = View.VISIBLE
 
+            val seguirText = findViewById<TextView>(R.id.textoSeguir)
+            seguirText.visibility = View.GONE
+            val seguirTira = findViewById<ImageView>(R.id.tiraSeguir)
+            seguirTira.visibility = View.GONE
+            val seguirCarton = findViewById<ImageView>(R.id.cartonSeguir)
+            seguirCarton.visibility = View.GONE
+
+            seguirButton.visibility = View.GONE
             seguirButton.isClickable = false
 
             if (minDifference < 0) {

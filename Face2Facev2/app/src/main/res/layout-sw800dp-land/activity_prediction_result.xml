@@ -43,7 +43,7 @@
         android:visibility="visible" />
 
     <ImageView
-        android:id="@+id/carton2"
+        android:id="@+id/cartonSeguir"
         android:layout_width="180dp"
         android:layout_height="100dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -79,7 +79,7 @@
 
 
     <ImageView
-        android:id="@+id/tira1"
+        android:id="@+id/tiraSeguir"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="125dp"
@@ -92,7 +92,7 @@
         app:srcCompat="@drawable/adhesiva" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textoSeguir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintRight_toRightOf="parent"
