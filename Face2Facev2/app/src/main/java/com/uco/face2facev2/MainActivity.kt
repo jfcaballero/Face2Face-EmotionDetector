@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.media.Image
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import android.text.Html.FROM_HTML_MODE_LEGACY
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ScrollView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import kotlin.system.exitProcess
 
@@ -99,9 +101,12 @@ class MainActivity : AppCompatActivity() {
             configDialog.show(supportFragmentManager, "Configuracion")
         })
 
+        val helpDialogView = layoutInflater.inflate(R.layout.help_dialog, null) as ScrollView
+        val textoAyuda = helpDialogView.findViewById<TextView>(R.id.texto_ayuda)
+        textoAyuda.text = Html.fromHtml(getString(R.string.ayuda), FROM_HTML_MODE_LEGACY)
         val builder = AlertDialog.Builder(this)
         builder
-            .setMessage(Html.fromHtml(getString(R.string.ayuda), FROM_HTML_MODE_LEGACY))
+            .setView(helpDialogView)
             .setTitle("Ayuda")
             .setPositiveButton("Cerrar") { dialog, _ ->
                 dialog.dismiss()
@@ -125,6 +130,7 @@ class MainActivity : AppCompatActivity() {
 
         scrollCreditos = findViewById(R.id.scroll)
         val creditosButton = findViewById<ImageButton>(R.id.buttonCreditos)
+        val closeCreditos = findViewById<ImageButton>(R.id.closeCreditos)
 
         creditosButton.setOnClickListener(View.OnClickListener {
             if (!mute)
@@ -132,11 +138,23 @@ class MainActivity : AppCompatActivity() {
 
             if (scrollCreditos.visibility != View.VISIBLE) {
                 scrollCreditos.visibility = View.VISIBLE
+                closeCreditos.visibility = View.VISIBLE
+                closeCreditos.isClickable = true
             }
 
-            else
+            else {
                 scrollCreditos.visibility = View.GONE
+                closeCreditos.visibility = View.GONE
+                closeCreditos.isClickable = false
+            }
+
         })
+
+        closeCreditos.setOnClickListener {
+            scrollCreditos.visibility = View.GONE
+            it.visibility = View.GONE
+            it.isClickable = false
+        }
 
     }
 

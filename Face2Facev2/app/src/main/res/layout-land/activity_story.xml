@@ -58,8 +58,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="112dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginTop="265dp"
         android:fontFamily="@font/f3dumb"
@@ -106,9 +106,9 @@
     <ImageView
         android:id="@+id/carton"
         android:layout_width="250dp"
-        android:layout_height="110dp"
+        android:layout_height="120dp"
         android:layout_marginTop="48dp"
-        android:layout_marginStart="585dp"
+        android:layout_marginStart="590dp"
         android:adjustViewBounds="false"
         android:baselineAligned="false"
         android:contentDescription="@string/todo"

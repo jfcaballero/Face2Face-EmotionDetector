@@ -18,7 +18,7 @@
     <string name="prefs_file">com.uco.face2facev2.shared-preferences</string>
     <string name="classification_model">vgg19_affectnet_balanced.ptl</string>
     <string name="detection_model">face_detection_yunet_2023mar.onnx</string>
-    <string name="umbral">UMBRAL DE PREDICCIÓN</string>
+    <string name="umbral">UMBRAL DE SIMILITUD</string>
     <string name="tryagain">Inténtalo de nuevo</string>
     <string name="ayuda">
         &lt;ul>
@@ -29,10 +29,10 @@
         &lt;br/>
         &lt;b>¿Que es el "Umbral de similitud"?&lt;/b>
         &lt;ul>
-            &lt;li>Bajo: Aunque la imitación no sea buena, frecuentemente no se le dirá que repita.  Si la imitación es buena no tendrá que repetirla.&lt;/li>
-            &lt;li>Medio: Aunque la imitación no sea buena, a veces se le dirá que la repita. Si la imitación es buena es poco frecuente que tenga que repetirla.&lt;/li>
-            &lt;li>Alto: Si la imitación no es buena se le pedirá que la repita. Si la imitación es buena puede que alguna vez se le diga que repita.&lt;/li>
+            &lt;li>&lt;b>Bajo&lt;/b>: Aunque la imitación no sea buena, frecuentemente no se le dirá que repita.  Si la imitación es buena no tendrá que repetirla.&lt;/li>
+            &lt;li>&lt;b>Medio&lt;/b>: Aunque la imitación no sea buena, a veces se le dirá que la repita. Si la imitación es buena es poco frecuente que tenga que repetirla.&lt;/li>
+            &lt;li>&lt;b>Alto&lt;/b>: Si la imitación no es buena se le pedirá que la repita. Si la imitación es buena puede que alguna vez se le diga que repita.&lt;/li>
         &lt;/ul>
-        Lo aconsejable es que intente imitar lo más fielmente posible una emoción y dejar el umbral en "Medio".
+        Lo aconsejable es que intente imitar lo más fielmente posible una emoción y dejar el umbral en &lt;b>BAJO&lt;/b> o &lt;b>MEDIO&lt;/b>.
     </string>
 </resources>

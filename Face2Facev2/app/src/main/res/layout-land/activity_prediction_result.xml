@@ -93,8 +93,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_alignParentEnd="true"
@@ -169,8 +169,8 @@
 
     <TextView
         android:id="@+id/tryagainText"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@+id/tryagain"
         app:layout_constraintRight_toRightOf="@+id/tryagain"
         app:layout_constraintTop_toTopOf="@id/tryagain"
@@ -178,6 +178,7 @@
         android:fontFamily="@font/learningcurve"
         android:textSize="28sp"
         android:text="@string/tryagain"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:visibility="gone" />
 
