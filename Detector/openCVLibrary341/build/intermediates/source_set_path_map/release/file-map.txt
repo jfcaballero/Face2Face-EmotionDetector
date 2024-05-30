@@ -1,7 +1,0 @@
-org.opencv.openCVLibrary341-pngs-0 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/build/generated/res/pngs/release
-org.opencv.openCVLibrary341-resValues-1 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/build/generated/res/resValues/release
-org.opencv.openCVLibrary341-mergeReleaseResources-2 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
-org.opencv.openCVLibrary341-mergeReleaseResources-3 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
-org.opencv.openCVLibrary341-merged_res-4 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/build/intermediates/merged_res/release
-org.opencv.openCVLibrary341-main-5 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/src/main/res
-org.opencv.openCVLibrary341-release-6 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Detector/openCVLibrary341/src/release/res

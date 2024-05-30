@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Face2Face-EmotionDetector4ASD</string>
-    <string name="source_image">Source Image</string>
-    <string name="select_gallery">Select Image from galslery</string>
-    <string name="historia_sorpresa">Historia Sorpresa</string>
-    <string name="todo">TODO</string>
-    <string name="historia_alegria">Historia Alegría</string>
-    <string name="opencv_camera">OpenCV Camera</string>
-</resources>
