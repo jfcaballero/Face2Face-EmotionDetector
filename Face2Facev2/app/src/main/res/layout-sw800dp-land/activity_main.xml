@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/carton"
-        android:layout_width="660dp"
-        android:layout_height="340dp"
+        android:layout_width="1267dp"
+        android:layout_height="730dp"
         android:layout_alignTop="@+id/practicaAlegria"
         android:adjustViewBounds="false"
         android:baselineAligned="false"
@@ -30,8 +30,8 @@
 
     <ImageButton
         android:id="@+id/historiaAlegria"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
         android:cropToPadding="false"
@@ -40,14 +40,14 @@
         app:layout_constraintTop_toTopOf="@id/carton"
         app:layout_constraintBottom_toBottomOf="@id/carton"
         app:layout_constraintRight_toRightOf="@id/carton"
-        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintVertical_bias="0.275"
         app:srcCompat="@drawable/boton" />
 
     <ImageButton
         android:id="@+id/historiaSorpresa"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
         android:cropToPadding="false"
@@ -56,14 +56,14 @@
         app:layout_constraintTop_toTopOf="@id/carton"
         app:layout_constraintBottom_toBottomOf="@id/carton"
         app:layout_constraintRight_toRightOf="@id/carton"
-        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintVertical_bias="0.465"
         app:srcCompat="@drawable/boton" />
 
     <ImageButton
         android:id="@+id/practicaAlegria"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
         android:clickable="true"
@@ -74,14 +74,14 @@
         app:layout_constraintTop_toTopOf="@id/carton"
         app:layout_constraintBottom_toBottomOf="@id/carton"
         app:layout_constraintRight_toRightOf="@id/carton"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintVertical_bias="0.86"
         app:srcCompat="@drawable/boton" />
 
     <ImageButton
         android:id="@+id/practicaSorpresa"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
         android:clickable="true"
@@ -98,8 +98,8 @@
 
     <ImageButton
         android:id="@+id/sonido"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="48dp"
         android:adjustViewBounds="false"
@@ -114,10 +114,10 @@
 
     <ImageButton
         android:id="@+id/config"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="118dp"
+        android:layout_marginTop="178dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
         android:clickable="true"
@@ -130,10 +130,10 @@
 
     <ImageButton
         android:id="@+id/help"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="318dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundcorner"
         android:clickable="true"
@@ -146,8 +146,8 @@
 
     <ImageView
         android:id="@+id/tira1"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
+        android:layout_width="861dp"
+        android:layout_height="210dp"
         android:alpha=".95"
         app:layout_constraintLeft_toLeftOf="@id/carton"
         app:layout_constraintRight_toRightOf="@id/carton"
@@ -158,8 +158,8 @@
 
     <ImageView
         android:id="@+id/tira2"
-        android:layout_width="410dp"
-        android:layout_height="80dp"
+        android:layout_width="920dp"
+        android:layout_height="210dp"
         android:alpha=".95"
         app:layout_constraintLeft_toLeftOf="@id/carton"
         app:layout_constraintRight_toRightOf="@id/carton"
@@ -175,7 +175,7 @@
         android:fontFamily="@font/f3dumb"
         android:text="@string/aprendizaje"
         android:textColor="@color/colorBlack"
-        android:textSize="24sp"
+        android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="@id/tira1"
         app:layout_constraintRight_toRightOf="@id/tira1"
         app:layout_constraintTop_toTopOf="@id/tira1"
@@ -188,7 +188,7 @@
         android:fontFamily="@font/f3dumb"
         android:text="@string/practica_interactiva"
         android:textColor="@color/colorBlack"
-        android:textSize="24sp"
+        android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="@id/tira2"
         app:layout_constraintRight_toRightOf="@id/tira2"
         app:layout_constraintTop_toTopOf="@id/tira2"
@@ -202,7 +202,7 @@
         android:fontFamily="@font/f3dumb"
         android:text="@string/historia_alegria"
         android:textColor="@color/colorDarkBlue"
-        android:textSize="20sp"
+        android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="@id/carton"
         app:layout_constraintTop_toTopOf="@id/carton"
         app:layout_constraintBottom_toBottomOf="@id/carton"
@@ -217,7 +217,7 @@
         android:fontFamily="@font/f3dumb"
         android:text="@string/historia_sorpresa"
         android:textColor="@color/colorDarkBlue"
-        android:textSize="20sp"
+        android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="@id/carton"
         app:layout_constraintTop_toTopOf="@id/carton"
         app:layout_constraintBottom_toBottomOf="@id/carton"
@@ -232,12 +232,12 @@
         android:fontFamily="@font/f3dumb"
         android:text="@string/alegria"
         android:textColor="@color/colorDarkBlue"
-        android:textSize="20sp"
+        android:textSize="45sp"
         app:layout_constraintLeft_toLeftOf="@id/carton"
         app:layout_constraintTop_toTopOf="@id/carton"
         app:layout_constraintBottom_toBottomOf="@id/carton"
         app:layout_constraintRight_toRightOf="@id/carton"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintVertical_bias="0.84" />
 
     <TextView
@@ -247,19 +247,19 @@
         android:fontFamily="@font/f3dumb"
         android:text="@string/sorpresa"
         android:textColor="@color/colorDarkBlue"
-        android:textSize="20sp"
+        android:textSize="45sp"
         app:layout_constraintLeft_toLeftOf="@id/carton"
         app:layout_constraintTop_toTopOf="@id/carton"
         app:layout_constraintBottom_toBottomOf="@id/carton"
         app:layout_constraintRight_toRightOf="@id/carton"
-        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintVertical_bias="0.84" />
 
     <ImageButton
         android:id="@+id/buttonCreditos"
         style="@android:style/Widget.ImageButton"
-        android:layout_width="80dp"
-        android:layout_height="150dp"
+        android:layout_width="145dp"
+        android:layout_height="270dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/roundcorner"
         android:scaleType="fitXY"
@@ -270,11 +270,11 @@
     <ImageButton
         android:id="@+id/buttonSalir"
         style="@android:style/Widget.ImageButton"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/roundcorner"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="290dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

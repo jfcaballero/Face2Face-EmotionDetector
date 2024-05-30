@@ -174,7 +174,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        // Se reaunda la musica por donde se quedo en onPause
+        // Se reinicia la musica
         if (!mute) {
             backgroundMusic?.start()
         }

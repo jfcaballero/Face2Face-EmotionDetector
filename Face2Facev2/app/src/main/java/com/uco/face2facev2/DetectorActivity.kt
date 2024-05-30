@@ -63,7 +63,9 @@ class DetectorActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewL
 
     private var predicting: Boolean = false
 
-    // Companion object para almacenar objetos y funciones static
+    /**
+     * Companion object para almacenar objetos y funciones static
+     */
     companion object {
 
         private var detector: FaceDetectorYN? = null    // Evita consumo innecesario de memoria creando el detector muchas veces

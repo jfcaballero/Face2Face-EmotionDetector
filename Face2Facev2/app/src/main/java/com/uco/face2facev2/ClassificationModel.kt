@@ -10,20 +10,35 @@ import org.pytorch.Module
 import org.pytorch.torchvision.TensorImageUtils
 import kotlin.math.pow
 
-
+/**
+ * Clase encargada de cargar el modelo de clasificacion y realizar predicciones
+ */
 class ClassificationModel {
 
+    // Array donde se almacenan las probabilidades predichas. Este atributo es publico de forma que sea accesible tras realizar la prediccion
     val predictedProbs: DoubleArray = DoubleArray(3)
 
+    // Se incluye el modelo dentro de un companion object para que exista una unica instancia
     companion object {
         private var module: Module? = null
     }
 
+    /**
+     * Metodo para cargar el modelo
+     *
+     * @param modelPath Ruta del sistema donde se encuentra el modelo
+     */
     fun load(modelPath: String) {
         if (module == null) {
             module = LiteModuleLoader.load(modelPath)
         }
     }
+
+    /**
+     * Metodo para realizar una prediccion sobre una imagen dada
+     *
+     * @param face Imagen de entrada en forma de matriz de OpenCV
+     */
     fun predict(face: Mat) {
         if (module == null) {
             throw IllegalStateException("La red neuronal no ha sido cargada mediante el metodo create")
@@ -53,6 +68,7 @@ class ClassificationModel {
             predictedProbs[i] = Math.E.pow(score.toDouble()) / expSum
         }
 
+        // Liberacion de memoria
         resized.release()
         bitmap.recycle()
     }

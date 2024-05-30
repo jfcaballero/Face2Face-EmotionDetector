@@ -13,8 +13,13 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
+/**
+ * Clase que contiene funciones diversas que se utilizan desde distintas actividades
+ */
 class Utils {
-    // Se utiliza companion object para que la funcion pueda llamarse como a una funcion static de Java
+    /**
+     * Companion object que contiene los metodos de la clase para que actuen como metodos estaticos
+     */
     companion object {
         /**
          * Establece la presentacion de la ventana con las barras del sistema ocultas y en modo apaisado
@@ -56,6 +61,14 @@ class Utils {
             sound.start()
         }
 
+        /**
+         * Funcion para obtener la ruta de un recurso en el sistema
+         *
+         * @param context Contexto de la actividad desde la que se llama a la funcion
+         * @param assetName Nombre del recurso
+         *
+         * @return Ruta del recurso en el sistema en forma de cadena de caracteres
+         */
         fun assetFilePath(context: Context, assetName: String): String {
             val file = File(context.filesDir, assetName)
 
