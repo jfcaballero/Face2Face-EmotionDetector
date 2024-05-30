@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_opencv_camera"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondotela"
+    android:paddingLeft="0dp"
+    android:paddingTop="0dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="0dp"
+    tools:context=".DetectorActivity">
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/camera_view"
+        android:layout_width="290dp"
+        android:layout_height="400dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62"
+        app:camera_id="front" />
+
+    <ImageView
+        android:id="@+id/pizarra"
+        android:layout_width="460dp"
+        android:layout_height="380dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62"
+        android:rotation="90"
+        android:src="@mipmap/pizarrasinpinza" />
+
+    <ImageView
+        android:id="@+id/carton"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:rotation="15"
+        android:visibility="visible"
+        android:src="@mipmap/carton2" />
+
+
+    <ImageButton
+        android:id="@+id/buttonVolver"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="55dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/boton" />
+
+
+    <ImageView
+        android:id="@+id/tira1"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:alpha=".95"
+        android:rotation="15"
+        android:src="@drawable/adhesiva" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/f3dumb"
+        android:rotation="15"
+        android:text="@string/volver"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="19sp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/cuerda" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="242dp"
+        android:layout_height="187dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:src="@drawable/lienzoypinza" />
+
+    <ImageView
+        android:id="@+id/cara"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="70dp" />
+
+    <ImageView
+        android:id="@+id/botonblanco"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toBottomOf="@id/pizarra"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="26dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:visibility="gone"
+        android:src="@drawable/botonblanco" />
+
+    <ImageButton
+        android:id="@+id/camara"
+        android:layout_height="70dp"
+        android:layout_width="70dp"
+        app:layout_constraintTop_toBottomOf="@id/pizarra"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/roundcorner"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/camara" />
+
+    <TextView
+        android:id="@+id/countdown"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toBottomOf="@id/pizarra"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/f3dumb"
+        android:text=""
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/carton_pulsar"
+        android:layout_width="250dp"
+        android:layout_height="110dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="160dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:src="@mipmap/carton2" />
+
+    <TextView
+        android:id="@+id/texto_pulsar"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="65dp"
+        android:fontFamily="@font/f3dumb"
+        android:text="@string/pulsa_camara"
+        android:textColor="@color/colorDarkBlue"
+        android:visibility="gone"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/camara_pulsar"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="100dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/camara" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

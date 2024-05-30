@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:background="@drawable/fondotela"
+    android:screenOrientation="landscape"
+    tools:context=".PredictionResultActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/cuerda" />
+
+    <ImageView
+        android:id="@+id/marco"
+        android:layout_width="250dp"
+        android:layout_height="195dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="96dp"
+        android:rotation="90"
+        android:visibility="gone"
+        app:srcCompat="@drawable/marcofoto" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="225dp"
+        android:layout_height="match_parent"
+        app:layout_constraintRight_toRightOf="@id/marco"
+        app:layout_constraintTop_toTopOf="parent"
+        android:rotation="-90"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/cartonSeguir"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="220dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:rotation="15"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/carton2"
+        tools:src="@mipmap/carton2" />
+
+    <ImageButton
+        android:id="@+id/buttonSeguir"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="225dp"
+        android:layout_marginEnd="60dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:rotation="15"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/boton" />
+
+
+    <ImageView
+        android:id="@+id/tiraSeguir"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="34dp"
+        android:alpha=".95"
+        android:rotation="16"
+        app:srcCompat="@drawable/adhesiva" />
+
+    <TextView
+        android:id="@+id/textoSeguir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="271dp"
+        android:layout_marginEnd="48dp"
+        android:fontFamily="@font/f3dumb"
+        android:rotation="15"
+        android:text="@string/seguir"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/muelle"
+        android:layout_width="170dp"
+        android:layout_height="200dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="380dp"
+        android:layout_marginTop="210dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/muelle" />
+
+    <ImageView
+        android:id="@+id/bombilla"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="393dp"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/bombilla" />
+
+    <ImageView
+        android:id="@+id/cartelMuyBien"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="395dp"
+        android:layout_marginTop="90dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/cartelmuybien" />
+
+
+    <ImageView
+        android:id="@+id/libro"
+        android:layout_width="750dp"
+        android:layout_height="400dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/libro_historia_maria2" />
+
+
+    <ImageButton
+        android:id="@+id/tryagain"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        app:layout_constraintLeft_toLeftOf="@+id/libro"
+        app:layout_constraintRight_toRightOf="@+id/libro"
+        app:layout_constraintTop_toTopOf="@id/libro"
+        app:layout_constraintBottom_toBottomOf="@id/libro"
+        app:layout_constraintVertical_bias="0.77"
+        app:layout_constraintHorizontal_bias="0.22"
+        android:background="@drawable/adhesiva"
+        android:rotation="1"
+        android:alpha="1"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tryagainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/tryagain"
+        app:layout_constraintRight_toRightOf="@+id/tryagain"
+        app:layout_constraintTop_toTopOf="@id/tryagain"
+        app:layout_constraintBottom_toBottomOf="@id/tryagain"
+        android:fontFamily="@font/learningcurve"
+        android:textSize="28sp"
+        android:text="@string/tryagain"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

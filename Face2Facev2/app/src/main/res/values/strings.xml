@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Face2Face Emociones TEA</string>
+    <string name="historia_sorpresa">HISTORIA SORPRESA</string>
+    <string name="todo">TODO</string>
+    <string name="aprendizaje">APRENDIZAJE</string>
+    <string name="practica_interactiva">PRÁCTICA INTERACTIVA</string>
+    <string name="historia_alegria">HISTORIA ALEGRÍA</string>
+    <string name="alegria">ALEGRÍA</string>
+    <string name="sorpresa">SORPRESA</string>
+    <string name="volver">VOLVER</string>
+    <string name="seguir">SEGUIR</string>
+    <string name="modocaptura">MODO DE CAPTURA</string>
+    <string name="botoncamara">PULSAR BOTÓN\nDE CÁMARA</string>
+    <string name="temporizador">TEMPORIZADOR</string>
+    <string name="segundos">%d SEGUNDOS</string>
+    <string name="pulsa_play">PULSA EL BOTÓN DE PLAY</string>
+    <string name="pulsa_camara">PULSA EL BOTÓN DE LA CÁMARA</string>
+    <string name="prefs_file">com.uco.face2facev2.shared-preferences</string>
+    <string name="classification_model">vgg19_affectnet_balanced.ptl</string>
+    <string name="detection_model">face_detection_yunet_2023mar.onnx</string>
+    <string name="umbral">UMBRAL DE SIMILITUD</string>
+    <string name="tryagain">Inténtalo de nuevo</string>
+    <string name="ayuda">
+        &lt;ul>
+            &lt;li>Colóquese en un lugar donde haya suficiente claridad, a ser posible sin demasiados objetos alrededor.&lt;/li>
+            &lt;li>Evite llevar complementos en la cabeza que puedan confundir a la aplicación de reconocimiento.&lt;/li>
+            &lt;li>La predicción de la similitud de una emoción depende de muchos factores: entorno en el que se esté dando lugar la emoción, grado de la emoción, condicionantes sociales, personales, raza, cultura, etc.&lt;/li>
+        &lt;/ul>
+        &lt;br/>
+        &lt;b>¿Que es el "Umbral de similitud"?&lt;/b>
+        &lt;ul>
+            &lt;li>&lt;b>Bajo&lt;/b>: Aunque la imitación no sea buena, frecuentemente no se le dirá que repita.  Si la imitación es buena no tendrá que repetirla.&lt;/li>
+            &lt;li>&lt;b>Medio&lt;/b>: Aunque la imitación no sea buena, a veces se le dirá que la repita. Si la imitación es buena es poco frecuente que tenga que repetirla.&lt;/li>
+            &lt;li>&lt;b>Alto&lt;/b>: Si la imitación no es buena se le pedirá que la repita. Si la imitación es buena puede que alguna vez se le diga que repita.&lt;/li>
+        &lt;/ul>
+        Lo aconsejable es que intente imitar lo más fielmente posible una emoción y dejar el umbral en &lt;b>BAJO&lt;/b> o &lt;b>MEDIO&lt;/b>.
+    </string>
+</resources>

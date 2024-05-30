@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondotela"
+    tools:context=".StoryActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="240dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="490dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:rotation="15"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/carton2"
+        tools:src="@mipmap/carton2" />
+
+
+    <ImageButton
+        android:id="@+id/buttonVolver"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="515dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boton" />
+
+
+    <ImageView
+        android:id="@+id/tira1"
+        android:layout_width="220dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="550dp"
+        android:alpha=".95"
+        android:rotation="15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/adhesiva" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="595dp"
+        android:fontFamily="@font/f3dumb"
+        android:rotation="15"
+        android:text="@string/volver"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="720dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="188dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="1000dp"
+        android:layout_height="800dp"
+        android:layout_marginStart="250dp"
+        android:src="@drawable/tvbase"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonPlay"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="1045dp"
+        android:layout_marginTop="190dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/botontv" />
+
+    <ImageView
+        android:id="@+id/carton"
+        android:layout_width="280dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="5dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/carton2"
+        tools:src="@mipmap/carton2" />
+
+    <TextView
+        android:id="@+id/pulsar"
+        android:layout_width="260dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/f3dumb"
+        android:text="@string/pulsa_play"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/play"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="224dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/botontv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

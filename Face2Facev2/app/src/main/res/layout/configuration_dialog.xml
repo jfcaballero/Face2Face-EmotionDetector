@@ -1,0 +1,218 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondotela">
+
+    <ImageView
+        android:id="@+id/carton"
+        android:layout_width="420dp"
+        android:layout_height="300dp"
+        android:adjustViewBounds="false"
+        android:baselineAligned="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:orientation="horizontal"
+        android:rotation="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@mipmap/carton2"
+        tools:src="@mipmap/carton2" />
+
+    <ImageView
+        android:id="@+id/tira"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/adhesiva"
+        app:layout_constraintEnd_toEndOf="@id/carton"
+        app:layout_constraintStart_toStartOf="@id/carton"
+        app:layout_constraintTop_toTopOf="@id/carton" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/f3dumb"
+        android:text="@string/modocaptura"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="@id/tira"
+        app:layout_constraintTop_toTopOf="@id/tira"
+        app:layout_constraintRight_toRightOf="@id/tira"
+        app:layout_constraintBottom_toBottomOf="@id/tira" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/botoncamara"
+        android:fontFamily="@font/f3dumb"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/boton_camara"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="78dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boton" />
+
+    <ImageView
+        android:id="@+id/check_camara"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="85dp"
+        android:src="@drawable/check"
+        android:alpha="0.8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="140dp"
+        android:text="@string/temporizador"
+        android:fontFamily="@font/f3dumb"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/boton_tempo"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="138dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/roundcorner"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boton" />
+
+    <ImageView
+        android:id="@+id/check_tempo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="145dp"
+        android:src="@drawable/check"
+        android:alpha="0.8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temporizador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="187dp"
+        android:text=""
+        android:fontFamily="@font/f3dumb"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/minus"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="190dp"
+        android:src="@drawable/minus"
+        android:background="@drawable/roundcorner"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:alpha="0.8"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/plus"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="190dp"
+        android:src="@drawable/plus"
+        android:background="@drawable/roundcorner"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:alpha="0.8"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="6dp"
+        android:alpha="0.8"
+        android:rotation="45"
+        android:src="@drawable/plus"
+        android:background="@drawable/roundcorner"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/umbral"
+        android:fontFamily="@font/f3dumb"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="20sp"
+        app:layout_constraintVertical_bias="0.84"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderThreshold"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:trackColor="@color/control_background"
+        app:thumbColor="@color/control_background"
+        android:valueFrom="0.2"
+        android:valueTo="0.4"
+        android:stepSize="0.1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
