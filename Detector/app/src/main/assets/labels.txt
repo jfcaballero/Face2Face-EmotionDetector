@@ -1,4 +1,0 @@
-angryimg
-neutralimg
-smileimg
-surprisedimg
