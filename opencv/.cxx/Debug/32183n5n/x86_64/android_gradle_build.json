@@ -1,19 +1,19 @@
 {
   "buildFiles": [
-    "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/libcxx_helper/CMakeLists.txt"
+    "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/libcxx_helper/CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
     [
       "/home/jfcaballero/Android/Sdk/cmake/3.22.1/bin/ninja",
       "-C",
-      "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/32183n5n/x86_64",
+      "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/.cxx/Debug/32183n5n/x86_64",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
     "/home/jfcaballero/Android/Sdk/cmake/3.22.1/bin/ninja",
     "-C",
-    "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/32183n5n/x86_64",
+    "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/.cxx/Debug/32183n5n/x86_64",
     "{LIST_OF_TARGETS_TO_BUILD}"
   ],
   "libraries": {
@@ -21,7 +21,7 @@
       "toolchain": "toolchain",
       "abi": "x86_64",
       "artifactName": "opencv_jni_shared",
-      "output": "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/32183n5n/x86_64/libopencv_jni_shared.a"
+      "output": "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/.cxx/Debug/32183n5n/x86_64/libopencv_jni_shared.a"
     }
   },
   "toolchains": {

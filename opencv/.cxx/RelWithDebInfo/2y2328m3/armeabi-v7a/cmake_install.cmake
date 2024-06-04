@@ -1,4 +1,4 @@
-# Install script for directory: /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/libcxx_helper
+# Install script for directory: /media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/libcxx_helper
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/RelWithDebInfo/2y2328m3/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/.cxx/RelWithDebInfo/2y2328m3/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/jfcaballero/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/libcxx_helper -B/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/32183n5n/armeabi-v7a
+  command = /home/jfcaballero/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/libcxx_helper -B/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/.cxx/Debug/32183n5n/armeabi-v7a
   description = Re-running CMake...
   generator = 1
 

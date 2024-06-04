@@ -163,7 +163,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/i1h5i4vb/x86"
+			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/.cxx/Debug/i1h5i4vb/x86"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -715,7 +715,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/libcxx_helper"
+			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/libcxx_helper"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -751,7 +751,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/intermediates/cxx/Debug/i1h5i4vb/obj/x86"
+			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/intermediates/cxx/Debug/i1h5i4vb/obj/x86"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1023,7 +1023,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/intermediates/cxx/Debug/i1h5i4vb/obj/x86"
+			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/intermediates/cxx/Debug/i1h5i4vb/obj/x86"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1307,7 +1307,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/i1h5i4vb/x86"
+			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/.cxx/Debug/i1h5i4vb/x86"
 		},
 		{
 			"name" : "Project_IS_TOP_LEVEL",
@@ -1331,7 +1331,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/libcxx_helper"
+			"value" : "/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/libcxx_helper"
 		}
 	],
 	"kind" : "cache",

@@ -1,7 +1,7 @@
-org.opencv-pngs-0 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/generated/res/pngs/release
-org.opencv-resValues-1 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/generated/res/resValues/release
-org.opencv-mergeReleaseResources-2 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
-org.opencv-mergeReleaseResources-3 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
-org.opencv-release-4 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/intermediates/merged_res/release/mergeReleaseResources
-org.opencv-java-5 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/java/res
-org.opencv-release-6 /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/src/release/res
+org.opencv-pngs-0 /media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/generated/res/pngs/release
+org.opencv-resValues-1 /media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/generated/res/resValues/release
+org.opencv-mergeReleaseResources-2 /media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+org.opencv-mergeReleaseResources-3 /media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+org.opencv-release-4 /media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/intermediates/merged_res/release/mergeReleaseResources
+org.opencv-java-5 /media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/java/res
+org.opencv-release-6 /media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/src/release/res

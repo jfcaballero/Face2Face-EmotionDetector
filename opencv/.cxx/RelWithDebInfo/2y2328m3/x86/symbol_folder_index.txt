@@ -1,1 +1,1 @@
-/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/intermediates/cxx/RelWithDebInfo/2y2328m3/obj/x86
+/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/intermediates/cxx/RelWithDebInfo/2y2328m3/obj/x86

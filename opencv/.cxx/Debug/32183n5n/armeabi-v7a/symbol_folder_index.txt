@@ -1,1 +1,1 @@
-/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/intermediates/cxx/Debug/32183n5n/obj/armeabi-v7a
+/media/datos/Src/tfgs/Face2Face-EmotionDetector/opencv/build/intermediates/cxx/Debug/32183n5n/obj/armeabi-v7a
