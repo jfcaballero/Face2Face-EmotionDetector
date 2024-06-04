@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/RelWithDebInfo/2y2328m3/x86",
+  "command": "/home/jfcaballero/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=i686-none-linux-android29 --sysroot=/home/jfcaballero/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -fPIC -o CMakeFiles/opencv_jni_shared.dir/dummy.cpp.o -c /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/libcxx_helper/dummy.cpp",
+  "file": "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/libcxx_helper/dummy.cpp"
+}
+]

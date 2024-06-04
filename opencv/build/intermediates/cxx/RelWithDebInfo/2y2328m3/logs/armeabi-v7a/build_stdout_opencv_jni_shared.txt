@@ -1,0 +1,2 @@
+ninja: Entering directory `/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/RelWithDebInfo/2y2328m3/armeabi-v7a'
+ninja: no work to do.

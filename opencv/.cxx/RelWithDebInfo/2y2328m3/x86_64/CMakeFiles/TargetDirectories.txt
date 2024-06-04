@@ -1,0 +1,3 @@
+/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/RelWithDebInfo/2y2328m3/x86_64/CMakeFiles/opencv_jni_shared.dir
+/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/RelWithDebInfo/2y2328m3/x86_64/CMakeFiles/edit_cache.dir
+/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/RelWithDebInfo/2y2328m3/x86_64/CMakeFiles/rebuild_cache.dir

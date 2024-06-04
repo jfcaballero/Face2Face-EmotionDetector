@@ -1,0 +1,1 @@
+/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/build/intermediates/cxx/Debug/32183n5n/obj/arm64-v8a

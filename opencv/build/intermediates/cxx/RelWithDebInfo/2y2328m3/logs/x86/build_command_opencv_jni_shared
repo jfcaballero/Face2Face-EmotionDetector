@@ -1,0 +1,4 @@
+/home/jfcaballero/Android/Sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/RelWithDebInfo/2y2328m3/x86 \
+  opencv_jni_shared

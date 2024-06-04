@@ -1,0 +1,37 @@
+{
+  "buildFiles": [
+    "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/libcxx_helper/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/jfcaballero/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/32183n5n/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/jfcaballero/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/32183n5n/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "opencv_jni_shared::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "opencv_jni_shared",
+      "output": "/media/datos/Src/tfgs/Face2Face-EmotionDetector/Face2Facev2/opencv/.cxx/Debug/32183n5n/x86/libopencv_jni_shared.a"
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/jfcaballero/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/jfcaballero/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
